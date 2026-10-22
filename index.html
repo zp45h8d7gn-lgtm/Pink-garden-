@@ -1,146 +1,54 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#fff0f3">
-
-<title>Pink Garden | Breast Cancer Awareness</title>
+<title>Pink Hope | أمل وردي</title>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
 
-  --pink: #d4517a;
+  --pink: #ed77a7;
 
-  --rose: #a42c50;
+  --hot: #d94d88;
 
-  --light: #fff0f2;
+  --light: #fff0f6;
 
-  --green: #53764e;
+  --cream: #fffaf8;
 
-  --ink: #683345;
+  --dark: #512b40;
 
-  --glass: rgba(255, 246, 244, .94);
-
-}
-
-* {
-
-  box-sizing: border-box;
-
-  margin: 0;
-
-  padding: 0;
+  --muted: #956b80;
 
 }
 
-html {
+* { box-sizing: border-box; }
 
-  scroll-behavior: smooth;
-
-}
+html { scroll-behavior: smooth; }
 
 body {
 
-  font-family: 'DM Sans', sans-serif;
+  margin: 0;
 
-  background: #fff8f4;
+  background: var(--cream);
 
-  color: var(--ink);
+  color: var(--dark);
 
-}
-
-button, a {
-
-  -webkit-tap-highlight-color: transparent;
+  font-family: 'Cairo', sans-serif;
 
 }
 
-button {
+button, input, textarea { font: inherit; }
 
-  font: inherit;
-
-}
-
-a {
-
-  color: inherit;
-
-  text-decoration: none;
-
-}
-
-/* NAVIGATION */
-
-header {
-
-  min-height: 72px;
-
-  padding: 12px 5%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 18px;
-
-  background: #fff6f4;
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 100;
-
-  border-bottom: 1px solid #f0d4db;
-
-}
-
-.brand {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-}
-
-.ribbon-small {
-
-  font-size: 35px;
-
-  color: var(--pink);
-
-}
-
-.brand h1 {
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: 27px;
-
-  color: #852c48;
-
-}
-
-.brand p {
-
-  font-size: 10px;
-
-  color: #92717a;
-
-}
+button, a { -webkit-tap-highlight-color: transparent; }
 
 nav {
 
@@ -148,475 +56,197 @@ nav {
 
   align-items: center;
 
-  gap: clamp(12px, 2.5vw, 30px);
+  justify-content: space-between;
 
-  font-size: 12px;
+  padding: 18px 7%;
 
-}
+  background: rgba(255,250,248,.95);
 
-nav a:hover {
+  border-bottom: 1px solid #f8dce8;
 
-  color: var(--pink);
+  position: sticky;
 
-}
+  top: 0;
 
-.header-message {
-
-  font-family: 'Playfair Display', serif;
-
-  color: var(--pink);
-
-  font-style: italic;
-
-  font-size: 12px;
-
-}
-
-/* HERO */
-
-.hero {
-
-  min-height: 550px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  display: grid;
-
-  place-items: start center;
-
-  text-align: center;
-
-  padding: 65px 20px 130px;
-
-  /*
-
-  Replace the background below with your garden image.
-
-  Upload the image to GitHub and name it garden.jpg.
-
-  */
-
-  .hero::before {
-
-    linear-gradient(
-
-   background-image: url("garden.jpg");   
-
-      rgba(255, 232, 235, .30),
-
-      rgba(255, 229, 228, .13) 45%,
-
-      rgba(28, 61, 35, .20)
-
-    ),
-
-    url(“6AE84A78-FDDB-4581-A33D-9CFB9BA33FD4.png”);
-
-  background-color: #e9c7c5;
-
-  background-size: cover;
-
-  background-position: center 48%;
-
-}
-
-.hero-content {
-
-  position: relative;
-
-  z-index: 2;
-
-  max-width: 750px;
-
-}
-
-.eyebrow {
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 4px;
-
-  text-transform: uppercase;
-
-  color: #9f3455;
-
-}
-
-.hero h2 {
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: clamp(48px, 8vw, 88px);
-
-  color: #8c2847;
-
-  font-weight: 500;
-
-  line-height: 1.12;
-
-  margin: 15px 0;
-
-  text-shadow: 0 2px 20px #fff7ed55;
-
-}
-
-.hero h2 span {
-
-  color: var(--pink);
-
-  font-style: italic;
-
-}
-
-.hero-content p {
-
-  max-width: 520px;
-
-  margin: 0 auto 23px;
-
-  line-height: 1.9;
-
-  font-size: 15px;
-
-  color: #65454e;
-
-}
-
-.primary-btn {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  border: 0;
-
-  border-radius: 35px;
-
-  padding: 14px 27px;
-
-  color: white;
-
-  background: linear-gradient(135deg, #e77799, #bd3f67);
-
-  box-shadow: 0 7px 20px #9d31572b;
-
-  cursor: pointer;
-
-  transition: .25s;
-
-}
-
-.primary-btn:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 10px 25px #9d315740;
-
-}
-
-/* FLOATING INFORMATION CARDS */
-
-.dashboard {
-
-  position: relative;
-
-  z-index: 4;
-
-  width: min(1120px, 92%);
-
-  margin: -35px auto 0;
-
-  display: grid;
-
-  grid-template-columns: 1.3fr 1fr;
-
-  gap: 16px;
-
-}
-
-.glass {
-
-  background: var(--glass);
-
-  border: 1px solid rgba(255,255,255,.95);
-
-  border-radius: 18px;
-
-  box-shadow: 0 10px 30px #68334515;
+  z-index: 10;
 
   backdrop-filter: blur(12px);
 
 }
 
-.progress-card {
+.logo {
 
-  padding: 20px;
+  font-size: 23px;
 
-  display: flex;
+  font-weight: 800;
 
-  align-items: center;
-
-  gap: 17px;
+  color: var(--hot);
 
 }
 
-.card-icon {
+.logo span { color: var(--dark); }
+
+.nav-links {
+
+  display: flex;
+
+  gap: 22px;
+
+  align-items: center;
+
+}
+
+.nav-links a {
+
+  text-decoration: none;
+
+  color: var(--dark);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+}
+
+.lang-btn {
+
+  border: 1px solid #edb4cd;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 8px 15px;
+
+  color: var(--hot);
+
+  cursor: pointer;
+
+  font-weight: 800;
+
+}
+
+.hero {
+
+  padding: 75px 8% 85px;
+
+  background:
+
+    radial-gradient(circle at 90% 15%, #ffd7e8 0, transparent 28%),
+
+    radial-gradient(circle at 5% 90%, #ffe8f0 0, transparent 32%),
+
+    #fff7fa;
 
   display: grid;
 
-  place-items: center;
-
-  width: 53px;
-
-  height: 53px;
-
-  flex-shrink: 0;
-
-  background: #f9dfe6;
-
-  border-radius: 50%;
-
-  font-size: 27px;
-
-}
-
-.card-content {
-
-  min-width: 0;
-
-  flex: 1;
-
-}
-
-.card-content h3,
-
-.donation-card h3 {
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: 17px;
-
-  color: #92354f;
-
-}
-
-.card-content p,
-
-.donation-card p {
-
-  margin-top: 5px;
-
-  font-size: 11px;
-
-  color: #967681;
-
-  line-height: 1.7;
-
-}
-
-.progress-meta {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 10px;
-
-  margin-top: 12px;
-
-  font-size: 11px;
-
-}
-
-.progress-track {
-
-  height: 8px;
-
-  margin-top: 7px;
-
-  background: #f2d9e1;
-
-  border-radius: 20px;
-
-  overflow: hidden;
-
-}
-
-.progress-fill {
-
-  height: 100%;
-
-  width: 0;
-
-  background: linear-gradient(90deg, #eea0b8, #c8416d);
-
-  transition: width .4s ease;
-
-}
-
-.donation-card {
-
-  padding: 20px;
-
-  display: flex;
+  grid-template-columns: 1.1fr .9fr;
 
   align-items: center;
 
-  gap: 13px;
+  gap: 35px;
+
+  min-height: 510px;
 
 }
 
-.heart {
+.eyebrow {
 
-  font-size: 30px;
+  color: var(--hot);
 
-  color: var(--pink);
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  font-weight: 800;
 
 }
 
-.small-btn {
+.hero h1 {
+
+  font-size: clamp(38px, 5.5vw, 67px);
+
+  line-height: 1.25;
+
+  margin: 15px 0;
+
+  letter-spacing: -1px;
+
+}
+
+.hero h1 em {
+
+  color: var(--hot);
+
+  font-style: normal;
+
+}
+
+.hero p {
+
+  color: var(--muted);
+
+  line-height: 2;
+
+  max-width: 490px;
+
+  font-size: 15px;
+
+}
+
+.primary-btn {
 
   display: inline-block;
 
-  margin-top: 10px;
+  border: none;
 
-  border-radius: 25px;
-
-  background: var(--pink);
+  background: var(--hot);
 
   color: white;
 
-  padding: 9px 15px;
+  text-decoration: none;
 
-  font-size: 11px;
+  border-radius: 30px;
+
+  padding: 13px 25px;
+
+  margin-top: 15px;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 22px #d94d8830;
+
+  transition: .2s;
+
+  font-weight: 800;
 
 }
 
-/* GARDEN */
+.primary-btn:hover { transform: translateY(-3px); }
 
-.garden-section {
+.hero-art {
 
-  padding: 65px 5%;
+  min-height: 300px;
 
-  text-align: center;
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 
   position: relative;
 
 }
 
-.kicker {
+.big-heart {
 
-  color: #c45579;
+  width: 235px;
 
-  font-size: 10px;
+  height: 235px;
 
-  font-weight: 600;
+  border-radius: 48% 52% 45% 55%;
 
-  letter-spacing: 3px;
-
-  text-transform: uppercase;
-
-}
-
-.section-title {
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: clamp(33px, 5vw, 48px);
-
-  font-weight: 500;
-
-  color: #77324b;
-
-  margin: 12px 0;
-
-}
-
-.section-description {
-
-  max-width: 580px;
-
-  margin: auto;
-
-  color: #967780;
-
-  font-size: 13px;
-
-  line-height: 1.9;
-
-}
-
-/*
-
-Flower illustrations are drawn using CSS.
-
-Each flower is a real clickable HTML button.
-
-*/
-
-.flower-garden {
-
-  max-width: 1100px;
-
-  margin: 45px auto 0;
-
-  display: grid;
-
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-
-  gap: 15px;
-
-}
-
-.flower-card {
-
-  cursor: pointer;
-
-  border: 1px solid transparent;
-
-  border-radius: 18px;
-
-  padding: 12px 5px 16px;
-
-  background: transparent;
-
-  color: var(--ink);
-
-  transition: transform .3s, background .3s;
-
-}
-
-.flower-card:hover,
-
-.flower-card:focus-visible {
-
-  transform: translateY(-7px);
-
-  background: #fff0f4;
-
-  border-color: #f1d1dc;
-
-  outline: none;
-
-}
-
-.flower-card.completed {
-
-  background: #fbe3eb;
-
-  border-color: #e8b1c4;
-
-}
-
-.flower-scene {
-
-  height: 145px;
+  background: linear-gradient(145deg,#ffc7dd,#e96b9e);
 
   display: flex;
 
@@ -624,737 +254,523 @@ Each flower is a real clickable HTML button.
 
   justify-content: center;
 
+  font-size: 110px;
+
+  transform: rotate(-7deg);
+
+  box-shadow: 0 25px 60px #dc62922d;
+
+  animation: float 4s ease-in-out infinite;
+
+}
+
+.sticker {
+
+  position: absolute;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 12px 16px;
+
+  box-shadow: 0 8px 25px #76304c12;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+}
+
+.sticker.one { top: 25px; right: 5%; }
+
+.sticker.two { bottom: 25px; left: 0; }
+
+@keyframes float {
+
+  0%,100% { transform: translateY(0) rotate(-7deg); }
+
+  50% { transform: translateY(-12px) rotate(-3deg); }
+
+}
+
+section { padding: 70px 7%; }
+
+.section-heading {
+
+  text-align: center;
+
+  margin-bottom: 35px;
+
+}
+
+.section-heading .eyebrow { letter-spacing: 1px; }
+
+.section-heading h2 {
+
+  font-size: clamp(28px,4vw,40px);
+
+  margin: 8px 0;
+
+}
+
+.section-heading p {
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+}
+
+.game-section {
+
+  background: white;
+
+}
+
+.machine {
+
+  max-width: 600px;
+
+  margin: auto;
+
+  background: linear-gradient(145deg,#ffdeeb,#f8a8c8);
+
+  padding: 18px;
+
+  border-radius: 30px;
+
+  box-shadow: 0 20px 55px #c94f801c;
+
+  border: 4px solid #f7bfd5;
+
+}
+
+.machine-top {
+
+  background: #d95089;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 12px;
+
+  border-radius: 16px 16px 8px 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+.machine-window {
+
+  background: #fff9fc;
+
+  border: 5px solid #ef8db4;
+
+  border-radius: 16px;
+
+  padding: 25px 12px;
+
+  margin-top: 12px;
+
+  overflow: hidden;
+
   position: relative;
 
 }
 
-.flower-stem {
+.claw {
 
-  position: absolute;
-
-  top: 69px;
-
-  left: calc(50% - 2px);
-
-  width: 4px;
-
-  height: 75px;
-
-  border-radius: 10px;
-
-  background: linear-gradient(90deg, #355c39, #88a36a, #426a40);
-
-}
-
-.leaf {
-
-  position: absolute;
-
-  z-index: 1;
-
-  top: 102px;
-
-  left: calc(50% - 25px);
-
-  width: 29px;
-
-  height: 15px;
-
-  background: linear-gradient(140deg, #a3bd7c, #426b43);
-
-  border-radius: 100% 0 100% 0;
-
-  transform: rotate(-12deg);
-
-}
-
-.leaf.right {
-
-  left: calc(50% + 1px);
-
-  top: 118px;
-
-  transform: scaleX(-1) rotate(-20deg);
-
-}
-
-.flower-head {
-
-  position: absolute;
-
-  top: 8px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 94px;
-
-  height: 94px;
-
-  z-index: 2;
-
-  filter: drop-shadow(0 5px 4px #61324720);
-
-  transition: transform .35s;
-
-}
-
-.flower-card:hover .flower-head {
-
-  transform: translateX(-50%) rotate(7deg) scale(1.08);
-
-}
-
-.petal {
-
-  position: absolute;
-
-  left: 31px;
-
-  top: 1px;
-
-  width: 32px;
-
-  height: 48px;
-
-  border-radius: 50% 50% 42% 42%;
-
-  transform-origin: 50% 46px;
-
-  background: linear-gradient(
-
-    90deg,
-
-    #d84b79,
-
-    #f7b7cb 48%,
-
-    #ed8aaa
-
-  );
-
-  box-shadow: inset -3px -2px 5px #9e345020;
-
-}
-
-.flower-center {
-
-  position: absolute;
-
-  z-index: 3;
-
-  left: 34px;
-
-  top: 33px;
-
-  width: 27px;
-
-  height: 27px;
-
-  border-radius: 50%;
-
-  background: radial-gradient(circle at 35% 30%, #fff2b8, #d6a044 65%, #a97531);
-
-  box-shadow: 0 2px 4px #8a592744;
-
-}
-
-/* Different flower varieties */
-
-.flower-card:nth-child(2) .petal {
-
-  width: 25px;
-
-  left: 35px;
-
-  height: 48px;
-
-  border-radius: 45% 45% 50% 50%;
-
-  background: linear-gradient(90deg, #fff8e6, #e7d9b8, #fffdf6);
-
-}
-
-.flower-card:nth-child(2) .flower-center {
-
-  background: radial-gradient(circle, #9a703b, #634526);
-
-}
-
-.flower-card:nth-child(3) .petal {
-
-  width: 27px;
-
-  left: 33px;
-
-  height: 46px;
-
-  border-radius: 70% 70% 35% 35%;
-
-  background: linear-gradient(90deg, #e84e7b, #ffb4c7, #c93668);
-
-}
-
-.flower-card:nth-child(4) .petal {
-
-  width: 26px;
-
-  left: 34px;
-
-  height: 37px;
-
-  top: 10px;
-
-  transform-origin: 50% 39px;
-
-  background: linear-gradient(90deg, #ad8bc9, #e4d4f3, #a58ac4);
-
-}
-
-.flower-card:nth-child(4) .flower-center {
-
-  background: #e3cfea;
-
-}
-
-.flower-card:nth-child(5) .petal {
-
-  width: 24px;
-
-  left: 35px;
-
-  height: 45px;
-
-  background: linear-gradient(90deg, #e74d88, #ffc1d8, #dd3b76);
-
-}
-
-.flower-card:nth-child(5) .flower-center {
-
-  background: radial-gradient(circle, #6b4c32, #30251b);
-
-}
-
-.flower-card:nth-child(6) .petal {
-
-  background: linear-gradient(90deg, #e99bb9, #fff3f4, #e8a3bb);
-
-}
-
-.flower-label {
-
-  display: block;
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-
-}
-
-.flower-hint {
-
-  display: block;
-
-  margin-top: 6px;
-
-  font-size: 10px;
-
-  color: #bc6582;
-
-}
-
-/* MESSAGE PANEL */
-
-.message-panel {
-
-  display: none;
-
-  max-width: 1050px;
-
-  margin: 32px auto 0;
-
-  text-align: left;
-
-  border: 1px solid #f0d4dd;
-
-  border-radius: 20px;
-
-  background: rgba(255,248,246,.97);
-
-  box-shadow: 0 12px 32px #68334512;
-
-  overflow: hidden;
-
-  animation: appear .3s ease;
-
-}
-
-.message-panel.active {
-
-  display: grid;
-
-  grid-template-columns: 180px 1fr;
-
-}
-
-@keyframes appear {
-
-  from { opacity: 0; transform: translateY(10px); }
-
-  to { opacity: 1; transform: translateY(0); }
-
-}
-
-.panel-image {
-
-  display: grid;
-
-  place-items: center;
-
-  font-size: 90px;
-
-  min-height: 230px;
-
-  background: linear-gradient(145deg, #f7d5df, #fff1e8);
-
-}
-
-.panel-content {
-
-  padding: 25px;
-
-  min-width: 0;
-
-}
-
-.panel-heading {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 10px;
-
-}
-
-.panel-heading h3 {
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: 25px;
-
-  color: #8b304d;
-
-}
-
-.close-panel {
-
-  border: none;
-
-  background: transparent;
-
-  color: #a84c6b;
-
-  font-size: 26px;
-
-  cursor: pointer;
-
-}
-
-.message-badge {
-
-  display: inline-block;
-
-  margin: 12px 0;
-
-  padding: 5px 10px;
-
-  background: #f8dfe7;
-
-  border-radius: 20px;
-
-  color: #a34464;
-
-  font-size: 10px;
-
-}
-
-#messageText {
-
-  color: #765562;
-
-  line-height: 1.9;
-
-  font-size: 14px;
-
-  min-height: 58px;
-
-}
-
-.panel-controls {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 12px;
-
-  margin-top: 20px;
-
-}
-
-.message-dots {
-
-  display: flex;
-
-  gap: 8px;
-
-}
-
-.message-dot {
-
-  width: 9px;
-
-  height: 9px;
-
-  padding: 0;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background: #e4bdca;
-
-  cursor: pointer;
-
-}
-
-.message-dot.active {
-
-  background: #c64c74;
-
-  transform: scale(1.2);
-
-}
-
-.next-btn {
-
-  border: 0;
-
-  background: #ce527a;
-
-  color: white;
-
-  padding: 11px 19px;
-
-  border-radius: 25px;
-
-  cursor: pointer;
-
-}
-
-/* ABOUT */
-
-.about-section {
-
-  padding: 65px 5%;
+  font-size: 43px;
 
   text-align: center;
 
-  background: linear-gradient(135deg, #fff0f3, #fffaf5);
+  height: 64px;
+
+  transition: transform .5s;
 
 }
 
-.about-grid {
-
-  max-width: 950px;
-
-  margin: 32px auto 0;
+.dolls {
 
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
 
-  gap: 18px;
+  gap: 15px;
 
-}
+  text-align: center;
 
-.about-card {
-
-  background: rgba(255,255,255,.8);
-
-  border: 1px solid #f0dce2;
-
-  border-radius: 20px;
-
-  padding: 25px 18px;
+  padding: 20px 5px 8px;
 
 }
 
-.about-card .icon {
+.doll {
 
-  font-size: 32px;
+  font-size: clamp(38px,7vw,60px);
 
-  margin-bottom: 12px;
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 15px 2px;
+
+  box-shadow: 0 5px 12px #d94d8817;
+
+  border: 2px solid #ffe0ec;
+
+  transition: .25s;
 
 }
 
-.about-card h3 {
+.doll.selected {
 
-  font-family: 'Playfair Display', serif;
+  transform: translateY(-10px) scale(1.1);
 
-  color: #893650;
+  border-color: var(--hot);
+
+  box-shadow: 0 8px 22px #d94d8844;
+
+}
+
+.machine-controls {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 15px 0 5px;
+
+}
+
+.machine-controls button {
+
+  border: none;
+
+  border-radius: 30px;
+
+  padding: 12px 22px;
+
+  cursor: pointer;
+
+  font-weight: 800;
+
+}
+
+.grab-btn { background: var(--hot); color: white; }
+
+.reset-btn { background: white; color: var(--hot); }
+
+.message-card {
+
+  display: none;
+
+  margin: 22px auto 0;
+
+  max-width: 600px;
+
+  background: #fff0f6;
+
+  border: 1px solid #f4c2d7;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  animation: appear .4s ease;
+
+}
+
+.message-card.show { display: block; }
+
+.message-card .emoji { font-size: 35px; }
+
+.message-card h3 {
+
+  color: var(--hot);
 
   margin-bottom: 10px;
 
 }
 
-.about-card p {
+.message-card p { line-height: 2; }
 
-  font-size: 12px;
+@keyframes appear {
 
-  line-height: 1.9;
+  from { opacity: 0; transform: translateY(12px); }
 
-  color: #967780;
+  to { opacity: 1; transform: translateY(0); }
 
 }
 
-/* FOOTER */
+.awareness { background: #fff4f8; }
 
-footer {
+.info-grid {
 
-  padding: 35px 20px;
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 20px;
+
+}
+
+.info-card {
+
+  background: white;
+
+  border: 1px solid #f9dbe7;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  transition: .2s;
+
+}
+
+.info-card:hover { transform: translateY(-5px); }
+
+.info-icon {
+
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 17px;
+
+  background: #ffe6f0;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 27px;
+
+}
+
+.info-card h3 { font-size: 18px; }
+
+.info-card p {
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 2;
+
+}
+
+.support-section { background: white; }
+
+.support-layout {
+
+  display: grid;
+
+  grid-template-columns: .8fr 1.2fr;
+
+  gap: 30px;
+
+  align-items: start;
+
+}
+
+.support-intro {
+
+  background: linear-gradient(145deg,#f9a9c9,#dc5a91);
+
+  color: white;
+
+  border-radius: 25px;
+
+  padding: 30px;
+
+}
+
+.support-intro h3 { font-size: 26px; }
+
+.support-intro p { line-height: 2; }
+
+.support-form, .wall {
+
+  background: #fff8fb;
+
+  border: 1px solid #f8dce8;
+
+  border-radius: 22px;
+
+  padding: 22px;
+
+}
+
+.support-form { margin-bottom: 18px; }
+
+input, textarea {
+
+  width: 100%;
+
+  border: 1px solid #f0cada;
+
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  margin-bottom: 12px;
+
+  outline: none;
+
+  color: var(--dark);
+
+}
+
+input:focus, textarea:focus { border-color: var(--hot); }
+
+textarea { resize: vertical; min-height: 95px; }
+
+.support-form button {
+
+  width: 100%;
+
+  margin-top: 0;
+
+}
+
+.wall h3 { margin-top: 0; }
+
+.wall-message {
+
+  background: white;
+
+  border: 1px solid #f5dce7;
+
+  border-radius: 14px;
+
+  padding: 13px;
+
+  margin-top: 12px;
+
+  overflow-wrap: anywhere;
+
+}
+
+.wall-message strong { color: var(--hot); }
+
+.wall-message p {
+
+  margin-bottom: 0;
+
+  line-height: 1.8;
+
+  font-size: 14px;
+
+}
+
+.donate-section {
+
+  background: linear-gradient(135deg,#d94d88,#f6a6c5);
+
+  color: white;
 
   text-align: center;
 
-  background: #f9e0e7;
-
-  color: #89586a;
+  padding: 65px 7%;
 
 }
 
-.footer-title {
+.donate-section h2 { font-size: clamp(28px,4vw,42px); }
 
-  font-family: 'Playfair Display', serif;
+.donate-section p {
 
-  font-size: 28px;
+  line-height: 2;
 
-  color: #a33c60;
+  max-width: 600px;
 
-  margin-bottom: 8px;
-
-}
-
-footer p {
-
-  max-width: 650px;
-
-  margin: 0 auto;
-
-  font-size: 11px;
-
-  line-height: 1.9;
+  margin: auto;
 
 }
 
-.footer-heart {
+.donate-btn {
 
-  margin: 12px;
+  display: inline-block;
 
-  color: #c84d77;
+  margin-top: 25px;
 
-  font-size: 20px;
+  padding: 14px 30px;
 
-}
+  background: white;
 
-/* MOBILE */
+  color: var(--hot);
 
-@media (max-width: 850px) {
+  border-radius: 30px;
 
-  .header-message {
+  text-decoration: none;
 
-    display: none;
-
-  }
-
-  .dashboard {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .flower-garden {
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  }
-
-  .message-panel.active {
-
-    grid-template-columns: 125px 1fr;
-
-  }
-
-  .panel-image {
-
-    font-size: 65px;
-
-  }
+  font-weight: 800;
 
 }
 
-@media (max-width: 540px) {
+footer {
 
-  header {
+  text-align: center;
 
-    padding: 12px 4%;
+  padding: 25px;
 
-  }
+  background: #fff7fa;
 
-  .brand h1 {
+  color: var(--muted);
 
-    font-size: 21px;
+  font-size: 12px;
 
-  }
+  line-height: 2;
 
-  .brand p {
+}
 
-    font-size: 9px;
+footer strong { color: var(--hot); }
 
-  }
+@media(max-width:750px) {
 
-  .ribbon-small {
+  nav { padding: 14px 5%; }
 
-    font-size: 28px;
-
-  }
-
-  nav {
-
-    gap: 11px;
-
-    font-size: 10px;
-
-  }
-
-  nav a:nth-child(2),
-
-  nav a:nth-child(4) {
-
-    display: none;
-
-  }
+  .nav-links { display: none; }
 
   .hero {
 
-    min-height: 470px;
-
-    padding: 65px 18px 100px;
-
-  }
-
-  .hero-content p {
-
-    font-size: 13px;
-
-  }
-
-  .dashboard {
-
-    width: 92%;
-
-  }
-
-  .progress-card,
-
-  .donation-card {
-
-    padding: 15px;
-
-  }
-
-  .garden-section {
-
-    padding: 50px 4%;
-
-  }
-
-  .flower-garden {
-
-    gap: 6px;
-
-    margin-top: 28px;
-
-  }
-
-  .flower-scene {
-
-    height: 105px;
-
-  }
-
-  .flower-head {
-
-    transform: translateX(-50%) scale(.76);
-
-  }
-
-  .flower-card:hover .flower-head {
-
-    transform: translateX(-50%) scale(.8) rotate(7deg);
-
-  }
-
-  .flower-label {
-
-    font-size: 11px;
-
-  }
-
-  .flower-hint {
-
-    font-size: 9px;
-
-  }
-
-  .message-panel.active {
-
     grid-template-columns: 1fr;
 
-  }
+    text-align: center;
 
-  .panel-image {
+    padding: 55px 7%;
 
-    min-height: 115px;
-
-    font-size: 65px;
+    gap: 10px;
 
   }
 
-  .panel-content {
+  .hero p { margin-left: auto; margin-right: auto; }
 
-    padding: 20px;
+  .hero-art { min-height: 260px; }
 
-  }
+  .big-heart { width: 190px; height: 190px; font-size: 85px; }
 
-  .panel-heading h3 {
+  section { padding: 55px 5%; }
 
-    font-size: 21px;
+  .info-grid { grid-template-columns: 1fr; }
 
-  }
+  .support-layout { grid-template-columns: 1fr; }
 
-  .about-grid {
+  .dolls { gap: 8px; }
 
-    grid-template-columns: 1fr;
-
-  }
+  .doll { padding: 12px 0; }
 
 }
 
@@ -1364,165 +780,277 @@ footer p {
 
 <body>
 
-<header>
+<nav>
 
-  <a class="brand" href="#home">
+  <div class="logo">♡ Pink <span>Hope</span></div>
 
-    <span class="ribbon-small">🎗</span>
+  <div class="nav-links">
 
-    <div>
+    <a href="#home" data-en="Home">الرئيسية</a>
 
-      <h1>Pink Garden</h1>
+    <a href="#game" data-en="The Claw Machine">آلة الدمى</a>
 
-      <p>Small steps make a big difference</p>
+    <a href="#awareness" data-en="Awareness">التوعية</a>
 
-    </div>
+    <a href="#support" data-en="Support Wall">رسائل الدعم</a>
 
-  </a>
+  </div>
 
-  <nav>
+  <button class="lang-btn" id="languageBtn" onclick="toggleLanguage()">English</button>
 
-    <a href="#home">Home</a>
+</nav>
 
-    <a href="#about">About</a>
+<header class="hero" id="home">
 
-    <a href="#garden">The Flowers</a>
+  <div>
 
-    <a href="#support">Support</a>
+    <div class="eyebrow" data-en="A LITTLE HOPE GOES A LONG WAY">قليل من الأمل يصنع فرقًا كبيرًا</div>
 
-  </nav>
+    <h1 data-en="A world of hope, wrapped in <em>pink.</em>">
 
-  <div class="header-message">♡ You are not alone</div>
+      عالم من الأمل<br>بلون <em>وردي</em>
 
-</header>
+    </h1>
 
-<main>
+    <p data-en="Every message matters. Every story deserves to be heard. Join us in spreading awareness, kindness, and hope in the fight against breast cancer.">
 
-<section class="hero" id="home">
+      كل رسالة لها معنى وكل قصة تستحق أن تُسمع
 
-  <div class="hero-content">
-
-    <div class="eyebrow">Breast Cancer Awareness</div>
-
-    <h2>Pink Garden<span> ♡</span></h2>
-
-    <p>
-
-      A virtual garden of awareness, where every flower shares
-
-      an important message about breast health. Discover knowledge,
-
-      nurture hope, and let awareness bloom.
+      شاركينا نشر الوعي واللطف والأمل في رحلة التوعية بسرطان الثدي
 
     </p>
 
-    <a class="primary-btn" href="#garden">
-
-      Explore the Garden <span>→</span>
-
-    </a>
+    <a href="#game" class="primary-btn" data-en="Find Your Message ♡">اكتشفي رسالتك ♡</a>
 
   </div>
 
-</section>
+  <div class="hero-art">
 
-<div class="dashboard">
+    <div class="big-heart">🎀</div>
 
-  <div class="glass progress-card">
+    <div class="sticker one" data-en="♡ You are not alone">♡ أنتِ لستِ وحدك</div>
 
-    <div class="card-icon">🌱</div>
+    <div class="sticker two" data-en="Spread love, spread hope ✨">انشري الحب والأمل ✨</div>
 
-    <div class="card-content">
+  </div>
 
-      <h3>Your awareness journey</h3>
+</header>
 
-      <p>Discover all 30 messages and make your garden bloom.</p>
+<section class="game-section" id="game">
 
-      <div class="progress-meta">
+  <div class="section-heading">
 
-        <span id="progressLabel">Your garden is waiting to bloom</span>
+    <div class="eyebrow" data-en="A SURPRISE JUST FOR YOU">مفاجأة صغيرة لكِ</div>
 
-        <strong id="progressCount">0 / 30</strong>
+    <h2 data-en="The Pink Claw Machine">آلة الدمى الوردية</h2>
 
-      </div>
+    <p data-en="Pick a plushie and discover a little message of hope or awareness.">
 
-      <div class="progress-track">
+      اسحبي دمية واكتشفي رسالة صغيرة تحمل الأمل أو التوعية
 
-        <div class="progress-fill" id="progressFill"></div>
+    </p>
+
+  </div>
+
+  <div class="machine">
+
+    <div class="machine-top">♡ PINK HOPE ♡</div>
+
+    <div class="machine-window">
+
+      <div class="claw" id="claw">🕹️</div>
+
+      <div class="dolls" id="dolls">
+
+        <div class="doll">🐰</div>
+
+        <div class="doll">🧸</div>
+
+        <div class="doll">🐱</div>
+
+        <div class="doll">🐼</div>
+
+        <div class="doll">🐻</div>
+
+        <div class="doll">🐥</div>
 
       </div>
 
     </div>
 
+    <div class="machine-controls">
+
+      <button class="grab-btn" onclick="grabDoll()" data-en="Grab a Plushie ♡">اسحبي دمية ♡</button>
+
+      <button class="reset-btn" onclick="resetGame()" data-en="Try Again">إعادة</button>
+
+    </div>
+
   </div>
 
-  <div class="glass donation-card" id="support">
+  <div class="message-card" id="messageCard" aria-live="polite">
 
-    <div class="heart">♡</div>
+    <div class="emoji" id="messageEmoji">💗</div>
+
+    <h3 id="messageTitle"></h3>
+
+    <p id="messageText"></p>
+
+    <button class="primary-btn" onclick="grabDoll()" data-en="Get Another Message">اكتشفي رسالة ثانية</button>
+
+  </div>
+
+</section>
+
+<section class="awareness" id="awareness">
+
+  <div class="section-heading">
+
+    <div class="eyebrow" data-en="KNOWLEDGE IS POWER">المعرفة قوة</div>
+
+    <h2 data-en="Awareness Saves Lives">الوعي يصنع الفرق</h2>
+
+    <p data-en="Learning about breast health is one way to care for yourself and others.">
+
+      التعرّف على صحة الثدي خطوة مهمة للاهتمام بنفسك وبمن تحبين
+
+    </p>
+
+  </div>
+
+  <div class="info-grid">
+
+    <article class="info-card">
+
+      <div class="info-icon">🎀</div>
+
+      <h3 data-en="Know Your Body">تعرّفي على جسمك</h3>
+
+      <p data-en="Being familiar with your breasts can help you notice changes that are new or unusual for you.">
+
+        معرفة شكل وملمس الثدي المعتاد يساعدك على ملاحظة أي تغيّرات جديدة أو غير مألوفة
+
+      </p>
+
+    </article>
+
+    <article class="info-card">
+
+      <div class="info-icon">🩺</div>
+
+      <h3 data-en="Notice Changes">انتبهي للتغيّرات</h3>
+
+      <p data-en="A new lump, skin dimpling, nipple changes, or unusual discharge should be assessed by a healthcare professional.">
+
+        ظهور كتلة جديدة أو تغيّر الجلد أو الحلمة أو إفرازات غير معتادة يستدعي استشارة مختص صحي
+
+      </p>
+
+    </article>
+
+    <article class="info-card">
+
+      <div class="info-icon">💗</div>
+
+      <h3 data-en="Screening Matters">الفحص مهم</h3>
+
+      <p data-en="Ask your healthcare professional which screening tests are appropriate for your age and personal risk.">
+
+        اسألي المختص الصحي عن الفحوصات المناسبة لعمرك وعوامل الخطورة لديك
+
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section class="support-section" id="support">
+
+  <div class="section-heading">
+
+    <div class="eyebrow" data-en="WORDS CAN HEAL">للكلمات أثر</div>
+
+    <h2 data-en="A Wall Full of Love">جدار مليء بالحب</h2>
+
+    <p data-en="Leave a kind message for someone who might need a little hope today.">
+
+      اتركي رسالة لطيفة لشخص قد يحتاج إلى جرعة من الأمل اليوم
+
+    </p>
+
+  </div>
+
+  <div class="support-layout">
+
+    <div class="support-intro">
+
+      <div style="font-size:42px">💌</div>
+
+      <h3 data-en="Your words matter.">كلماتك تصنع فرقًا</h3>
+
+      <p data-en="Sometimes, a few kind words can make a difficult day feel a little lighter. Share kindness freely.">
+
+        أحيانًا كلمات بسيطة تخفف ثقل يوم صعب
+
+        شاركي اللطف والأمل مع الآخرين
+
+      </p>
+
+      <div style="font-size:25px">♡ 🎀 ♡</div>
+
+    </div>
 
     <div>
 
-      <h3>Support Zahra Association</h3>
+      <form class="support-form" id="supportForm">
 
-      <p>Help promote breast cancer awareness and support.</p>
+        <h3 data-en="Write a message ♡">اكتبي رسالة ♡</h3>
 
-      <a class="small-btn"
+        <input id="visitorName" type="text" maxlength="40"
 
-         href="https://donate.zahra.org.sa"
+          placeholder="اسمك (اختياري)" data-placeholder-en="Your name (optional)">
 
-         target="_blank"
+        <textarea id="visitorMessage" maxlength="400" required
 
-         rel="noopener noreferrer">
+          placeholder="اكتبي رسالة مليئة بالأمل..."></textarea>
 
-        Visit Donation Page →
+        <button type="submit" class="primary-btn" data-en="Share Some Love ♡">شاركي الحب ♡</button>
 
-      </a>
+      </form>
 
-    </div>
+      <div class="wall">
 
-  </div>
+        <h3 data-en="Messages of Hope 💗">رسائل الأمل 💗</h3>
 
-</div>
+        <div id="messageWall">
 
-<section class="garden-section" id="garden">
+          <div class="wall-message">
 
-  <div class="kicker">A little knowledge goes a long way</div>
+            <strong data-en="A Friend of Hope">صديقة الأمل</strong>
 
-  <h2 class="section-title">Click on a flower</h2>
+            <p data-en="You are stronger than you know, and you deserve love every step of the way. 💗">
 
-  <p class="section-description">
+              أنتِ أقوى مما تتخيلين وتستحقين الحب في كل خطوة 💗
 
-    Each flower represents a key message about breast health.
+            </p>
 
-    Explore six flowers to discover 30 educational messages.
+          </div>
 
-  </p>
+          <div class="wall-message">
 
-  <div class="flower-garden" id="flowerGarden"></div>
+            <strong data-en="Pink Heart">قلب وردي</strong>
 
-  <div class="message-panel" id="messagePanel">
+            <p data-en="You don't have to face everything alone. There is always room for hope. 🎀">
 
-    <div class="panel-image" id="panelImage">🌹</div>
+              لستِ مضطرة لمواجهة كل شيء وحدك فهناك دائمًا مساحة للأمل 🎀
 
-    <div class="panel-content">
+            </p>
 
-      <div class="panel-heading">
+          </div>
 
-        <h3 id="panelTitle">Know Your Body</h3>
-
-        <button class="close-panel" id="closePanel" aria-label="Close">×</button>
-
-      </div>
-
-      <span class="message-badge" id="messageBadge">Message 1 of 5</span>
-
-      <p id="messageText"></p>
-
-      <div class="panel-controls">
-
-        <div class="message-dots" id="messageDots"></div>
-
-        <button class="next-btn" id="nextMessage">Next →</button>
+        </div>
 
       </div>
 
@@ -1532,452 +1060,354 @@ footer p {
 
 </section>
 
-<section class="about-section" id="about">
+<section class="donate-section">
 
-  <div class="kicker">Growing awareness together</div>
+  <div style="font-size:42px">🎀</div>
 
-  <h2 class="section-title">Why Pink Garden?</h2>
+  <h2 data-en="Together, We Can Make a Difference">معًا نصنع فرقًا</h2>
 
-  <p class="section-description">
+  <p data-en="Support breast cancer awareness and help contribute to the work of Zahra Association through its official donation platform.">
 
-    Every small message can begin an important conversation.
-
-    Pink Garden makes breast health education inviting and accessible.
+    ساهمي في دعم التوعية بسرطان الثدي وادعمي جهود جمعية زهرة عبر منصة التبرع الرسمية
 
   </p>
 
-  <div class="about-grid">
+  <a class="donate-btn"
 
-    <article class="about-card">
+     href="https://donate.zahra.org.sa/"
 
-      <div class="icon">🌸</div>
+     target="_blank" rel="noopener noreferrer"
 
-      <h3>Learn</h3>
+     data-en="Donate to Zahra Association ♡">
 
-      <p>Explore messages about breast health, changes to notice, and screening.</p>
+     التبرع لجمعية زهرة ♡
 
-    </article>
-
-    <article class="about-card">
-
-      <div class="icon">🌿</div>
-
-      <h3>Grow</h3>
-
-      <p>Discover new messages and track your progress through the garden.</p>
-
-    </article>
-
-    <article class="about-card">
-
-      <div class="icon">🩷</div>
-
-      <h3>Support</h3>
-
-      <p>Share reliable information and support people affected by breast cancer.</p>
-
-    </article>
-
-  </div>
+  </a>
 
 </section>
-
-</main>
 
 <footer>
 
-  <div class="footer-title">Pink Garden ♡</div>
+  <strong>♡ Pink Hope</strong>
 
-  <p>Together we can make a difference</p>
+  <div data-en="Spreading awareness, one heart at a time.">ننشر الوعي ونزرع الأمل قلبًا بعد قلب</div>
 
-  <div class="footer-heart">♡ ───────── ♡ ───────── ♡</div>
+  <div data-en="Educational content only. It does not replace professional medical advice.">
 
-  <p>
+    المحتوى للتوعية فقط ولا يغني عن استشارة المختص الصحي
 
-    Pink Garden is an independent student awareness project.
+  </div>
 
-    Educational content only. This website does not replace
-
-    professional medical advice.
-
-  </p>
+  <div>© 2026 Pink Hope</div>
 
 </footer>
 
 <script>
 
-const flowers = [
+const messages = [
 
   {
 
-    title: "Know Your Body",
+    type: "support",
 
-    icon: "🌹",
+    emoji: "💗",
 
-    messages: [
+    arTitle: "أنتِ لستِ وحدك",
 
-      "Become familiar with how your breasts normally look and feel. Knowing what is usual for you can help you notice changes.",
+    enTitle: "You Are Not Alone",
 
-      "A new lump or swelling in the breast or armpit should be assessed by a healthcare professional.",
+    ar: "في الأيام الصعبة تذكّري أن مشاعرك مهمة وأن طلب الدعم ليس ضعفًا بل شجاعة. أنتِ تستحقين الرعاية والاهتمام.",
 
-      "Changes in breast size or shape, skin dimpling, or a newly inverted nipple deserve medical assessment.",
-
-      "Unusual nipple discharge, particularly bloody discharge, should be discussed with a healthcare professional.",
-
-      "Not every breast change is cancer, but unexplained changes should not be ignored."
-
-    ]
+    en: "On difficult days, remember that your feelings matter. Asking for support is not weakness; it is courage. You deserve care and kindness."
 
   },
 
   {
 
-    title: "Early Detection",
+    type: "awareness",
 
-    icon: "🌷",
+    emoji: "🎀",
 
-    messages: [
+    arTitle: "الوعي خطوة مهمة",
 
-      "Finding breast cancer early can improve treatment options and outcomes.",
+    enTitle: "Awareness Matters",
 
-      "Screening recommendations depend on your age, personal risk, and local clinical guidelines.",
+    ar: "التعرّف على التغيّرات الجديدة في الثدي والتحدث مع مختص صحي عند ملاحظتها يساعدان على اتخاذ الخطوات المناسبة.",
 
-      "A mammogram is an imaging test that can detect some breast changes before they can be felt.",
-
-      "Do not ignore a new breast change, even if your last screening result was normal.",
-
-      "Ask your healthcare provider which screening plan is appropriate for you."
-
-    ]
+    en: "Knowing what is normal for you and discussing new breast changes with a healthcare professional can help you take appropriate next steps."
 
   },
 
   {
 
-    title: "Risk Awareness",
+    type: "support",
 
-    icon: "🌺",
+    emoji: "🌷",
 
-    messages: [
+    arTitle: "خذي الأمور خطوة بخطوة",
 
-      "Getting older is one of the strongest risk factors for breast cancer, although it can occur in younger people too.",
+    enTitle: "One Step at a Time",
 
-      "Having a close relative with breast cancer may increase your risk. Discuss your family history with your clinician.",
+    ar: "لا تحتاجين إلى امتلاك كل الإجابات اليوم. امنحي نفسك الوقت والراحة واطلبي المساندة عندما تحتاجين إليها.",
 
-      "Some inherited gene changes, including BRCA1 and BRCA2, can increase breast cancer risk.",
-
-      "Having risk factors does not mean someone will definitely develop breast cancer.",
-
-      "Breast cancer can occur in people with no known family history."
-
-    ]
+    en: "You don't need to have every answer today. Give yourself time, rest, and permission to ask for support whenever you need it."
 
   },
 
   {
 
-    title: "Healthy Habits",
+    type: "awareness",
 
-    icon: "💐",
+    emoji: "🩺",
 
-    messages: [
+    arTitle: "لا تتجاهلي التغيّرات",
 
-      "Regular physical activity supports overall health and may help reduce breast cancer risk.",
+    enTitle: "Pay Attention to Changes",
 
-      "Maintaining a healthy weight, particularly after menopause, can help lower breast cancer risk.",
+    ar: "أي كتلة جديدة أو تغيّر غير معتاد في الثدي يستحق التقييم من مختص صحي. كثير من التغيّرات لها أسباب غير سرطانية، لكن الفحص مهم.",
 
-      "Alcohol consumption is associated with an increased risk of breast cancer.",
-
-      "A balanced diet supports general health, but no single food can prevent or cure breast cancer.",
-
-      "Healthy habits do not eliminate risk or replace recommended screening."
-
-    ]
+    en: "A new lump or unusual breast change deserves assessment by a healthcare professional. Many changes are non-cancerous, but checking matters."
 
   },
 
   {
 
-    title: "Support & Care",
+    type: "support",
 
-    icon: "🌸",
+    emoji: "🦋",
 
-    messages: [
+    arTitle: "قوتك ليست في إخفاء مشاعرك",
 
-      "A breast cancer diagnosis can be emotionally challenging. Listening without judgment can help someone feel supported.",
+    enTitle: "Your Feelings Matter",
 
-      "Ask someone receiving treatment what kind of support they need instead of assuming.",
+    ar: "من حقك أن تشعري بالخوف أو الحزن أو التعب. لا يلزم أن تكوني قوية طوال الوقت حتى تستحقي الحب والدعم.",
 
-      "Accompanying someone to an appointment, when they want you there, can offer practical and emotional support.",
-
-      "Encourage patients to discuss treatment concerns and side effects with their healthcare team.",
-
-      "Compassion, respect, and accurate information can make a meaningful difference during treatment."
-
-    ]
+    en: "You are allowed to feel scared, sad, or tired. You don't have to be strong all the time to deserve love and support."
 
   },
 
   {
 
-    title: "Hope & Strength",
+    type: "awareness",
 
-    icon: "🪷",
+    emoji: "💗",
 
-    messages: [
+    arTitle: "اسألي عن الفحص المناسب",
 
-      "Breast cancer includes different types and stages. Treatment and outlook vary from person to person.",
+    enTitle: "Ask About Screening",
 
-      "Treatment may include surgery, radiation therapy, chemotherapy, hormone therapy, targeted therapy, or combinations of these.",
+    ar: "تختلف توصيات فحوصات سرطان الثدي حسب العمر وعوامل الخطورة. استشيري مختصًا صحيًا لمعرفة ما يناسبك.",
 
-      "A breast cancer diagnosis does not define a person's identity, worth, or future.",
+    en: "Breast cancer screening recommendations vary by age and risk factors. Talk to a healthcare professional about what is right for you."
 
-      "Reliable medical information is more helpful than frightening stories or unverified treatment claims.",
+  },
 
-      "Supporting breast health means encouraging timely assessment and treating every person with dignity."
+  {
 
-    ]
+    type: "support",
+
+    emoji: "🌸",
+
+    arTitle: "أنتِ تستحقين اللطف",
+
+    enTitle: "You Deserve Kindness",
+
+    ar: "تذكّري أن تعاملي نفسك بالرحمة نفسها التي تمنحينها للأشخاص الذين تحبينهم. أنتِ مهمة.",
+
+    en: "Treat yourself with the same compassion you give the people you love. You matter."
+
+  },
+
+  {
+
+    type: "support",
+
+    emoji: "🧸",
+
+    arTitle: "يوم واحد في كل مرة",
+
+    enTitle: "One Day at a Time",
+
+    ar: "لا بأس إن كان كل ما تستطيعين فعله اليوم هو الراحة والتنفس ومواصلة يومك. الخطوات الصغيرة لها قيمة.",
+
+    en: "It's okay if all you can do today is rest, breathe, and get through the day. Small steps still count."
 
   }
 
 ];
 
-const garden = document.getElementById("flowerGarden");
+let isEnglish = false;
 
-const panel = document.getElementById("messagePanel");
+let lastMessage = -1;
 
-let activeFlower = 0;
+function toggleLanguage() {
 
-let activeMessage = 0;
+  isEnglish = !isEnglish;
 
-const completedMessages = new Set();
+  document.documentElement.lang = isEnglish ? "en" : "ar";
 
-function createFlower(index) {
+  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
 
-  const button = document.createElement("button");
+  document.getElementById("languageBtn").textContent =
 
-  button.type = "button";
+    isEnglish ? "العربية" : "English";
 
-  button.className = "flower-card";
+  document.querySelectorAll("[data-en]").forEach(element => {
 
-  button.setAttribute("aria-label", "Explore " + flowers[index].title);
+    const english = element.getAttribute("data-en");
 
-  let petals = "";
-
-  for (let i = 0; i < 10; i++) {
-
-    petals += `
-
-      <span class="petal"
-
-        style="transform: rotate(${i * 36}deg)">
-
-      </span>
-
-    `;
-
-  }
-
-  button.innerHTML = `
-
-    <span class="flower-scene">
-
-      <span class="flower-stem"></span>
-
-      <span class="leaf"></span>
-
-      <span class="leaf right"></span>
-
-      <span class="flower-head">
-
-        ${petals}
-
-        <span class="flower-center"></span>
-
-      </span>
-
-    </span>
-
-    <span class="flower-label">${flowers[index].title}</span>
-
-    <span class="flower-hint" id="hint${index}">Explore flower →</span>
-
-  `;
-
-  button.addEventListener("click", () => openFlower(index));
-
-  return button;
-
-}
-
-function renderGarden() {
-
-  garden.innerHTML = "";
-
-  flowers.forEach((flower, index) => {
-
-    garden.appendChild(createFlower(index));
+    if (english) element.innerHTML = english;
 
   });
 
-  updateProgress();
+  document.querySelectorAll("[data-placeholder-en]").forEach(element => {
 
-}
+    element.placeholder = isEnglish
 
-function openFlower(index) {
+      ? element.getAttribute("data-placeholder-en")
 
-  activeFlower = index;
-
-  activeMessage = 0;
-
-  panel.classList.add("active");
-
-  showMessage();
-
-  panel.scrollIntoView({
-
-    behavior: "smooth",
-
-    block: "nearest"
+      : "اسمك (اختياري)";
 
   });
 
+  document.getElementById("visitorMessage").placeholder = isEnglish
+
+    ? "Write a message full of hope..."
+
+    : "اكتبي رسالة مليئة بالأمل...";
+
+  document.querySelectorAll("#messageWall .wall-message").forEach(el => {
+
+    const title = el.querySelector("strong");
+
+    const p = el.querySelector("p");
+
+    if (title.dataset.ar) title.textContent = isEnglish ? title.dataset.en : title.dataset.ar;
+
+    if (p.dataset.ar) p.textContent = isEnglish ? p.dataset.en : p.dataset.ar;
+
+  });
+
+  if (lastMessage >= 0) showMessage(lastMessage);
+
 }
 
-function showMessage() {
+function grabDoll() {
 
-  const flower = flowers[activeFlower];
+  const claw = document.getElementById("claw");
 
-  document.getElementById("panelTitle").textContent = flower.title;
+  const dolls = [...document.querySelectorAll(".doll")];
 
-  document.getElementById("panelImage").textContent = flower.icon;
+  const card = document.getElementById("messageCard");
+
+  let index;
+
+  do {
+
+    index = Math.floor(Math.random() * messages.length);
+
+  } while (messages.length > 1 && index === lastMessage);
+
+  lastMessage = index;
+
+  const dollIndex = Math.floor(Math.random() * dolls.length);
+
+  dolls.forEach(d => d.classList.remove("selected"));
+
+  claw.style.transform = "translateY(90px)";
+
+  setTimeout(() => {
+
+    dolls[dollIndex].classList.add("selected");
+
+    claw.style.transform = "translateY(0)";
+
+    showMessage(index);
+
+    card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  }, 550);
+
+}
+
+function showMessage(index) {
+
+  const message = messages[index];
+
+  document.getElementById("messageEmoji").textContent = message.emoji;
+
+  document.getElementById("messageTitle").textContent =
+
+    isEnglish ? message.enTitle : message.arTitle;
 
   document.getElementById("messageText").textContent =
 
-    flower.messages[activeMessage];
+    isEnglish ? message.en : message.ar;
 
-  document.getElementById("messageBadge").textContent =
-
-    "Message " + (activeMessage + 1) + " of 5";
-
-  const dots = document.getElementById("messageDots");
-
-  dots.innerHTML = "";
-
-  flower.messages.forEach((message, index) => {
-
-    const dot = document.createElement("button");
-
-    dot.type = "button";
-
-    dot.className = "message-dot" +
-
-      (index === activeMessage ? " active" : "");
-
-    dot.setAttribute("aria-label", "Message " + (index + 1));
-
-    dot.addEventListener("click", () => {
-
-      activeMessage = index;
-
-      showMessage();
-
-    });
-
-    dots.appendChild(dot);
-
-  });
-
-  document.getElementById("nextMessage").textContent =
-
-    activeMessage === 4 ? "Finish flower ✓" : "Next →";
+  document.getElementById("messageCard").classList.add("show");
 
 }
 
-document.getElementById("nextMessage").addEventListener("click", () => {
+function resetGame() {
 
-  const flower = flowers[activeFlower];
+  lastMessage = -1;
 
-  completedMessages.add(activeFlower + "-" + activeMessage);
+  document.getElementById("messageCard").classList.remove("show");
 
-  if (activeMessage < flower.messages.length - 1) {
+  document.querySelectorAll(".doll").forEach(d => d.classList.remove("selected"));
 
-    activeMessage++;
-
-    showMessage();
-
-    updateProgress();
-
-    return;
-
-  }
-
-  for (let i = 0; i < flower.messages.length; i++) {
-
-    completedMessages.add(activeFlower + "-" + i);
-
-  }
-
-  garden.children[activeFlower].classList.add("completed");
-
-  document.getElementById("hint" + activeFlower).textContent =
-
-    "✓ Flower explored";
-
-  updateProgress();
-
-  panel.classList.remove("active");
-
-  if (completedMessages.size === 30) {
-
-    alert("Your garden is in full bloom! Thank you for growing awareness with Pink Garden. ♡");
-
-  }
-
-});
-
-document.getElementById("closePanel").addEventListener("click", () => {
-
-  panel.classList.remove("active");
-
-});
-
-function updateProgress() {
-
-  const count = completedMessages.size;
-
-  document.getElementById("progressCount").textContent =
-
-    count + " / 30";
-
-  document.getElementById("progressFill").style.width =
-
-    (count / 30 * 100) + "%";
-
-  document.getElementById("progressLabel").textContent =
-
-    count === 30
-
-      ? "Your garden is in full bloom!"
-
-      : count === 0
-
-        ? "Your garden is waiting to bloom"
-
-        : "Keep going — your garden is growing!";
+  document.getElementById("claw").style.transform = "translateY(0)";
 
 }
 
-renderGarden();
+document.getElementById("supportForm").addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const nameInput = document.getElementById("visitorName");
+
+  const messageInput = document.getElementById("visitorMessage");
+
+  const name = nameInput.value.trim() ||
+
+    (isEnglish ? "A Friend of Hope" : "صديقة الأمل");
+
+  const message = messageInput.value.trim();
+
+  if (!message) return;
+
+  const card = document.createElement("div");
+
+  card.className = "wall-message";
+
+  const title = document.createElement("strong");
+
+  title.textContent = name;
+
+  title.dataset.ar = name;
+
+  title.dataset.en = name;
+
+  const paragraph = document.createElement("p");
+
+  paragraph.textContent = message;
+
+  paragraph.dataset.ar = message;
+
+  paragraph.dataset.en = message;
+
+  card.appendChild(title);
+
+  card.appendChild(paragraph);
+
+  document.getElementById("messageWall").prepend(card);
+
+  this.reset();
+
+});
 
 </script>
-body {
 
-
-
-}
-
-</style>
 </body>
 
 </html>
