@@ -6,197 +6,443 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="theme-color" content="#fff1f6">
+<meta name="theme-color" content="#fff0f3">
 
 <title>Pink Garden | Breast Cancer Awareness</title>
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+
+  --pink: #d4517a;
+
+  --rose: #a42c50;
+
+  --light: #fff0f2;
+
+  --green: #53764e;
+
+  --ink: #683345;
+
+  --glass: rgba(255, 246, 244, .94);
+
+}
+
 * {
 
   box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
 
 }
 
 body {
 
-  margin: 0;
+  font-family: 'DM Sans', sans-serif;
 
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff8f4;
 
-  background: #fff4f8;
-
-  color: #75445c;
-
-  text-align: center;
+  color: var(--ink);
 
 }
+
+button, a {
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+button {
+
+  font: inherit;
+
+}
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+/* NAVIGATION */
 
 header {
 
-  padding: 35px 16px 25px;
+  min-height: 72px;
 
-  background: linear-gradient(160deg, #ffe0ed, #fff8fb);
+  padding: 12px 5%;
 
-}
+  display: flex;
 
-.ribbon {
+  align-items: center;
 
-  font-size: 38px;
+  justify-content: space-between;
 
-}
+  gap: 18px;
 
-h1 {
+  background: #fff6f4;
 
-  color: #c05283;
+  position: sticky;
 
-  font-size: 34px;
+  top: 0;
 
-  margin: 14px 0;
+  z-index: 100;
 
-}
-
-.subtitle {
-
-  font-size: 16px;
-
-  line-height: 1.8;
+  border-bottom: 1px solid #f0d4db;
 
 }
 
-.instruction {
+.brand {
 
-  font-size: 13px;
+  display: flex;
 
-  color: #966b80;
+  align-items: center;
 
-  margin-top: 18px;
-
-}
-
-.garden {
-
-  margin: 18px;
-
-  padding: 22px 10px;
-
-  border: 5px solid #d6e8bb;
-
-  border-radius: 32px;
-
-  background:
-
-    radial-gradient(ellipse at 20% 20%, #e9f6d9, transparent 40%),
-
-    radial-gradient(ellipse at 80% 80%, #c6e6b9, transparent 45%),
-
-    #d9edc8;
-
-  display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 15px 8px;
+  gap: 10px;
 
 }
 
-.flower-card {
+.ribbon-small {
 
-  padding: 14px 5px;
+  font-size: 35px;
 
-  background: #ffffffc9;
-
-  border-radius: 23px;
-
-  border: 2px solid transparent;
-
-  transition: transform .25s, background .25s;
+  color: var(--pink);
 
 }
 
-.flower-card:active {
+.brand h1 {
 
-  transform: scale(.97);
+  font-family: 'Playfair Display', serif;
 
-}
+  font-size: 27px;
 
-.flower-card.done {
-
-  background: #fff0f7;
-
-  border-color: #eaa1c1;
+  color: #852c48;
 
 }
 
-.flower {
+.brand p {
 
-  border: none;
+  font-size: 10px;
 
-  background: transparent;
-
-  font-size: 56px;
-
-  cursor: pointer;
-
-  padding: 6px;
-
-  transition: transform .3s;
+  color: #92717a;
 
 }
 
-.flower:hover {
+nav {
 
-  transform: scale(1.12) rotate(-5deg);
+  display: flex;
 
-}
+  align-items: center;
 
-.flower-name {
-
-  font-weight: bold;
-
-  font-size: 14px;
-
-  color: #70455a;
-
-  line-height: 1.5;
-
-}
-
-.flower-status {
-
-  margin-top: 7px;
-
-  color: #648450;
+  gap: clamp(12px, 2.5vw, 30px);
 
   font-size: 12px;
 
 }
 
-.progress-box {
+nav a:hover {
 
-  margin: 20px 15px;
+  color: var(--pink);
 
-  color: #b84f80;
+}
 
-  font-weight: bold;
+.header-message {
+
+  font-family: 'Playfair Display', serif;
+
+  color: var(--pink);
+
+  font-style: italic;
+
+  font-size: 12px;
+
+}
+
+/* HERO */
+
+.hero {
+
+  min-height: 550px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: grid;
+
+  place-items: start center;
+
+  text-align: center;
+
+  padding: 65px 20px 130px;
+
+  /*
+
+  Replace the background below with your garden image.
+
+  Upload the image to GitHub and name it garden.jpg.
+
+  */
+
+  background-image:
+
+    linear-gradient(
+
+      180deg,
+
+      rgba(255, 232, 235, .30),
+
+      rgba(255, 229, 228, .13) 45%,
+
+      rgba(28, 61, 35, .20)
+
+    ),
+
+    url("garden.jpg");
+
+  background-color: #e9c7c5;
+
+  background-size: cover;
+
+  background-position: center 48%;
+
+}
+
+.hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 750px;
+
+}
+
+.eyebrow {
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #9f3455;
+
+}
+
+.hero h2 {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(48px, 8vw, 88px);
+
+  color: #8c2847;
+
+  font-weight: 500;
+
+  line-height: 1.12;
+
+  margin: 15px 0;
+
+  text-shadow: 0 2px 20px #fff7ed55;
+
+}
+
+.hero h2 span {
+
+  color: var(--pink);
+
+  font-style: italic;
+
+}
+
+.hero-content p {
+
+  max-width: 520px;
+
+  margin: 0 auto 23px;
 
   line-height: 1.9;
+
+  font-size: 15px;
+
+  color: #65454e;
+
+}
+
+.primary-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border: 0;
+
+  border-radius: 35px;
+
+  padding: 14px 27px;
+
+  color: white;
+
+  background: linear-gradient(135deg, #e77799, #bd3f67);
+
+  box-shadow: 0 7px 20px #9d31572b;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+}
+
+.primary-btn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px #9d315740;
+
+}
+
+/* FLOATING INFORMATION CARDS */
+
+.dashboard {
+
+  position: relative;
+
+  z-index: 4;
+
+  width: min(1120px, 92%);
+
+  margin: -35px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 1.3fr 1fr;
+
+  gap: 16px;
+
+}
+
+.glass {
+
+  background: var(--glass);
+
+  border: 1px solid rgba(255,255,255,.95);
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px #68334515;
+
+  backdrop-filter: blur(12px);
+
+}
+
+.progress-card {
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+}
+
+.card-icon {
+
+  display: grid;
+
+  place-items: center;
+
+  width: 53px;
+
+  height: 53px;
+
+  flex-shrink: 0;
+
+  background: #f9dfe6;
+
+  border-radius: 50%;
+
+  font-size: 27px;
+
+}
+
+.card-content {
+
+  min-width: 0;
+
+  flex: 1;
+
+}
+
+.card-content h3,
+
+.donation-card h3 {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 17px;
+
+  color: #92354f;
+
+}
+
+.card-content p,
+
+.donation-card p {
+
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  color: #967681;
+
+  line-height: 1.7;
+
+}
+
+.progress-meta {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 12px;
+
+  font-size: 11px;
 
 }
 
 .progress-track {
 
-  max-width: 350px;
+  height: 8px;
 
-  height: 10px;
+  margin-top: 7px;
 
-  background: #f3d7e4;
+  background: #f2d9e1;
 
   border-radius: 20px;
-
-  margin: 12px auto;
 
   overflow: hidden;
 
@@ -206,49 +452,171 @@ h1 {
 
   height: 100%;
 
-  width: 0%;
+  width: 0;
 
-  background: #d76b9c;
+  background: linear-gradient(90deg, #eea0b8, #c8416d);
 
-  border-radius: 20px;
-
-  transition: width .4s;
+  transition: width .4s ease;
 
 }
 
-.panel {
+.donation-card {
 
-  display: none;
+  padding: 20px;
 
-  margin: 20px 16px;
+  display: flex;
 
-  padding: 26px 18px;
+  align-items: center;
 
-  background: white;
-
-  border: 1px solid #f7d3e3;
-
-  border-radius: 28px;
-
-  box-shadow: 0 5px 24px #d89ab733;
+  gap: 13px;
 
 }
 
-.panel h2 {
+.heart {
 
-  color: #bf5284;
+  font-size: 30px;
 
-  line-height: 1.5;
+  color: var(--pink);
 
 }
 
-#message {
+.small-btn {
 
-  font-size: 17px;
+  display: inline-block;
+
+  margin-top: 10px;
+
+  border-radius: 25px;
+
+  background: var(--pink);
+
+  color: white;
+
+  padding: 9px 15px;
+
+  font-size: 11px;
+
+}
+
+/* GARDEN */
+
+.garden-section {
+
+  padding: 65px 5%;
+
+  text-align: center;
+
+  position: relative;
+
+}
+
+.kicker {
+
+  color: #c45579;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+}
+
+.section-title {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(33px, 5vw, 48px);
+
+  font-weight: 500;
+
+  color: #77324b;
+
+  margin: 12px 0;
+
+}
+
+.section-description {
+
+  max-width: 580px;
+
+  margin: auto;
+
+  color: #967780;
+
+  font-size: 13px;
 
   line-height: 1.9;
 
-  min-height: 105px;
+}
+
+/*
+
+Flower illustrations are drawn using CSS.
+
+Each flower is a real clickable HTML button.
+
+*/
+
+.flower-garden {
+
+  max-width: 1100px;
+
+  margin: 45px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  gap: 15px;
+
+}
+
+.flower-card {
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+
+  border-radius: 18px;
+
+  padding: 12px 5px 16px;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  transition: transform .3s, background .3s;
+
+}
+
+.flower-card:hover,
+
+.flower-card:focus-visible {
+
+  transform: translateY(-7px);
+
+  background: #fff0f4;
+
+  border-color: #f1d1dc;
+
+  outline: none;
+
+}
+
+.flower-card.completed {
+
+  background: #fbe3eb;
+
+  border-color: #e8b1c4;
+
+}
+
+.flower-scene {
+
+  height: 145px;
 
   display: flex;
 
@@ -256,123 +624,735 @@ h1 {
 
   justify-content: center;
 
-}
-
-.counter {
-
-  color: #b96b8d;
-
-  font-size: 13px;
-
-  margin: 12px;
+  position: relative;
 
 }
 
-button.action {
+.flower-stem {
+
+  position: absolute;
+
+  top: 69px;
+
+  left: calc(50% - 2px);
+
+  width: 4px;
+
+  height: 75px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #355c39, #88a36a, #426a40);
+
+}
+
+.leaf {
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 102px;
+
+  left: calc(50% - 25px);
+
+  width: 29px;
+
+  height: 15px;
+
+  background: linear-gradient(140deg, #a3bd7c, #426b43);
+
+  border-radius: 100% 0 100% 0;
+
+  transform: rotate(-12deg);
+
+}
+
+.leaf.right {
+
+  left: calc(50% + 1px);
+
+  top: 118px;
+
+  transform: scaleX(-1) rotate(-20deg);
+
+}
+
+.flower-head {
+
+  position: absolute;
+
+  top: 8px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 94px;
+
+  height: 94px;
+
+  z-index: 2;
+
+  filter: drop-shadow(0 5px 4px #61324720);
+
+  transition: transform .35s;
+
+}
+
+.flower-card:hover .flower-head {
+
+  transform: translateX(-50%) rotate(7deg) scale(1.08);
+
+}
+
+.petal {
+
+  position: absolute;
+
+  left: 31px;
+
+  top: 1px;
+
+  width: 32px;
+
+  height: 48px;
+
+  border-radius: 50% 50% 42% 42%;
+
+  transform-origin: 50% 46px;
+
+  background: linear-gradient(
+
+    90deg,
+
+    #d84b79,
+
+    #f7b7cb 48%,
+
+    #ed8aaa
+
+  );
+
+  box-shadow: inset -3px -2px 5px #9e345020;
+
+}
+
+.flower-center {
+
+  position: absolute;
+
+  z-index: 3;
+
+  left: 34px;
+
+  top: 33px;
+
+  width: 27px;
+
+  height: 27px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 35% 30%, #fff2b8, #d6a044 65%, #a97531);
+
+  box-shadow: 0 2px 4px #8a592744;
+
+}
+
+/* Different flower varieties */
+
+.flower-card:nth-child(2) .petal {
+
+  width: 25px;
+
+  left: 35px;
+
+  height: 48px;
+
+  border-radius: 45% 45% 50% 50%;
+
+  background: linear-gradient(90deg, #fff8e6, #e7d9b8, #fffdf6);
+
+}
+
+.flower-card:nth-child(2) .flower-center {
+
+  background: radial-gradient(circle, #9a703b, #634526);
+
+}
+
+.flower-card:nth-child(3) .petal {
+
+  width: 27px;
+
+  left: 33px;
+
+  height: 46px;
+
+  border-radius: 70% 70% 35% 35%;
+
+  background: linear-gradient(90deg, #e84e7b, #ffb4c7, #c93668);
+
+}
+
+.flower-card:nth-child(4) .petal {
+
+  width: 26px;
+
+  left: 34px;
+
+  height: 37px;
+
+  top: 10px;
+
+  transform-origin: 50% 39px;
+
+  background: linear-gradient(90deg, #ad8bc9, #e4d4f3, #a58ac4);
+
+}
+
+.flower-card:nth-child(4) .flower-center {
+
+  background: #e3cfea;
+
+}
+
+.flower-card:nth-child(5) .petal {
+
+  width: 24px;
+
+  left: 35px;
+
+  height: 45px;
+
+  background: linear-gradient(90deg, #e74d88, #ffc1d8, #dd3b76);
+
+}
+
+.flower-card:nth-child(5) .flower-center {
+
+  background: radial-gradient(circle, #6b4c32, #30251b);
+
+}
+
+.flower-card:nth-child(6) .petal {
+
+  background: linear-gradient(90deg, #e99bb9, #fff3f4, #e8a3bb);
+
+}
+
+.flower-label {
+
+  display: block;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+}
+
+.flower-hint {
+
+  display: block;
+
+  margin-top: 6px;
+
+  font-size: 10px;
+
+  color: #bc6582;
+
+}
+
+/* MESSAGE PANEL */
+
+.message-panel {
+
+  display: none;
+
+  max-width: 1050px;
+
+  margin: 32px auto 0;
+
+  text-align: left;
+
+  border: 1px solid #f0d4dd;
+
+  border-radius: 20px;
+
+  background: rgba(255,248,246,.97);
+
+  box-shadow: 0 12px 32px #68334512;
+
+  overflow: hidden;
+
+  animation: appear .3s ease;
+
+}
+
+.message-panel.active {
+
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+}
+
+@keyframes appear {
+
+  from { opacity: 0; transform: translateY(10px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+.panel-image {
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 90px;
+
+  min-height: 230px;
+
+  background: linear-gradient(145deg, #f7d5df, #fff1e8);
+
+}
+
+.panel-content {
+
+  padding: 25px;
+
+  min-width: 0;
+
+}
+
+.panel-heading {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+}
+
+.panel-heading h3 {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 25px;
+
+  color: #8b304d;
+
+}
+
+.close-panel {
 
   border: none;
 
-  border-radius: 25px;
+  background: transparent;
 
-  padding: 13px 20px;
+  color: #a84c6b;
 
-  margin: 6px;
-
-  background: #c45385;
-
-  color: white;
-
-  font-size: 14px;
+  font-size: 26px;
 
   cursor: pointer;
 
 }
 
-button.secondary {
+.message-badge {
 
-  background: #f8e2ec;
+  display: inline-block;
 
-  color: #874a67;
+  margin: 12px 0;
 
-}
+  padding: 5px 10px;
 
-button.action:focus-visible,
+  background: #f8dfe7;
 
-.flower:focus-visible {
+  border-radius: 20px;
 
-  outline: 3px solid #874a67;
+  color: #a34464;
 
-  outline-offset: 3px;
-
-}
-
-.tree {
-
-  font-size: 70px;
-
-  margin: 20px;
-
-  transition: transform .3s;
+  font-size: 10px;
 
 }
 
-#celebration {
+#messageText {
 
-  display: none;
-
-  margin: 20px 16px;
-
-  padding: 28px 18px;
-
-  background: linear-gradient(135deg, #ffe1ee, #fff9fc);
-
-  border-radius: 28px;
-
-}
-
-#celebration h2 {
-
-  color: #bf5284;
-
-}
-
-footer {
-
-  padding: 25px 18px;
+  color: #765562;
 
   line-height: 1.9;
 
-  font-size: 13px;
+  font-size: 14px;
 
-  color: #8d6a7a;
+  min-height: 58px;
 
 }
 
-@media (min-width: 600px) {
+.panel-controls {
 
-  .garden {
+  display: flex;
 
-    max-width: 650px;
+  align-items: center;
 
-    margin: 25px auto;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+}
+
+.message-dots {
+
+  display: flex;
+
+  gap: 8px;
+
+}
+
+.message-dot {
+
+  width: 9px;
+
+  height: 9px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #e4bdca;
+
+  cursor: pointer;
+
+}
+
+.message-dot.active {
+
+  background: #c64c74;
+
+  transform: scale(1.2);
+
+}
+
+.next-btn {
+
+  border: 0;
+
+  background: #ce527a;
+
+  color: white;
+
+  padding: 11px 19px;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+
+}
+
+/* ABOUT */
+
+.about-section {
+
+  padding: 65px 5%;
+
+  text-align: center;
+
+  background: linear-gradient(135deg, #fff0f3, #fffaf5);
+
+}
+
+.about-grid {
+
+  max-width: 950px;
+
+  margin: 32px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+}
+
+.about-card {
+
+  background: rgba(255,255,255,.8);
+
+  border: 1px solid #f0dce2;
+
+  border-radius: 20px;
+
+  padding: 25px 18px;
+
+}
+
+.about-card .icon {
+
+  font-size: 32px;
+
+  margin-bottom: 12px;
+
+}
+
+.about-card h3 {
+
+  font-family: 'Playfair Display', serif;
+
+  color: #893650;
+
+  margin-bottom: 10px;
+
+}
+
+.about-card p {
+
+  font-size: 12px;
+
+  line-height: 1.9;
+
+  color: #967780;
+
+}
+
+/* FOOTER */
+
+footer {
+
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: #f9e0e7;
+
+  color: #89586a;
+
+}
+
+.footer-title {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 28px;
+
+  color: #a33c60;
+
+  margin-bottom: 8px;
+
+}
+
+footer p {
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  font-size: 11px;
+
+  line-height: 1.9;
+
+}
+
+.footer-heart {
+
+  margin: 12px;
+
+  color: #c84d77;
+
+  font-size: 20px;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .header-message {
+
+    display: none;
+
+  }
+
+  .dashboard {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .flower-garden {
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
   }
 
-  .panel {
+  .message-panel.active {
 
-    max-width: 580px;
-
-    margin: 25px auto;
+    grid-template-columns: 125px 1fr;
 
   }
 
-  #celebration {
+  .panel-image {
 
-    max-width: 580px;
+    font-size: 65px;
 
-    margin: 25px auto;
+  }
+
+}
+
+@media (max-width: 540px) {
+
+  header {
+
+    padding: 12px 4%;
+
+  }
+
+  .brand h1 {
+
+    font-size: 21px;
+
+  }
+
+  .brand p {
+
+    font-size: 9px;
+
+  }
+
+  .ribbon-small {
+
+    font-size: 28px;
+
+  }
+
+  nav {
+
+    gap: 11px;
+
+    font-size: 10px;
+
+  }
+
+  nav a:nth-child(2),
+
+  nav a:nth-child(4) {
+
+    display: none;
+
+  }
+
+  .hero {
+
+    min-height: 470px;
+
+    padding: 65px 18px 100px;
+
+  }
+
+  .hero-content p {
+
+    font-size: 13px;
+
+  }
+
+  .dashboard {
+
+    width: 92%;
+
+  }
+
+  .progress-card,
+
+  .donation-card {
+
+    padding: 15px;
+
+  }
+
+  .garden-section {
+
+    padding: 50px 4%;
+
+  }
+
+  .flower-garden {
+
+    gap: 6px;
+
+    margin-top: 28px;
+
+  }
+
+  .flower-scene {
+
+    height: 105px;
+
+  }
+
+  .flower-head {
+
+    transform: translateX(-50%) scale(.76);
+
+  }
+
+  .flower-card:hover .flower-head {
+
+    transform: translateX(-50%) scale(.8) rotate(7deg);
+
+  }
+
+  .flower-label {
+
+    font-size: 11px;
+
+  }
+
+  .flower-hint {
+
+    font-size: 9px;
+
+  }
+
+  .message-panel.active {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .panel-image {
+
+    min-height: 115px;
+
+    font-size: 65px;
+
+  }
+
+  .panel-content {
+
+    padding: 20px;
+
+  }
+
+  .panel-heading h3 {
+
+    font-size: 21px;
+
+  }
+
+  .about-grid {
+
+    grid-template-columns: 1fr;
 
   }
 
@@ -386,103 +1366,237 @@ footer {
 
 <header>
 
-  <div class="ribbon">🎀 🦋 🌷</div>
+  <a class="brand" href="#home">
 
-  <h1>Pink Garden</h1>
+    <span class="ribbon-small">🎗</span>
 
-  <div class="subtitle">
+    <div>
 
-    Every flower holds a message.<br>
+      <h1>Pink Garden</h1>
 
-    Every message plants a seed of hope. 💗
+      <p>Small steps make a big difference</p>
 
-  </div>
+    </div>
 
-  <div class="instruction">
+  </a>
 
-    Tap a flower to discover its story
+  <nav>
 
-  </div>
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#garden">The Flowers</a>
+
+    <a href="#support">Support</a>
+
+  </nav>
+
+  <div class="header-message">♡ You are not alone</div>
 
 </header>
 
 <main>
 
-  <div class="garden" id="garden"></div>
+<section class="hero" id="home">
 
-  <div class="progress-box">
+  <div class="hero-content">
 
-    <div id="progress">🌱 0 of 30 messages discovered</div>
+    <div class="eyebrow">Breast Cancer Awareness</div>
 
-    <div class="progress-track">
-
-      <div class="progress-fill" id="progressFill"></div>
-
-    </div>
-
-    <div id="flowerProgress">Flowers completed: 0 of 6</div>
-
-  </div>
-
-  <section class="panel" id="panel">
-
-    <div id="panelFlower" style="font-size:48px">🌸</div>
-
-    <h2 id="panelTitle"></h2>
-
-    <div class="counter" id="counter"></div>
-
-    <p id="message"></p>
-
-    <button class="action" id="next" onclick="nextMessage()">
-
-      Next Message 🌷
-
-    </button>
-
-    <br>
-
-    <button class="action secondary" onclick="closePanel()">
-
-      Return to the Garden
-
-    </button>
-
-  </section>
-
-  <div class="tree" id="tree">🌱</div>
-
-  <section id="celebration">
-
-    <div style="font-size:55px">🎉🌸🦋</div>
-
-    <h2>You Are an Awareness Ambassador!</h2>
+    <h2>Pink Garden<span> ♡</span></h2>
 
     <p>
 
-      You discovered all 30 messages in Pink Garden.<br>
+      A virtual garden of awareness, where every flower shares
 
-      Thank you for choosing knowledge and spreading awareness. 💗
+      an important message about breast health. Discover knowledge,
+
+      nurture hope, and let awareness bloom.
 
     </p>
 
-    <button class="action" onclick="restartGarden()">
+    <a class="primary-btn" href="#garden">
 
-      Explore the Garden Again 🌷
+      Explore the Garden <span>→</span>
 
-    </button>
+    </a>
 
-  </section>
+  </div>
+
+</section>
+
+<div class="dashboard">
+
+  <div class="glass progress-card">
+
+    <div class="card-icon">🌱</div>
+
+    <div class="card-content">
+
+      <h3>Your awareness journey</h3>
+
+      <p>Discover all 30 messages and make your garden bloom.</p>
+
+      <div class="progress-meta">
+
+        <span id="progressLabel">Your garden is waiting to bloom</span>
+
+        <strong id="progressCount">0 / 30</strong>
+
+      </div>
+
+      <div class="progress-track">
+
+        <div class="progress-fill" id="progressFill"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="glass donation-card" id="support">
+
+    <div class="heart">♡</div>
+
+    <div>
+
+      <h3>Support Zahra Association</h3>
+
+      <p>Help promote breast cancer awareness and support.</p>
+
+      <a class="small-btn"
+
+         href="https://donate.zahra.org.sa"
+
+         target="_blank"
+
+         rel="noopener noreferrer">
+
+        Visit Donation Page →
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<section class="garden-section" id="garden">
+
+  <div class="kicker">A little knowledge goes a long way</div>
+
+  <h2 class="section-title">Click on a flower</h2>
+
+  <p class="section-description">
+
+    Each flower represents a key message about breast health.
+
+    Explore six flowers to discover 30 educational messages.
+
+  </p>
+
+  <div class="flower-garden" id="flowerGarden"></div>
+
+  <div class="message-panel" id="messagePanel">
+
+    <div class="panel-image" id="panelImage">🌹</div>
+
+    <div class="panel-content">
+
+      <div class="panel-heading">
+
+        <h3 id="panelTitle">Know Your Body</h3>
+
+        <button class="close-panel" id="closePanel" aria-label="Close">×</button>
+
+      </div>
+
+      <span class="message-badge" id="messageBadge">Message 1 of 5</span>
+
+      <p id="messageText"></p>
+
+      <div class="panel-controls">
+
+        <div class="message-dots" id="messageDots"></div>
+
+        <button class="next-btn" id="nextMessage">Next →</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="about-section" id="about">
+
+  <div class="kicker">Growing awareness together</div>
+
+  <h2 class="section-title">Why Pink Garden?</h2>
+
+  <p class="section-description">
+
+    Every small message can begin an important conversation.
+
+    Pink Garden makes breast health education inviting and accessible.
+
+  </p>
+
+  <div class="about-grid">
+
+    <article class="about-card">
+
+      <div class="icon">🌸</div>
+
+      <h3>Learn</h3>
+
+      <p>Explore messages about breast health, changes to notice, and screening.</p>
+
+    </article>
+
+    <article class="about-card">
+
+      <div class="icon">🌿</div>
+
+      <h3>Grow</h3>
+
+      <p>Discover new messages and track your progress through the garden.</p>
+
+    </article>
+
+    <article class="about-card">
+
+      <div class="icon">🩷</div>
+
+      <h3>Support</h3>
+
+      <p>Share reliable information and support people affected by breast cancer.</p>
+
+    </article>
+
+  </div>
+
+</section>
 
 </main>
 
 <footer>
 
-  <div>🌸 Together, We Grow Awareness and Hope 🌸</div>
+  <div class="footer-title">Pink Garden ♡</div>
+
+  <p>Together we can make a difference</p>
+
+  <div class="footer-heart">♡ ───────── ♡ ───────── ♡</div>
 
   <p>
 
-    This website is for educational purposes only and does not replace
+    Pink Garden is an independent student awareness project.
+
+    Educational content only. This website does not replace
 
     professional medical advice.
 
@@ -496,21 +1610,21 @@ const flowers = [
 
   {
 
-    emoji: "🌸",
+    title: "Know Your Body",
 
-    name: "Flower of Awareness",
+    icon: "🌹",
 
     messages: [
 
-      "Breast cancer occurs when some cells in the breast grow abnormally and may spread to other parts of the body.",
+      "Become familiar with how your breasts normally look and feel. Knowing what is usual for you can help you notice changes.",
 
-      "Breast cancer is the most common cancer in women worldwide, but it can also affect men.",
+      "A new lump or swelling in the breast or armpit should be assessed by a healthcare professional.",
 
-      "Breast cancer can be diagnosed at different ages, and the risk generally increases with age.",
+      "Changes in breast size or shape, skin dimpling, or a newly inverted nipple deserve medical assessment.",
 
-      "Breast cancer can occur even in people who have no family history of the disease.",
+      "Unusual nipple discharge, particularly bloody discharge, should be discussed with a healthcare professional.",
 
-      "Reliable information helps people make informed health decisions and recognize the importance of medical care."
+      "Not every breast change is cancer, but unexplained changes should not be ignored."
 
     ]
 
@@ -518,21 +1632,21 @@ const flowers = [
 
   {
 
-    emoji: "🌷",
+    title: "Early Detection",
 
-    name: "Flower of Self-Care",
+    icon: "🌷",
 
     messages: [
 
-      "A new lump in the breast or underarm is a change that should be evaluated by a healthcare professional.",
+      "Finding breast cancer early can improve treatment options and outcomes.",
 
-      "A new change in the size or shape of the breast may need medical assessment.",
+      "Screening recommendations depend on your age, personal risk, and local clinical guidelines.",
 
-      "New skin dimpling, unusual swelling, or changes in breast skin deserve attention.",
+      "A mammogram is an imaging test that can detect some breast changes before they can be felt.",
 
-      "Changes in the nipple, including new inversion or unusual discharge, should be assessed by a healthcare professional.",
+      "Do not ignore a new breast change, even if your last screening result was normal.",
 
-      "These changes do not always mean cancer, but getting new or unusual changes checked promptly is important."
+      "Ask your healthcare provider which screening plan is appropriate for you."
 
     ]
 
@@ -540,21 +1654,21 @@ const flowers = [
 
   {
 
-    emoji: "🌺",
+    title: "Risk Awareness",
 
-    name: "Flower of Knowledge",
+    icon: "🌺",
 
     messages: [
 
-      "Increasing age is an important risk factor for breast cancer.",
+      "Getting older is one of the strongest risk factors for breast cancer, although it can occur in younger people too.",
 
-      "A family history of breast cancer may increase risk, particularly when certain hereditary patterns are present.",
+      "Having a close relative with breast cancer may increase your risk. Discuss your family history with your clinician.",
 
-      "Inherited gene changes, including BRCA1 and BRCA2, can increase the risk of breast cancer.",
+      "Some inherited gene changes, including BRCA1 and BRCA2, can increase breast cancer risk.",
 
-      "Some hormonal, reproductive, and personal medical history factors may influence breast cancer risk.",
+      "Having risk factors does not mean someone will definitely develop breast cancer.",
 
-      "Having a risk factor does not mean someone will develop breast cancer, and people without known risk factors can still develop it."
+      "Breast cancer can occur in people with no known family history."
 
     ]
 
@@ -562,21 +1676,21 @@ const flowers = [
 
   {
 
-    emoji: "🌼",
+    title: "Healthy Habits",
 
-    name: "Flower of Hope",
+    icon: "💐",
 
     messages: [
 
-      "Early detection can identify some breast cancers at an earlier stage, when treatment may be more effective.",
+      "Regular physical activity supports overall health and may help reduce breast cancer risk.",
 
-      "Mammography is an imaging test used for breast cancer screening in appropriate groups.",
+      "Maintaining a healthy weight, particularly after menopause, can help lower breast cancer risk.",
 
-      "Recommended screening depends on age, personal history, risk level, and local healthcare guidelines.",
+      "Alcohol consumption is associated with an increased risk of breast cancer.",
 
-      "Knowing what is normal for your breasts can help you notice new changes and seek medical advice.",
+      "A balanced diet supports general health, but no single food can prevent or cure breast cancer.",
 
-      "Ask a healthcare professional which screening schedule is appropriate for you. Screening is different from investigating symptoms."
+      "Healthy habits do not eliminate risk or replace recommended screening."
 
     ]
 
@@ -584,21 +1698,21 @@ const flowers = [
 
   {
 
-    emoji: "🌹",
+    title: "Support & Care",
 
-    name: "Flower of Strength",
+    icon: "🌸",
 
     messages: [
 
-      "There are different types of breast cancer, and treatment depends on the cancer's type, stage, and characteristics.",
+      "A breast cancer diagnosis can be emotionally challenging. Listening without judgment can help someone feel supported.",
 
-      "Treatment may include surgery, radiation therapy, medicines, or a combination of approaches.",
+      "Ask someone receiving treatment what kind of support they need instead of assuming.",
 
-      "Laboratory and tissue tests help healthcare teams understand the cancer and guide treatment decisions.",
+      "Accompanying someone to an appointment, when they want you there, can offer practical and emotional support.",
 
-      "Patients can ask their healthcare team about treatment options, expected side effects, and available support.",
+      "Encourage patients to discuss treatment concerns and side effects with their healthcare team.",
 
-      "Every person's treatment journey is different. Medical, emotional, and social support can all play important roles."
+      "Compassion, respect, and accurate information can make a meaningful difference during treatment."
 
     ]
 
@@ -606,21 +1720,21 @@ const flowers = [
 
   {
 
-    emoji: "🪻",
+    title: "Hope & Strength",
 
-    name: "Flower of Support",
+    icon: "🪷",
 
     messages: [
 
-      "Listening with compassion and allowing someone to express their feelings can help them feel supported.",
+      "Breast cancer includes different types and stages. Treatment and outlook vary from person to person.",
 
-      "Avoid minimizing someone's fears or expecting them to stay strong all the time. Every feeling deserves space.",
+      "Treatment may include surgery, radiation therapy, chemotherapy, hormone therapy, targeted therapy, or combinations of these.",
 
-      "Practical help, such as assisting with appointments or everyday tasks, can make a meaningful difference.",
+      "A breast cancer diagnosis does not define a person's identity, worth, or future.",
 
-      "Respect privacy. Never share someone's health information or personal story without their permission.",
+      "Reliable medical information is more helpful than frightening stories or unverified treatment claims.",
 
-      "Counseling and trusted support groups may help some people cope with the emotional challenges of treatment."
+      "Supporting breast health means encouraging timely assessment and treating every person with dignity."
 
     ]
 
@@ -628,77 +1742,103 @@ const flowers = [
 
 ];
 
-let currentFlower = null;
+const garden = document.getElementById("flowerGarden");
 
-let currentIndex = 0;
+const panel = document.getElementById("messagePanel");
 
-const discovered = new Set();
+let activeFlower = 0;
 
-const completed = new Set();
+let activeMessage = 0;
 
-function renderGarden() {
+const completedMessages = new Set();
 
-  const garden = document.getElementById("garden");
+function createFlower(index) {
 
-  garden.innerHTML = "";
+  const button = document.createElement("button");
 
-  flowers.forEach((flower, i) => {
+  button.type = "button";
 
-    const card = document.createElement("div");
+  button.className = "flower-card";
 
-    card.className = "flower-card";
+  button.setAttribute("aria-label", "Explore " + flowers[index].title);
 
-    card.id = "card-" + i;
+  let petals = "";
 
-    const button = document.createElement("button");
+  for (let i = 0; i < 10; i++) {
 
-    button.className = "flower";
+    petals += `
 
-    button.textContent = flower.emoji;
+      <span class="petal"
 
-    button.setAttribute("aria-label", flower.name);
+        style="transform: rotate(${i * 36}deg)">
 
-    button.onclick = () => openFlower(i);
+      </span>
 
-    const name = document.createElement("div");
+    `;
 
-    name.className = "flower-name";
+  }
 
-    name.textContent = flower.name;
+  button.innerHTML = `
 
-    const status = document.createElement("div");
+    <span class="flower-scene">
 
-    status.className = "flower-status";
+      <span class="flower-stem"></span>
 
-    status.id = "status-" + i;
+      <span class="leaf"></span>
 
-    status.textContent = "0 of 5 messages";
+      <span class="leaf right"></span>
 
-    card.append(button, name, status);
+      <span class="flower-head">
 
-    garden.appendChild(card);
+        ${petals}
 
-  });
+        <span class="flower-center"></span>
+
+      </span>
+
+    </span>
+
+    <span class="flower-label">${flowers[index].title}</span>
+
+    <span class="flower-hint" id="hint${index}">Explore flower →</span>
+
+  `;
+
+  button.addEventListener("click", () => openFlower(index));
+
+  return button;
 
 }
 
-function openFlower(i) {
+function renderGarden() {
 
-  currentFlower = i;
+  garden.innerHTML = "";
 
-  currentIndex = 0;
+  flowers.forEach((flower, index) => {
 
-  document.getElementById("panel").style.display = "block";
+    garden.appendChild(createFlower(index));
 
-  document.getElementById("celebration").style.display = "none";
+  });
+
+  updateProgress();
+
+}
+
+function openFlower(index) {
+
+  activeFlower = index;
+
+  activeMessage = 0;
+
+  panel.classList.add("active");
 
   showMessage();
 
-  document.getElementById("panel").scrollIntoView({
+  panel.scrollIntoView({
 
     behavior: "smooth",
 
-    block: "center"
+    block: "nearest"
 
   });
 
@@ -706,240 +1846,132 @@ function openFlower(i) {
 
 function showMessage() {
 
-  const flower = flowers[currentFlower];
+  const flower = flowers[activeFlower];
 
-  document.getElementById("panelFlower").textContent = flower.emoji;
+  document.getElementById("panelTitle").textContent = flower.title;
 
-  document.getElementById("panelTitle").textContent = flower.name;
+  document.getElementById("panelImage").textContent = flower.icon;
 
-  document.getElementById("message").textContent =
+  document.getElementById("messageText").textContent =
 
-    flower.messages[currentIndex];
+    flower.messages[activeMessage];
 
-  document.getElementById("counter").textContent =
+  document.getElementById("messageBadge").textContent =
 
-    "Message " + (currentIndex + 1) + " of 5";
+    "Message " + (activeMessage + 1) + " of 5";
 
-  const key = currentFlower + "-" + currentIndex;
+  const dots = document.getElementById("messageDots");
 
-  discovered.add(key);
+  dots.innerHTML = "";
 
-  const nextButton = document.getElementById("next");
+  flower.messages.forEach((message, index) => {
 
-  if (currentIndex === 4) {
+    const dot = document.createElement("button");
 
-    nextButton.textContent = completed.has(currentFlower)
+    dot.type = "button";
 
-      ? "Flower Completed ✓"
+    dot.className = "message-dot" +
 
-      : "Complete This Flower ✓";
+      (index === activeMessage ? " active" : "");
 
-  } else {
+    dot.setAttribute("aria-label", "Message " + (index + 1));
 
-    nextButton.textContent = "Next Message 🌷";
+    dot.addEventListener("click", () => {
 
-  }
+      activeMessage = index;
 
-  updateProgress();
+      showMessage();
+
+    });
+
+    dots.appendChild(dot);
+
+  });
+
+  document.getElementById("nextMessage").textContent =
+
+    activeMessage === 4 ? "Finish flower ✓" : "Next →";
 
 }
 
-function nextMessage() {
+document.getElementById("nextMessage").addEventListener("click", () => {
 
-  if (currentFlower === null) return;
+  const flower = flowers[activeFlower];
 
-  if (currentIndex < 4) {
+  completedMessages.add(activeFlower + "-" + activeMessage);
 
-    currentIndex++;
+  if (activeMessage < flower.messages.length - 1) {
+
+    activeMessage++;
 
     showMessage();
+
+    updateProgress();
 
     return;
 
   }
 
-  completed.add(currentFlower);
+  for (let i = 0; i < flower.messages.length; i++) {
 
-  document.getElementById("card-" + currentFlower)
-
-    .classList.add("done");
-
-  document.getElementById("status-" + currentFlower)
-
-    .textContent = "Completed ✓";
-
-  document.getElementById("next").textContent = "Flower Completed ✓";
-
-  updateProgress();
-
-  if (completed.size === flowers.length) {
-
-    document.getElementById("celebration").style.display = "block";
-
-    document.getElementById("tree").textContent = "🌳🌸";
-
-    document.getElementById("celebration").scrollIntoView({
-
-      behavior: "smooth",
-
-      block: "center"
-
-    });
-
-  } else {
-
-    document.getElementById("tree").textContent =
-
-      completed.size < 2 ? "🌿" :
-
-      completed.size < 4 ? "🌳" : "🌳🌸";
+    completedMessages.add(activeFlower + "-" + i);
 
   }
 
-}
+  garden.children[activeFlower].classList.add("completed");
 
-function closePanel() {
+  document.getElementById("hint" + activeFlower).textContent =
 
-  document.getElementById("panel").style.display = "none";
-
-  document.getElementById("garden").scrollIntoView({
-
-    behavior: "smooth",
-
-    block: "center"
-
-  });
-
-}
-
-function updateProgress() {
-
-  document.getElementById("progress").textContent =
-
-    "🌱 " + discovered.size + " of 30 messages discovered";
-
-  document.getElementById("flowerProgress").textContent =
-
-    "Flowers completed: " + completed.size + " of 6";
-
-  document.getElementById("progressFill").style.width =
-
-    (discovered.size / 30 * 100) + "%";
-
-}
-
-function restartGarden() {
-
-  currentFlower = null;
-
-  currentIndex = 0;
-
-  discovered.clear();
-
-  completed.clear();
-
-  document.getElementById("panel").style.display = "none";
-
-  document.getElementById("celebration").style.display = "none";
-
-  document.getElementById("tree").textContent = "🌱";
-
-  renderGarden();
+    "✓ Flower explored";
 
   updateProgress();
 
-  window.scrollTo({
+  panel.classList.remove("active");
 
-    top: 0,
+  if (completedMessages.size === 30) {
 
-    behavior: "smooth"
+    alert("Your garden is in full bloom! Thank you for growing awareness with Pink Garden. ♡");
 
-  });
+  }
+
+});
+
+document.getElementById("closePanel").addEventListener("click", () => {
+
+  panel.classList.remove("active");
+
+});
+
+function updateProgress() {
+
+  const count = completedMessages.size;
+
+  document.getElementById("progressCount").textContent =
+
+    count + " / 30";
+
+  document.getElementById("progressFill").style.width =
+
+    (count / 30 * 100) + "%";
+
+  document.getElementById("progressLabel").textContent =
+
+    count === 30
+
+      ? "Your garden is in full bloom!"
+
+      : count === 0
+
+        ? "Your garden is waiting to bloom"
+
+        : "Keep going — your garden is growing!";
 
 }
 
 renderGarden();
 
-updateProgress();
-
 </script>
-<!-- Zahra Association Donation Section -->
 
-<section style="
-
-  margin: 35px 15px 20px;
-
-  padding: 35px 20px;
-
-  text-align: center;
-
-  background: linear-gradient(135deg, #fff0f5, #ffe0eb);
-
-  border-radius: 24px;
-
-  color: #78364f;
-
-">
-
-  <div style="font-size: 42px;">🎀</div>
-
-  <h2 style="color: #bd3d72;">
-
-    Together, We Can Make a Difference
-
-  </h2>
-
-  <p style="line-height: 1.8;">
-
-    Every act of kindness brings hope.
-
-    Explore how you can support breast cancer awareness
-
-    and patients through Zahra Association.
-
-  </p>
-
-  <a
-
-    href="https://donate.zahra.org.sa"
-
-    target="_blank"
-
-    rel="noopener noreferrer"
-
-    style="
-
-      display: inline-block;
-
-      background: #c83e78;
-
-      color: white;
-
-      text-decoration: none;
-
-      padding: 14px 28px;
-
-      border-radius: 30px;
-
-      font-weight: bold;
-
-      margin: 12px;
-
-    "
-
-  >
-
-    🩷 Donate to Zahra Association
-
-  </a>
-
-  <p style="font-size: 12px; margin-top: 18px; color: #875c6d;">
-
-    Pink Garden is an independent awareness project.
-
-  </p>
-
-</section>
 </body>
 
 </html>
