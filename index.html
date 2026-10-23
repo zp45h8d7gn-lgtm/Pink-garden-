@@ -6,27 +6,29 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-color" content="#201b35">
 
 <title>Pink Hope | أمل وردي</title>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
 
 :root {
 
-  --pink: #ed77a7;
+  --pink: #f4a4c4;
 
-  --hot: #d94d88;
+  --rose: #d96798;
 
-  --light: #fff0f6;
+  --berry: #87365e;
 
-  --cream: #fffaf8;
+  --cream: #fff8f6;
 
-  --dark: #512b40;
+  --ink: #553248;
 
-  --muted: #956b80;
+  --line: #f0d2df;
 
 }
 
@@ -40,7 +42,7 @@ body {
 
   background: var(--cream);
 
-  color: var(--dark);
+  color: var(--ink);
 
   font-family: 'Cairo', sans-serif;
 
@@ -48,21 +50,9 @@ body {
 
 button, input, textarea { font: inherit; }
 
-button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
 
-nav {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  padding: 18px 7%;
-
-  background: rgba(255,250,248,.95);
-
-  border-bottom: 1px solid #f8dce8;
+.topbar {
 
   position: sticky;
 
@@ -70,57 +60,75 @@ nav {
 
   z-index: 10;
 
+  background: #fff8f6ee;
+
   backdrop-filter: blur(12px);
 
-}
-
-.logo {
-
-  font-size: 23px;
-
-  font-weight: 800;
-
-  color: var(--hot);
+  border-bottom: 1px solid var(--line);
 
 }
 
-.logo span { color: var(--dark); }
+.nav {
 
-.nav-links {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 12px 18px;
 
   display: flex;
 
-  gap: 22px;
+  justify-content: space-between;
 
   align-items: center;
 
+  gap: 12px;
+
 }
 
-.nav-links a {
+.brand {
+
+  font-size: 1.2rem;
+
+  font-weight: 800;
+
+  color: var(--berry);
 
   text-decoration: none;
 
-  color: var(--dark);
+}
 
-  font-size: 13px;
+.navlinks {
+
+  display: flex;
+
+  gap: 16px;
+
+}
+
+.navlinks a {
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  font-size: .9rem;
 
   font-weight: 700;
 
 }
 
-.lang-btn {
+.lang {
 
-  border: 1px solid #edb4cd;
-
-  background: white;
+  border: 1px solid #e7b5ca;
 
   border-radius: 30px;
 
-  padding: 8px 15px;
+  background: white;
 
-  color: var(--hot);
+  padding: 7px 13px;
 
-  cursor: pointer;
+  color: var(--berry);
 
   font-weight: 800;
 
@@ -128,591 +136,535 @@ nav {
 
 .hero {
 
-  padding: 75px 8% 85px;
+  max-width: 1100px;
 
-  background:
+  margin: auto;
 
-    radial-gradient(circle at 90% 15%, #ffd7e8 0, transparent 28%),
-
-    radial-gradient(circle at 5% 90%, #ffe8f0 0, transparent 32%),
-
-    #fff7fa;
+  padding: 50px 20px 35px;
 
   display: grid;
 
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
 
   align-items: center;
-
-  gap: 35px;
-
-  min-height: 510px;
 
 }
 
 .eyebrow {
 
-  color: var(--hot);
+  display: inline-block;
 
-  font-size: 12px;
+  padding: 6px 13px;
 
-  letter-spacing: 2px;
+  border-radius: 30px;
+
+  background: #ffe5ef;
+
+  color: var(--berry);
+
+  font-size: .85rem;
 
   font-weight: 800;
 
 }
 
-.hero h1 {
+h1 {
 
-  font-size: clamp(38px, 5.5vw, 67px);
+  color: #71334f;
 
-  line-height: 1.25;
+  font-size: clamp(2.3rem, 5vw, 4rem);
 
-  margin: 15px 0;
+  line-height: 1.4;
 
-  letter-spacing: -1px;
-
-}
-
-.hero h1 em {
-
-  color: var(--hot);
-
-  font-style: normal;
+  margin: 17px 0;
 
 }
+
+h1 span { color: var(--rose); }
 
 .hero p {
 
-  color: var(--muted);
-
   line-height: 2;
 
-  max-width: 490px;
-
-  font-size: 15px;
+  color: #806678;
 
 }
 
-.primary-btn {
+.primary {
 
   display: inline-block;
 
-  border: none;
+  margin-top: 12px;
 
-  background: var(--hot);
+  padding: 12px 22px;
+
+  border-radius: 13px;
+
+  background: var(--berry);
 
   color: white;
 
   text-decoration: none;
 
-  border-radius: 30px;
-
-  padding: 13px 25px;
-
-  margin-top: 15px;
-
-  cursor: pointer;
-
-  box-shadow: 0 8px 22px #d94d8830;
-
-  transition: .2s;
-
   font-weight: 800;
 
 }
-
-.primary-btn:hover { transform: translateY(-3px); }
 
 .hero-art {
 
-  min-height: 300px;
+  min-height: 280px;
 
-  display: flex;
+  border-radius: 28px;
 
-  justify-content: center;
-
-  align-items: center;
-
-  position: relative;
-
-}
-
-.big-heart {
-
-  width: 235px;
-
-  height: 235px;
-
-  border-radius: 48% 52% 45% 55%;
-
-  background: linear-gradient(145deg,#ffc7dd,#e96b9e);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 110px;
-
-  transform: rotate(-7deg);
-
-  box-shadow: 0 25px 60px #dc62922d;
-
-  animation: float 4s ease-in-out infinite;
-
-}
-
-.sticker {
-
-  position: absolute;
-
-  background: white;
-
-  border-radius: 18px;
-
-  padding: 12px 16px;
-
-  box-shadow: 0 8px 25px #76304c12;
-
-  font-size: 13px;
-
-  font-weight: 800;
-
-}
-
-.sticker.one { top: 25px; right: 5%; }
-
-.sticker.two { bottom: 25px; left: 0; }
-
-@keyframes float {
-
-  0%,100% { transform: translateY(0) rotate(-7deg); }
-
-  50% { transform: translateY(-12px) rotate(-3deg); }
-
-}
-
-section { padding: 70px 7%; }
-
-.section-heading {
-
-  text-align: center;
-
-  margin-bottom: 35px;
-
-}
-
-.section-heading .eyebrow { letter-spacing: 1px; }
-
-.section-heading h2 {
-
-  font-size: clamp(28px,4vw,40px);
-
-  margin: 8px 0;
-
-}
-
-.section-heading p {
-
-  color: var(--muted);
-
-  font-size: 14px;
-
-  line-height: 1.9;
-
-}
-
-.game-section {
-
-  background: white;
-
-}
-
-.machine {
-
-  max-width: 600px;
-
-  margin: auto;
-
-  background: linear-gradient(145deg,#ffdeeb,#f8a8c8);
-
-  padding: 18px;
-
-  border-radius: 30px;
-
-  box-shadow: 0 20px 55px #c94f801c;
-
-  border: 4px solid #f7bfd5;
-
-}
-
-.machine-top {
-
-  background: #d95089;
-
-  color: white;
-
-  text-align: center;
-
-  padding: 12px;
-
-  border-radius: 16px 16px 8px 8px;
-
-  font-weight: 800;
-
-  letter-spacing: 2px;
-
-}
-
-.machine-window {
-
-  background: #fff9fc;
-
-  border: 5px solid #ef8db4;
-
-  border-radius: 16px;
-
-  padding: 25px 12px;
-
-  margin-top: 12px;
-
-  overflow: hidden;
-
-  position: relative;
-
-}
-
-.claw {
-
-  font-size: 43px;
-
-  text-align: center;
-
-  height: 64px;
-
-  transition: transform .5s;
-
-}
-
-.dolls {
-
-  display: grid;
-
-  grid-template-columns: repeat(3,1fr);
-
-  gap: 15px;
-
-  text-align: center;
-
-  padding: 20px 5px 8px;
-
-}
-
-.doll {
-
-  font-size: clamp(38px,7vw,60px);
-
-  background: white;
-
-  border-radius: 18px;
-
-  padding: 15px 2px;
-
-  box-shadow: 0 5px 12px #d94d8817;
-
-  border: 2px solid #ffe0ec;
-
-  transition: .25s;
-
-}
-
-.doll.selected {
-
-  transform: translateY(-10px) scale(1.1);
-
-  border-color: var(--hot);
-
-  box-shadow: 0 8px 22px #d94d8844;
-
-}
-
-.machine-controls {
-
-  display: flex;
-
-  justify-content: center;
-
-  gap: 12px;
-
-  padding: 15px 0 5px;
-
-}
-
-.machine-controls button {
-
-  border: none;
-
-  border-radius: 30px;
-
-  padding: 12px 22px;
-
-  cursor: pointer;
-
-  font-weight: 800;
-
-}
-
-.grab-btn { background: var(--hot); color: white; }
-
-.reset-btn { background: white; color: var(--hot); }
-
-.message-card {
-
-  display: none;
-
-  margin: 22px auto 0;
-
-  max-width: 600px;
-
-  background: #fff0f6;
-
-  border: 1px solid #f4c2d7;
-
-  border-radius: 22px;
-
-  padding: 25px;
-
-  text-align: center;
-
-  animation: appear .4s ease;
-
-}
-
-.message-card.show { display: block; }
-
-.message-card .emoji { font-size: 35px; }
-
-.message-card h3 {
-
-  color: var(--hot);
-
-  margin-bottom: 10px;
-
-}
-
-.message-card p { line-height: 2; }
-
-@keyframes appear {
-
-  from { opacity: 0; transform: translateY(12px); }
-
-  to { opacity: 1; transform: translateY(0); }
-
-}
-
-.awareness { background: #fff4f8; }
-
-.info-grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(3,1fr);
-
-  gap: 20px;
-
-}
-
-.info-card {
-
-  background: white;
-
-  border: 1px solid #f9dbe7;
-
-  border-radius: 22px;
-
-  padding: 25px;
-
-  transition: .2s;
-
-}
-
-.info-card:hover { transform: translateY(-5px); }
-
-.info-icon {
-
-  width: 55px;
-
-  height: 55px;
-
-  border-radius: 17px;
-
-  background: #ffe6f0;
+  background: linear-gradient(145deg,#ffe4ef,#efb1cc,#d981a8);
 
   display: grid;
 
   place-items: center;
 
-  font-size: 27px;
+  position: relative;
+
+  overflow: hidden;
 
 }
 
-.info-card h3 { font-size: 18px; }
+.ribbon {
 
-.info-card p {
-
-  color: var(--muted);
-
-  font-size: 13px;
-
-  line-height: 2;
-
-}
-
-.support-section { background: white; }
-
-.support-layout {
-
-  display: grid;
-
-  grid-template-columns: .8fr 1.2fr;
-
-  gap: 30px;
-
-  align-items: start;
-
-}
-
-.support-intro {
-
-  background: linear-gradient(145deg,#f9a9c9,#dc5a91);
+  font-size: 125px;
 
   color: white;
 
-  border-radius: 25px;
-
-  padding: 30px;
+  text-shadow: 0 8px 20px #a33d6a44;
 
 }
 
-.support-intro h3 { font-size: 26px; }
+.hero-note {
 
-.support-intro p { line-height: 2; }
+  position: absolute;
 
-.support-form, .wall {
+  bottom: 18px;
 
-  background: #fff8fb;
+  background: #fff9f2e8;
 
-  border: 1px solid #f8dce8;
+  padding: 9px 15px;
 
-  border-radius: 22px;
+  border-radius: 12px;
 
-  padding: 22px;
+  font-weight: 800;
 
 }
 
-.support-form { margin-bottom: 18px; }
+.content {
 
-input, textarea {
+  max-width: 1100px;
+
+  margin: 20px auto;
+
+  padding: 24px 20px;
+
+}
+
+.section-head {
+
+  text-align: center;
+
+  max-width: 720px;
+
+  margin: 0 auto 24px;
+
+}
+
+.section-head h2 {
+
+  color: #71334f;
+
+  font-size: clamp(1.7rem,3vw,2.5rem);
+
+  margin-bottom: 8px;
+
+}
+
+.section-head p {
+
+  line-height: 1.9;
+
+  color: #866779;
+
+}
+
+.game-shell {
+
+  padding: 14px;
+
+  border-radius: 23px;
+
+  background: white;
+
+  border: 1px solid var(--line);
+
+  box-shadow: 0 12px 35px #75405c14;
+
+}
+
+.game-hud {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  padding: 5px 5px 14px;
+
+}
+
+.counter {
+
+  padding: 7px 14px;
+
+  background: #ffedf5;
+
+  color: var(--berry);
+
+  border-radius: 30px;
+
+  font-weight: 800;
+
+}
+
+.game-wrap {
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  border: 3px solid #e7b7cc;
+
+  background: #282344;
+
+}
+
+canvas {
+
+  display: block;
 
   width: 100%;
 
-  border: 1px solid #f0cada;
+  height: auto;
+
+  image-rendering: pixelated;
+
+  touch-action: manipulation;
+
+}
+
+.game-tip {
+
+  text-align: center;
+
+  color: #876779;
+
+  font-size: .9rem;
+
+  padding: 12px 5px 3px;
+
+  line-height: 1.8;
+
+}
+
+.game-controls {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  flex-wrap: wrap;
+
+  margin-top: 13px;
+
+}
+
+.game-controls button {
+
+  border: 1px solid #e8bfd0;
+
+  background: #fff0f6;
+
+  color: #8f3d63;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+
+  padding: 10px 15px;
+
+  box-shadow: 0 3px 0 #e9c1d2;
+
+}
+
+.dpad {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,42px);
+
+  grid-template-rows: repeat(2,38px);
+
+  gap: 5px;
+
+}
+
+.dpad button { padding: 0; font-size: 1.2rem; }
+
+.dpad .up { grid-column: 2; }
+
+.dpad .left { grid-column: 1; grid-row: 2; }
+
+.dpad .down { grid-column: 2; grid-row: 2; }
+
+.dpad .right { grid-column: 3; grid-row: 2; }
+
+.lesson {
+
+  display: grid;
+
+  grid-template-columns: 60px 1fr;
+
+  gap: 13px;
+
+  align-items: center;
+
+  background: #fff1f7;
+
+  border: 1px solid var(--line);
+
+  border-radius: 17px;
+
+  padding: 16px;
+
+  margin-top: 14px;
+
+}
+
+.lesson-icon {
+
+  width: 56px;
+
+  height: 56px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 16px;
+
+  background: #ffe0eb;
+
+  font-size: 1.8rem;
+
+}
+
+.lesson h3 {
+
+  margin: 0 0 5px;
+
+  color: var(--berry);
+
+}
+
+.lesson p {
+
+  margin: 0;
+
+  line-height: 1.8;
+
+  color: #77576a;
+
+}
+
+.cards {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 16px;
+
+}
+
+.card {
 
   background: white;
+
+  border: 1px solid var(--line);
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-shadow: 0 10px 25px #75405c0c;
+
+}
+
+.card .icon { font-size: 2rem; }
+
+.card h3 {
+
+  color: var(--berry);
+
+  margin: 8px 0;
+
+}
+
+.card p {
+
+  line-height: 1.9;
+
+  color: #795e6d;
+
+}
+
+.support-box {
+
+  background: linear-gradient(120deg,#ffe8f0,#fff8f4);
+
+  border: 1px solid var(--line);
+
+  border-radius: 23px;
+
+  padding: 25px;
+
+}
+
+.support-box h2 { color: #71334f; }
+
+.support-box p { line-height: 1.9; }
+
+.message-form {
+
+  display: grid;
+
+  gap: 11px;
+
+}
+
+.message-form input,
+
+.message-form textarea {
+
+  width: 100%;
+
+  border: 1px solid #e8c6d4;
 
   border-radius: 12px;
 
   padding: 12px;
 
-  margin-bottom: 12px;
+  background: #fffdfc;
 
-  outline: none;
-
-  color: var(--dark);
+  color: var(--ink);
 
 }
 
-input:focus, textarea:focus { border-color: var(--hot); }
+.message-form textarea {
 
-textarea { resize: vertical; min-height: 95px; }
+  min-height: 100px;
 
-.support-form button {
-
-  width: 100%;
-
-  margin-top: 0;
+  resize: vertical;
 
 }
 
-.wall h3 { margin-top: 0; }
+.message-form button {
 
-.wall-message {
+  border: 0;
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  background: var(--berry);
+
+  color: white;
+
+  font-weight: 800;
+
+}
+
+.wall {
+
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-top: 18px;
+
+}
+
+.note {
 
   background: white;
 
-  border: 1px solid #f5dce7;
+  border: 1px solid var(--line);
 
-  border-radius: 14px;
+  border-radius: 13px;
 
-  padding: 13px;
+  padding: 12px 15px;
 
-  margin-top: 12px;
+  max-width: 100%;
 
   overflow-wrap: anywhere;
 
 }
 
-.wall-message strong { color: var(--hot); }
-
-.wall-message p {
-
-  margin-bottom: 0;
-
-  line-height: 1.8;
-
-  font-size: 14px;
-
-}
-
-.donate-section {
-
-  background: linear-gradient(135deg,#d94d88,#f6a6c5);
-
-  color: white;
+.donate {
 
   text-align: center;
 
-  padding: 65px 7%;
+  background: #38243b;
+
+  color: #fff5f8;
+
+  padding: 38px 20px;
+
+  margin-top: 30px;
 
 }
 
-.donate-section h2 { font-size: clamp(28px,4vw,42px); }
+.donate h2 { color: #ffd5e5; }
 
-.donate-section p {
+.donate p {
 
-  line-height: 2;
+  line-height: 1.9;
 
-  max-width: 600px;
+  max-width: 700px;
 
-  margin: auto;
+  margin: 0 auto 20px;
 
 }
 
-.donate-btn {
+.donate a {
 
   display: inline-block;
 
-  margin-top: 25px;
+  background: #ffe8f1;
 
-  padding: 14px 30px;
+  color: #71334f;
 
-  background: white;
+  padding: 12px 20px;
 
-  color: var(--hot);
-
-  border-radius: 30px;
+  border-radius: 12px;
 
   text-decoration: none;
 
@@ -720,57 +672,139 @@ textarea { resize: vertical; min-height: 95px; }
 
 }
 
-footer {
+.footer {
 
   text-align: center;
 
-  padding: 25px;
+  padding: 20px;
 
-  background: #fff7fa;
+  color: #9a7889;
 
-  color: var(--muted);
-
-  font-size: 12px;
-
-  line-height: 2;
+  font-size: .9rem;
 
 }
 
-footer strong { color: var(--hot); }
+.thanks-overlay {
 
-@media(max-width:750px) {
+  position: fixed;
 
-  nav { padding: 14px 5%; }
+  inset: 0;
 
-  .nav-links { display: none; }
+  background: #171326ee;
 
-  .hero {
+  display: none;
 
-    grid-template-columns: 1fr;
+  align-items: center;
 
-    text-align: center;
+  justify-content: center;
 
-    padding: 55px 7%;
+  padding: 20px;
 
-    gap: 10px;
+  z-index: 99;
 
-  }
+}
 
-  .hero p { margin-left: auto; margin-right: auto; }
+.thanks-overlay.show { display: flex; }
 
-  .hero-art { min-height: 260px; }
+.thanks-card {
 
-  .big-heart { width: 190px; height: 190px; font-size: 85px; }
+  max-width: 440px;
 
-  section { padding: 55px 5%; }
+  width: 100%;
 
-  .info-grid { grid-template-columns: 1fr; }
+  background: #fff8f4;
 
-  .support-layout { grid-template-columns: 1fr; }
+  border: 2px solid #f2bfd2;
 
-  .dolls { gap: 8px; }
+  border-radius: 24px;
 
-  .doll { padding: 12px 0; }
+  padding: 28px;
+
+  text-align: center;
+
+  box-shadow: 0 20px 70px #0006;
+
+  animation: popin .35s ease;
+
+}
+
+.thanks-flower { font-size: 3rem; }
+
+.thanks-card h2 {
+
+  color: #91395f;
+
+  margin: 8px 0;
+
+}
+
+.thanks-card p {
+
+  line-height: 1.9;
+
+  color: #77576a;
+
+}
+
+.thanks-card a,
+
+.thanks-card button {
+
+  display: inline-block;
+
+  border: 0;
+
+  border-radius: 12px;
+
+  padding: 11px 16px;
+
+  margin: 5px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+}
+
+.thanks-card a {
+
+  background: #a83e70;
+
+  color: white;
+
+}
+
+.thanks-card button {
+
+  background: #ffe4ee;
+
+  color: #813657;
+
+}
+
+@keyframes popin {
+
+  from { opacity: 0; transform: translateY(12px) scale(.97); }
+
+  to { opacity: 1; transform: translateY(0) scale(1); }
+
+}
+
+@media(max-width:800px) {
+
+  .hero { grid-template-columns: 1fr; padding-top: 35px; }
+
+  .hero-art { min-height: 210px; }
+
+  .navlinks { gap: 8px; }
+
+  .navlinks a { display: none; }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .game-shell { padding: 8px; }
+
+  .support-box { padding: 18px; }
 
 }
 
@@ -780,277 +814,179 @@ footer strong { color: var(--hot); }
 
 <body>
 
-<nav>
+<header class="topbar">
 
-  <div class="logo">♡ Pink <span>Hope</span></div>
+  <nav class="nav">
 
-  <div class="nav-links">
+    <a class="brand" href="#home">🎗️ <span data-ar="أمل وردي" data-en="Pink Hope">أمل وردي</span></a>
 
-    <a href="#home" data-en="Home">الرئيسية</a>
+    <div class="navlinks">
 
-    <a href="#game" data-en="The Claw Machine">آلة الدمى</a>
+      <a href="#game" data-ar="الحديقة" data-en="Garden">الحديقة</a>
 
-    <a href="#awareness" data-en="Awareness">التوعية</a>
+      <a href="#awareness" data-ar="التوعية" data-en="Awareness">التوعية</a>
 
-    <a href="#support" data-en="Support Wall">رسائل الدعم</a>
+      <a href="#support" data-ar="رسائل الأمل" data-en="Hope Wall">رسائل الأمل</a>
 
-  </div>
+    </div>
 
-  <button class="lang-btn" id="languageBtn" onclick="toggleLanguage()">English</button>
+    <button class="lang" id="langToggle" type="button">English</button>
 
-</nav>
+  </nav>
 
-<header class="hero" id="home">
+</header>
+
+<main>
+
+<section class="hero" id="home">
 
   <div>
 
-    <div class="eyebrow" data-en="A LITTLE HOPE GOES A LONG WAY">قليل من الأمل يصنع فرقًا كبيرًا</div>
+    <span class="eyebrow"
 
-    <h1 data-en="A world of hope, wrapped in <em>pink.</em>">
+      data-ar="معًا ننشر الوعي والأمل"
 
-      عالم من الأمل<br>بلون <em>وردي</em>
+      data-en="Together, spreading awareness and hope">
+
+      معًا ننشر الوعي والأمل
+
+    </span>
+
+    <h1 data-ar="ازرعي الأمل،<br><span>وانشري الوعي</span>"
+
+        data-en="Grow hope,<br><span>spread awareness</span>">
+
+      ازرعي الأمل،<br><span>وانشري الوعي</span>
 
     </h1>
 
-    <p data-en="Every message matters. Every story deserves to be heard. Join us in spreading awareness, kindness, and hope in the fight against breast cancer.">
+    <p data-ar="رحلة تفاعلية تجمع بين الزهور ورسائل الدعم ومعلومات مبسطة عن صحة الثدي وأهمية الكشف المبكر."
 
-      كل رسالة لها معنى وكل قصة تستحق أن تُسمع
+       data-en="An interactive journey combining flowers, supportive messages, and simple information about breast health and early detection.">
 
-      شاركينا نشر الوعي واللطف والأمل في رحلة التوعية بسرطان الثدي
+      رحلة تفاعلية تجمع بين الزهور ورسائل الدعم ومعلومات مبسطة عن صحة الثدي وأهمية الكشف المبكر.
 
     </p>
 
-    <a href="#game" class="primary-btn" data-en="Find Your Message ♡">اكتشفي رسالتك ♡</a>
+    <a class="primary" href="#game"
+
+       data-ar="ابدئي رحلة الحديقة 🌷"
+
+       data-en="Start the garden journey 🌷">
+
+      ابدئي رحلة الحديقة 🌷
+
+    </a>
 
   </div>
 
   <div class="hero-art">
 
-    <div class="big-heart">🎀</div>
+    <div class="ribbon">🎗</div>
 
-    <div class="sticker one" data-en="♡ You are not alone">♡ أنتِ لستِ وحدك</div>
+    <div class="hero-note"
 
-    <div class="sticker two" data-en="Spread love, spread hope ✨">انشري الحب والأمل ✨</div>
+      data-ar="كل زهرة تحمل رسالة أمل"
+
+      data-en="Every flower carries a message of hope">
+
+      كل زهرة تحمل رسالة أمل
+
+    </div>
 
   </div>
 
-</header>
+</section>
 
-<section class="game-section" id="game">
+<section class="content" id="game">
 
-  <div class="section-heading">
+  <div class="section-head">
 
-    <div class="eyebrow" data-en="A SURPRISE JUST FOR YOU">مفاجأة صغيرة لكِ</div>
+    <h2 data-ar="حديقة الأمل الوردية"
 
-    <h2 data-en="The Pink Claw Machine">آلة الدمى الوردية</h2>
+        data-en="The Pink Hope Garden">
 
-    <p data-en="Pick a plushie and discover a little message of hope or awareness.">
+      حديقة الأمل الوردية
 
-      اسحبي دمية واكتشفي رسالة صغيرة تحمل الأمل أو التوعية
+    </h2>
+
+    <p data-ar="تحركي في الحديقة واجمعي الزهور الثمانية. كل زهرة تحمل معلومة أو رسالة دعم جديدة. وعند جمع آخر زهرة ستظهر لك رسالة شكر."
+
+       data-en="Explore the garden and collect all eight flowers. Each flower carries an awareness fact or a message of support. Collect the last flower to reveal a thank-you message.">
+
+      تحركي في الحديقة واجمعي الزهور الثمانية. كل زهرة تحمل معلومة أو رسالة دعم جديدة. وعند جمع آخر زهرة ستظهر لك رسالة شكر.
 
     </p>
 
   </div>
 
-  <div class="machine">
+  <div class="game-shell">
 
-    <div class="machine-top">♡ PINK HOPE ♡</div>
+    <div class="game-hud">
 
-    <div class="machine-window">
+      <strong data-ar="🌿 عالم الأمل — Pixel Garden"
 
-      <div class="claw" id="claw">🕹️</div>
+              data-en="🌿 Hope World — Pixel Garden">
 
-      <div class="dolls" id="dolls">
+        🌿 عالم الأمل — Pixel Garden
 
-        <div class="doll">🐰</div>
+      </strong>
 
-        <div class="doll">🧸</div>
+      <span class="counter">
 
-        <div class="doll">🐱</div>
+        <span data-ar="الزهور" data-en="Flowers">الزهور</span>:
 
-        <div class="doll">🐼</div>
+        <b id="score">0</b>/<b id="total">8</b>
 
-        <div class="doll">🐻</div>
+      </span>
 
-        <div class="doll">🐥</div>
+    </div>
+
+    <div class="game-wrap">
+
+      <canvas id="gameCanvas" width="800" height="500" tabindex="0"></canvas>
+
+    </div>
+
+    <div class="game-tip"
+
+      data-ar="استخدمي الأسهم للتحرك أو الأزرار أسفل اللعبة. اقتربي من الزهور واجمعيها. يمكنك أيضًا لمس الزهرة مباشرة."
+
+      data-en="Use the arrows or the controls below to move. Approach the flowers to collect them, or tap a flower directly.">
+
+      استخدمي الأسهم للتحرك أو الأزرار أسفل اللعبة. اقتربي من الزهور واجمعيها. يمكنك أيضًا لمس الزهرة مباشرة.
+
+    </div>
+
+    <div class="game-controls">
+
+      <div class="dpad">
+
+        <button class="up" data-move="up" aria-label="Up">▲</button>
+
+        <button class="left" data-move="left" aria-label="Left">◀</button>
+
+        <button class="down" data-move="down" aria-label="Down">▼</button>
+
+        <button class="right" data-move="right" aria-label="Right">▶</button>
 
       </div>
 
-    </div>
+      <button id="collect" data-ar="🌸 اجمعي الزهرة" data-en="🌸 Collect flower">🌸 اجمعي الزهرة</button>
 
-    <div class="machine-controls">
-
-      <button class="grab-btn" onclick="grabDoll()" data-en="Grab a Plushie ♡">اسحبي دمية ♡</button>
-
-      <button class="reset-btn" onclick="resetGame()" data-en="Try Again">إعادة</button>
+      <button id="restart" data-ar="↻ إعادة اللعبة" data-en="↻ Restart">↻ إعادة اللعبة</button>
 
     </div>
 
-  </div>
+    <div class="lesson" aria-live="polite">
 
-  <div class="message-card" id="messageCard" aria-live="polite">
+      <div class="lesson-icon" id="lessonIcon">🌷</div>
 
-    <div class="emoji" id="messageEmoji">💗</div>
+      <div>
 
-    <h3 id="messageTitle"></h3>
+        <h3 id="lessonTitle">أهلًا بكِ في الحديقة</h3>
 
-    <p id="messageText"></p>
-
-    <button class="primary-btn" onclick="grabDoll()" data-en="Get Another Message">اكتشفي رسالة ثانية</button>
-
-  </div>
-
-</section>
-
-<section class="awareness" id="awareness">
-
-  <div class="section-heading">
-
-    <div class="eyebrow" data-en="KNOWLEDGE IS POWER">المعرفة قوة</div>
-
-    <h2 data-en="Awareness Saves Lives">الوعي يصنع الفرق</h2>
-
-    <p data-en="Learning about breast health is one way to care for yourself and others.">
-
-      التعرّف على صحة الثدي خطوة مهمة للاهتمام بنفسك وبمن تحبين
-
-    </p>
-
-  </div>
-
-  <div class="info-grid">
-
-    <article class="info-card">
-
-      <div class="info-icon">🎀</div>
-
-      <h3 data-en="Know Your Body">تعرّفي على جسمك</h3>
-
-      <p data-en="Being familiar with your breasts can help you notice changes that are new or unusual for you.">
-
-        معرفة شكل وملمس الثدي المعتاد يساعدك على ملاحظة أي تغيّرات جديدة أو غير مألوفة
-
-      </p>
-
-    </article>
-
-    <article class="info-card">
-
-      <div class="info-icon">🩺</div>
-
-      <h3 data-en="Notice Changes">انتبهي للتغيّرات</h3>
-
-      <p data-en="A new lump, skin dimpling, nipple changes, or unusual discharge should be assessed by a healthcare professional.">
-
-        ظهور كتلة جديدة أو تغيّر الجلد أو الحلمة أو إفرازات غير معتادة يستدعي استشارة مختص صحي
-
-      </p>
-
-    </article>
-
-    <article class="info-card">
-
-      <div class="info-icon">💗</div>
-
-      <h3 data-en="Screening Matters">الفحص مهم</h3>
-
-      <p data-en="Ask your healthcare professional which screening tests are appropriate for your age and personal risk.">
-
-        اسألي المختص الصحي عن الفحوصات المناسبة لعمرك وعوامل الخطورة لديك
-
-      </p>
-
-    </article>
-
-  </div>
-
-</section>
-
-<section class="support-section" id="support">
-
-  <div class="section-heading">
-
-    <div class="eyebrow" data-en="WORDS CAN HEAL">للكلمات أثر</div>
-
-    <h2 data-en="A Wall Full of Love">جدار مليء بالحب</h2>
-
-    <p data-en="Leave a kind message for someone who might need a little hope today.">
-
-      اتركي رسالة لطيفة لشخص قد يحتاج إلى جرعة من الأمل اليوم
-
-    </p>
-
-  </div>
-
-  <div class="support-layout">
-
-    <div class="support-intro">
-
-      <div style="font-size:42px">💌</div>
-
-      <h3 data-en="Your words matter.">كلماتك تصنع فرقًا</h3>
-
-      <p data-en="Sometimes, a few kind words can make a difficult day feel a little lighter. Share kindness freely.">
-
-        أحيانًا كلمات بسيطة تخفف ثقل يوم صعب
-
-        شاركي اللطف والأمل مع الآخرين
-
-      </p>
-
-      <div style="font-size:25px">♡ 🎀 ♡</div>
-
-    </div>
-
-    <div>
-
-      <form class="support-form" id="supportForm">
-
-        <h3 data-en="Write a message ♡">اكتبي رسالة ♡</h3>
-
-        <input id="visitorName" type="text" maxlength="40"
-
-          placeholder="اسمك (اختياري)" data-placeholder-en="Your name (optional)">
-
-        <textarea id="visitorMessage" maxlength="400" required
-
-          placeholder="اكتبي رسالة مليئة بالأمل..."></textarea>
-
-        <button type="submit" class="primary-btn" data-en="Share Some Love ♡">شاركي الحب ♡</button>
-
-      </form>
-
-      <div class="wall">
-
-        <h3 data-en="Messages of Hope 💗">رسائل الأمل 💗</h3>
-
-        <div id="messageWall">
-
-          <div class="wall-message">
-
-            <strong data-en="A Friend of Hope">صديقة الأمل</strong>
-
-            <p data-en="You are stronger than you know, and you deserve love every step of the way. 💗">
-
-              أنتِ أقوى مما تتخيلين وتستحقين الحب في كل خطوة 💗
-
-            </p>
-
-          </div>
-
-          <div class="wall-message">
-
-            <strong data-en="Pink Heart">قلب وردي</strong>
-
-            <p data-en="You don't have to face everything alone. There is always room for hope. 🎀">
-
-              لستِ مضطرة لمواجهة كل شيء وحدك فهناك دائمًا مساحة للأمل 🎀
-
-            </p>
-
-          </div>
-
-        </div>
+        <p id="lessonText">اجمعي الزهور لاكتشاف رسائل التوعية والأمل.</p>
 
       </div>
 
@@ -1060,363 +996,1226 @@ footer strong { color: var(--hot); }
 
 </section>
 
-<section class="donate-section">
+<section class="content" id="awareness">
 
-  <div style="font-size:42px">🎀</div>
+  <div class="section-head">
 
-  <h2 data-en="Together, We Can Make a Difference">معًا نصنع فرقًا</h2>
+    <h2 data-ar="معرفة صغيرة قد تصنع فرقًا كبيرًا"
 
-  <p data-en="Support breast cancer awareness and help contribute to the work of Zahra Association through its official donation platform.">
+        data-en="Small knowledge can make a big difference">
 
-    ساهمي في دعم التوعية بسرطان الثدي وادعمي جهود جمعية زهرة عبر منصة التبرع الرسمية
+      معرفة صغيرة قد تصنع فرقًا كبيرًا
+
+    </h2>
+
+    <p data-ar="التوعية تساعدنا على فهم صحة الثدي ومعرفة متى نطلب المشورة الطبية."
+
+       data-en="Awareness helps us understand breast health and know when to seek medical advice.">
+
+      التوعية تساعدنا على فهم صحة الثدي ومعرفة متى نطلب المشورة الطبية.
+
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <article class="card">
+
+      <div class="icon">🎗️</div>
+
+      <h3 data-ar="اعرفي التغيرات" data-en="Know the changes">اعرفي التغيرات</h3>
+
+      <p data-ar="انتبهي لأي كتلة جديدة أو تغير غير معتاد في الثدي أو الجلد أو الحلمة. وجود تغير لا يعني بالضرورة الإصابة بالسرطان لكنه يستحق التقييم الطبي."
+
+         data-en="Notice a new lump or unusual changes in the breast, skin, or nipple. A change does not necessarily mean cancer, but it deserves medical assessment.">
+
+        انتبهي لأي كتلة جديدة أو تغير غير معتاد في الثدي أو الجلد أو الحلمة. وجود تغير لا يعني بالضرورة الإصابة بالسرطان لكنه يستحق التقييم الطبي.
+
+      </p>
+
+    </article>
+
+    <article class="card">
+
+      <div class="icon">🩺</div>
+
+      <h3 data-ar="اسألي المختصين" data-en="Ask a healthcare professional">اسألي المختصين</h3>
+
+      <p data-ar="راجعي مختصًا صحيًا إذا لاحظتِ تغيرًا جديدًا أو مستمرًا. الفحص المناسب يعتمد على العمر والتاريخ الصحي والأعراض."
+
+         data-en="Speak with a healthcare professional if you notice a new or persistent change. Appropriate screening depends on age, health history, and symptoms.">
+
+        راجعي مختصًا صحيًا إذا لاحظتِ تغيرًا جديدًا أو مستمرًا. الفحص المناسب يعتمد على العمر والتاريخ الصحي والأعراض.
+
+      </p>
+
+    </article>
+
+    <article class="card">
+
+      <div class="icon">🌷</div>
+
+      <h3 data-ar="الدعم يصنع فرقًا" data-en="Support makes a difference">الدعم يصنع فرقًا</h3>
+
+      <p data-ar="الكلمة الطيبة والاستماع والمساندة دون أحكام قد تساعد المريضة على الشعور بأنها ليست وحدها."
+
+         data-en="Kind words, listening, and non-judgmental support can help someone feel less alone during their journey.">
+
+        الكلمة الطيبة والاستماع والمساندة دون أحكام قد تساعد المريضة على الشعور بأنها ليست وحدها.
+
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section class="content" id="support">
+
+  <div class="support-box">
+
+    <h2 data-ar="💗 جدار رسائل الأمل"
+
+        data-en="💗 The Hope Message Wall">
+
+      💗 جدار رسائل الأمل
+
+    </h2>
+
+    <p data-ar="اتركي رسالة لطيفة أو كلمة تشجيع لكل امرأة تمر برحلة العلاج. رسالتك قد تكون مصدر قوة وأمل لشخص آخر."
+
+       data-en="Leave a kind message or words of encouragement for anyone going through treatment. Your message may bring strength and hope to someone else.">
+
+      اتركي رسالة لطيفة أو كلمة تشجيع لكل امرأة تمر برحلة العلاج. رسالتك قد تكون مصدر قوة وأمل لشخص آخر.
+
+    </p>
+
+    <form class="message-form" id="messageForm">
+
+      <input id="name" maxlength="45"
+
+        data-placeholder-ar="اسمك (اختياري)"
+
+        data-placeholder-en="Your name (optional)"
+
+        placeholder="اسمك (اختياري)">
+
+      <textarea id="message" maxlength="300" required
+
+        data-placeholder-ar="اكتبي رسالتك هنا..."
+
+        data-placeholder-en="Write your message here..."
+
+        placeholder="اكتبي رسالتك هنا..."></textarea>
+
+      <button type="submit"
+
+        data-ar="💌 أضيفي رسالة الأمل"
+
+        data-en="💌 Add your hope message">
+
+        💌 أضيفي رسالة الأمل
+
+      </button>
+
+    </form>
+
+    <div class="wall" id="wall" aria-live="polite"></div>
+
+    <p style="font-size:.85rem;color:#896c7d"
+
+       data-ar="ملاحظة: الرسائل تظهر في متصفحك الحالي فقط ولا تُحفظ على الموقع للزوار الآخرين."
+
+       data-en="Note: Messages appear in your current browser only and are not saved for other visitors.">
+
+      ملاحظة: الرسائل تظهر في متصفحك الحالي فقط ولا تُحفظ على الموقع للزوار الآخرين.
+
+    </p>
+
+  </div>
+
+</section>
+
+<section class="donate">
+
+  <h2 data-ar="معًا نستطيع نشر الأمل 🎗️"
+
+      data-en="Together, we can spread hope 🎗️">
+
+    معًا نستطيع نشر الأمل 🎗️
+
+  </h2>
+
+  <p data-ar="إذا رغبتِ في دعم جهود التوعية بسرطان الثدي، يمكنك زيارة جمعية زهرة للتوعية بسرطان الثدي والتعرف على طرق الدعم المتاحة من خلال موقعها الرسمي."
+
+     data-en="If you would like to support breast cancer awareness, visit Zahra Breast Cancer Association's official website to learn about available ways to help.">
+
+    إذا رغبتِ في دعم جهود التوعية بسرطان الثدي، يمكنك زيارة جمعية زهرة للتوعية بسرطان الثدي والتعرف على طرق الدعم المتاحة من خلال موقعها الرسمي.
 
   </p>
 
-  <a class="donate-btn"
-
-     href="https://donate.zahra.org.sa/"
+  <a href="https://donate.zahra.org.sa"
 
      target="_blank" rel="noopener noreferrer"
 
-     data-en="Donate to Zahra Association ♡">
+     data-ar="🌸 زيارة صفحة التبرع لجمعية زهرة"
 
-     التبرع لجمعية زهرة ♡
+     data-en="🌸 Donate to Zahra Association">
+
+    🌸 زيارة صفحة التبرع لجمعية زهرة
 
   </a>
 
 </section>
 
-<footer>
+</main>
 
-  <strong>♡ Pink Hope</strong>
+<footer class="footer">
 
-  <div data-en="Spreading awareness, one heart at a time.">ننشر الوعي ونزرع الأمل قلبًا بعد قلب</div>
+  <span data-ar="Pink Hope — أمل وردي | معًا لنشر الوعي والدعم"
 
-  <div data-en="Educational content only. It does not replace professional medical advice.">
+        data-en="Pink Hope | Spreading awareness and support together">
 
-    المحتوى للتوعية فقط ولا يغني عن استشارة المختص الصحي
+    Pink Hope — أمل وردي | معًا لنشر الوعي والدعم
 
-  </div>
-
-  <div>© 2026 Pink Hope</div>
+  </span>
 
 </footer>
 
+<div class="thanks-overlay" id="thanksOverlay" role="dialog" aria-modal="true">
+
+  <div class="thanks-card">
+
+    <div class="thanks-flower">🌸🌷🌸</div>
+
+    <h2 data-ar="شكرًا لأنكِ زرعتِ الأمل!"
+
+        data-en="Thank you for growing hope!">
+
+      شكرًا لأنكِ زرعتِ الأمل!
+
+    </h2>
+
+    <p data-ar="أحسنتِ! لقد جمعتِ كل زهور الحديقة الثمانية. شكرًا لأنكِ خصصتِ وقتًا للتوعية بسرطان الثدي ونشر الدعم والأمل. كل كلمة طيبة وكل خطوة نحو الوعي قد تصنع فرقًا. 💗"
+
+       data-en="You did it! You collected all eight flowers. Thank you for helping spread breast cancer awareness, support, and hope. Every kind word and every step toward awareness can make a difference. 💗">
+
+      أحسنتِ! لقد جمعتِ كل زهور الحديقة الثمانية. شكرًا لأنكِ خصصتِ وقتًا للتوعية بسرطان الثدي ونشر الدعم والأمل. كل كلمة طيبة وكل خطوة نحو الوعي قد تصنع فرقًا. 💗
+
+    </p>
+
+    <a href="https://donate.zahra.org.sa"
+
+       target="_blank" rel="noopener noreferrer"
+
+       data-ar="ادعمي التوعية 🎗️"
+
+       data-en="Support awareness 🎗️">
+
+      ادعمي التوعية 🎗️
+
+    </a>
+
+    <button id="closeThanks" data-ar="إغلاق" data-en="Close">إغلاق</button>
+
+  </div>
+
+</div>
+
 <script>
 
-const messages = [
+(() => {
 
-  {
+  'use strict';
 
-    type: "support",
+  const canvas = document.getElementById('gameCanvas');
 
-    emoji: "💗",
+  const ctx = canvas.getContext('2d');
 
-    arTitle: "أنتِ لستِ وحدك",
+  const W = canvas.width;
 
-    enTitle: "You Are Not Alone",
+  const H = canvas.height;
 
-    ar: "في الأيام الصعبة تذكّري أن مشاعرك مهمة وأن طلب الدعم ليس ضعفًا بل شجاعة. أنتِ تستحقين الرعاية والاهتمام.",
+  let lang = 'ar';
 
-    en: "On difficult days, remember that your feelings matter. Asking for support is not weakness; it is courage. You deserve care and kindness."
+  let score = 0;
 
-  },
+  let gameComplete = false;
 
-  {
+  let holdTimer = null;
 
-    type: "awareness",
+  let activeDirection = null;
 
-    emoji: "🎀",
+  const player = {
 
-    arTitle: "الوعي خطوة مهمة",
+    x: 400,
 
-    enTitle: "Awareness Matters",
+    y: 250,
 
-    ar: "التعرّف على التغيّرات الجديدة في الثدي والتحدث مع مختص صحي عند ملاحظتها يساعدان على اتخاذ الخطوات المناسبة.",
+    speed: 7,
 
-    en: "Knowing what is normal for you and discussing new breast changes with a healthcare professional can help you take appropriate next steps."
+    direction: 'down'
 
-  },
+  };
 
-  {
+  const facts = [
 
-    type: "support",
+    {
 
-    emoji: "🌷",
+      icon: '🎗️',
 
-    arTitle: "خذي الأمور خطوة بخطوة",
+      ar: ['رسالة أمل', 'أنتِ لستِ وحدكِ. الدعم والمحبة وطلب المساعدة عند الحاجة أمور مهمة في رحلة العلاج.'],
 
-    enTitle: "One Step at a Time",
+      en: ['A message of hope', 'You are not alone. Support, kindness, and asking for help when needed matter throughout treatment.']
 
-    ar: "لا تحتاجين إلى امتلاك كل الإجابات اليوم. امنحي نفسك الوقت والراحة واطلبي المساندة عندما تحتاجين إليها.",
+    },
 
-    en: "You don't need to have every answer today. Give yourself time, rest, and permission to ask for support whenever you need it."
+    {
 
-  },
+      icon: '🩺',
 
-  {
+      ar: ['انتبهي للتغيرات', 'لاحظي أي تغير جديد في الثدي أو الحلمة أو الجلد واطلبي تقييمًا طبيًا عند ملاحظته.'],
 
-    type: "awareness",
+      en: ['Notice changes', 'Pay attention to new changes in the breast, nipple, or skin and seek medical assessment.']
 
-    emoji: "🩺",
+    },
 
-    arTitle: "لا تتجاهلي التغيّرات",
+    {
 
-    enTitle: "Pay Attention to Changes",
+      icon: '🌷',
 
-    ar: "أي كتلة جديدة أو تغيّر غير معتاد في الثدي يستحق التقييم من مختص صحي. كثير من التغيّرات لها أسباب غير سرطانية، لكن الفحص مهم.",
+      ar: ['الكشف المبكر', 'الفحوصات المناسبة حسب العمر والتاريخ الصحي قد تساعد في اكتشاف سرطان الثدي مبكرًا.'],
 
-    en: "A new lump or unusual breast change deserves assessment by a healthcare professional. Many changes are non-cancerous, but checking matters."
+      en: ['Early detection', 'Appropriate screening based on age and health history can help detect breast cancer early.']
 
-  },
+    },
 
-  {
+    {
 
-    type: "support",
+      icon: '💗',
 
-    emoji: "🦋",
+      ar: ['كوني سندًا', 'استمعي للمريضة واسأليها كيف يمكنك مساعدتها بدلًا من افتراض ما تحتاج إليه.'],
 
-    arTitle: "قوتك ليست في إخفاء مشاعرك",
+      en: ['Be supportive', 'Listen to the person and ask how you can help rather than assuming what they need.']
 
-    enTitle: "Your Feelings Matter",
+    },
 
-    ar: "من حقك أن تشعري بالخوف أو الحزن أو التعب. لا يلزم أن تكوني قوية طوال الوقت حتى تستحقي الحب والدعم.",
+    {
 
-    en: "You are allowed to feel scared, sad, or tired. You don't have to be strong all the time to deserve love and support."
+      icon: '🌸',
 
-  },
+      ar: ['كل تجربة مختلفة', 'تختلف تجارب المرضى واحتياجاتهم. احترمي مشاعر كل شخص وخصوصيته.'],
 
-  {
+      en: ['Every journey is different', 'Patients have different experiences and needs. Respect the feelings and privacy of every person.']
 
-    type: "awareness",
+    },
 
-    emoji: "💗",
+    {
 
-    arTitle: "اسألي عن الفحص المناسب",
+      icon: '🩷',
 
-    enTitle: "Ask About Screening",
+      ar: ['اطلبي المشورة', 'إذا لاحظتِ كتلة أو تغيرًا غير معتاد فلا تتجاهليه، واستشيري مختصًا صحيًا.'],
 
-    ar: "تختلف توصيات فحوصات سرطان الثدي حسب العمر وعوامل الخطورة. استشيري مختصًا صحيًا لمعرفة ما يناسبك.",
+      en: ['Seek advice', 'If you notice a lump or unusual change, do not ignore it. Consult a healthcare professional.']
 
-    en: "Breast cancer screening recommendations vary by age and risk factors. Talk to a healthcare professional about what is right for you."
+    },
 
-  },
+    {
 
-  {
+      icon: '🌼',
 
-    type: "support",
+      ar: ['كلمات تصنع فرقًا', 'كلمة بسيطة مثل أنا هنا من أجلك قد تمنح شخصًا آخر شعورًا بالراحة.'],
 
-    emoji: "🌸",
+      en: ['Words make a difference', 'A simple message like I am here for you can bring comfort to another person.']
 
-    arTitle: "أنتِ تستحقين اللطف",
+    },
 
-    enTitle: "You Deserve Kindness",
+    {
 
-    ar: "تذكّري أن تعاملي نفسك بالرحمة نفسها التي تمنحينها للأشخاص الذين تحبينهم. أنتِ مهمة.",
+      icon: '🎗️',
 
-    en: "Treat yourself with the same compassion you give the people you love. You matter."
+      ar: ['شكرًا لمشاركتك', 'مشاركتك في نشر الوعي خطوة جميلة. انقلي المعلومات الموثوقة وشجعي الآخرين على الاهتمام بصحتهم.'],
 
-  },
+      en: ['Thank you for joining', 'Sharing awareness is a meaningful step. Share reliable information and encourage others to care for their health.']
 
-  {
+    }
 
-    type: "support",
+  ];
 
-    emoji: "🧸",
+  const positions = [
 
-    arTitle: "يوم واحد في كل مرة",
+    [105, 100],
 
-    enTitle: "One Day at a Time",
+    [255, 90],
 
-    ar: "لا بأس إن كان كل ما تستطيعين فعله اليوم هو الراحة والتنفس ومواصلة يومك. الخطوات الصغيرة لها قيمة.",
+    [420, 110],
 
-    en: "It's okay if all you can do today is rest, breathe, and get through the day. Small steps still count."
+    [610, 95],
+
+    [710, 205],
+
+    [580, 365],
+
+    [330, 390],
+
+    [120, 340]
+
+  ];
+
+  const colors = [
+
+    '#ff9fc7',
+
+    '#f8d7ef',
+
+    '#ff7fab',
+
+    '#ffd5e4',
+
+    '#e7a6ff',
+
+    '#ffb7d0',
+
+    '#f6d2a7',
+
+    '#ff8fb8'
+
+  ];
+
+  let flowers = [];
+
+  function pixel(x, y, w, h, color) {
+
+    ctx.fillStyle = color;
+
+    ctx.fillRect(Math.round(x), Math.round(y), w, h);
 
   }
 
-];
+  function reset() {
 
-let isEnglish = false;
+    score = 0;
 
-let lastMessage = -1;
+    gameComplete = false;
 
-function toggleLanguage() {
+    player.x = 400;
 
-  isEnglish = !isEnglish;
+    player.y = 250;
 
-  document.documentElement.lang = isEnglish ? "en" : "ar";
+    player.direction = 'down';
 
-  document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+    flowers = positions.map((pos, i) => ({
 
-  document.getElementById("languageBtn").textContent =
+      x: pos[0],
 
-    isEnglish ? "العربية" : "English";
+      y: pos[1],
 
-  document.querySelectorAll("[data-en]").forEach(element => {
+      color: colors[i],
 
-    const english = element.getAttribute("data-en");
+      got: false,
 
-    if (english) element.innerHTML = english;
+      phase: i * 0.8
+
+    }));
+
+    document.getElementById('score').textContent = '0';
+
+    document.getElementById('total').textContent = String(flowers.length);
+
+    document.getElementById('thanksOverlay').classList.remove('show');
+
+    showLesson(-1);
+
+    draw();
+
+  }
+
+  function drawFlower(x, y, color, scale = 1) {
+
+    ctx.save();
+
+    ctx.translate(Math.round(x), Math.round(y));
+
+    ctx.scale(scale, scale);
+
+    pixel(-3, 4, 6, 15, '#39734d');
+
+    pixel(-10, 10, 8, 4, '#55975e');
+
+    pixel(3, 13, 8, 4, '#55975e');
+
+    pixel(-4, -13, 8, 8, color);
+
+    pixel(-12, -7, 9, 8, color);
+
+    pixel(3, -7, 9, 8, color);
+
+    pixel(-8, 1, 8, 7, color);
+
+    pixel(1, 1, 8, 7, color);
+
+    pixel(-4, -5, 8, 8, '#ffdf83');
+
+    pixel(-2, -3, 3, 3, '#fff5c9');
+
+    ctx.restore();
+
+  }
+
+  function drawTree(x, y, scale = 1) {
+
+    ctx.save();
+
+    ctx.translate(x, y);
+
+    ctx.scale(scale, scale);
+
+    pixel(-7, 0, 15, 38, '#61415a');
+
+    pixel(-30, -35, 60, 34, '#34495a');
+
+    pixel(-22, -48, 44, 23, '#405968');
+
+    pixel(-13, -59, 26, 16, '#526b70');
+
+    pixel(-24, -25, 12, 12, '#506f68');
+
+    pixel(12, -32, 12, 12, '#506f68');
+
+    pixel(-9, -44, 9, 9, '#6b8580');
+
+    ctx.restore();
+
+  }
+
+  function drawBush(x, y) {
+
+    pixel(x - 19, y, 38, 13, '#31594b');
+
+    pixel(x - 13, y - 7, 12, 12, '#49745b');
+
+    pixel(x + 1, y - 10, 13, 15, '#568363');
+
+    pixel(x - 4, y - 15, 9, 10, '#709274');
+
+  }
+
+  function drawWorld() {
+
+    const sky = ctx.createLinearGradient(0, 0, 0, H);
+
+    sky.addColorStop(0, '#20203e');
+
+    sky.addColorStop(0.43, '#57405e');
+
+    sky.addColorStop(1, '#c7839c');
+
+    ctx.fillStyle = sky;
+
+    ctx.fillRect(0, 0, W, H);
+
+    // النجوم
+
+    for (let i = 0; i < 65; i++) {
+
+      const x = (i * 137 + 31) % W;
+
+      const y = (i * 71 + 13) % 175;
+
+      pixel(x, y, i % 5 === 0 ? 4 : 2, i % 5 === 0 ? 4 : 2,
+
+        i % 3 === 0 ? '#ffe8ae' : '#fff6ed');
+
+    }
+
+    // القمر
+
+    ctx.fillStyle = '#fff0c7';
+
+    ctx.beginPath();
+
+    ctx.arc(695, 73, 30, 0, Math.PI * 2);
+
+    ctx.fill();
+
+    ctx.fillStyle = '#34314f';
+
+    ctx.beginPath();
+
+    ctx.arc(708, 61, 27, 0, Math.PI * 2);
+
+    ctx.fill();
+
+    // العشب
+
+    pixel(0, 185, W, 315, '#39594d');
+
+    for (let y = 185; y < H; y += 32) {
+
+      for (let x = 0; x < W; x += 32) {
+
+        pixel(x, y, 32, 32,
+
+          ((x + y) / 32) % 2 === 0 ? '#42634f' : '#3d604c');
+
+      }
+
+    }
+
+    // ممر الحديقة
+
+    const paths = [
+
+      [0, 260, 190, 52],
+
+      [140, 280, 65, 100],
+
+      [140, 350, 300, 52],
+
+      [390, 300, 65, 102],
+
+      [390, 295, 250, 50],
+
+      [590, 225, 60, 120],
+
+      [590, 225, 210, 50]
+
+    ];
+
+    paths.forEach(([x, y, w, h]) => {
+
+      pixel(x, y, w, h, '#a38a9b');
+
+      pixel(x + 5, y + 5, w - 10, h - 10, '#76627e');
+
+      for (let xx = x + 10; xx < x + w - 5; xx += 28) {
+
+        pixel(xx, y + 12, 3, 4, '#bda6b6');
+
+      }
+
+    });
+
+    // أحواض الزهور
+
+    [
+
+      [40, 65, 100, 58],
+
+      [210, 55, 95, 48],
+
+      [370, 70, 110, 50],
+
+      [560, 55, 110, 48],
+
+      [675, 150, 90, 60],
+
+      [520, 335, 115, 55],
+
+      [270, 350, 110, 58],
+
+      [55, 300, 110, 55]
+
+    ].forEach(([x, y, w, h]) => {
+
+      pixel(x - 5, y - 5, w + 10, h + 10, '#b79ba8');
+
+      pixel(x, y, w, h, '#654b62');
+
+      pixel(x + 6, y + 6, w - 12, h - 12, '#73506b');
+
+      pixel(x + 12, y + 10, w - 24, 4, '#9a6c89');
+
+    });
+
+    drawTree(45, 210, 0.85);
+
+    drawTree(765, 205, 0.8);
+
+    drawTree(750, 450, 0.7);
+
+    drawTree(205, 460, 0.7);
+
+    drawBush(170, 205);
+
+    drawBush(350, 205);
+
+    drawBush(485, 450);
+
+    drawBush(680, 430);
+
+    drawBush(60, 445);
+
+    // فوانيس
+
+    [[180, 240], [360, 275], [620, 300], [440, 420]].forEach(([x, y]) => {
+
+      pixel(x - 3, y, 7, 16, '#49354a');
+
+      pixel(x - 2, y + 2, 5, 7, '#ffd88c');
+
+      pixel(x - 7, y - 3, 15, 3, '#49354a');
+
+    });
+
+    // الزهور غير المجموعة
+
+    flowers.forEach(f => {
+
+      if (!f.got) {
+
+        const bob = Math.sin(Date.now() / 400 + f.phase) * 2;
+
+        drawFlower(f.x, f.y + bob, f.color, 1.25);
+
+      }
+
+    });
+
+  }
+
+  function drawGirl() {
+
+    const x = Math.round(player.x);
+
+    const y = Math.round(player.y);
+
+    ctx.save();
+
+    ctx.translate(x, y);
+
+    // الظل
+
+    pixel(-13, 13, 27, 5, '#253e3b');
+
+    // الحذاء
+
+    pixel(-10, 9, 8, 7, '#5b344f');
+
+    pixel(3, 9, 8, 7, '#5b344f');
+
+    pixel(-9, 10, 5, 2, '#ffe6ef');
+
+    pixel(4, 10, 5, 2, '#ffe6ef');
+
+    // الأرجل
+
+    pixel(-8, 2, 6, 9, '#f1b99f');
+
+    pixel(3, 2, 6, 9, '#f1b99f');
+
+    // الفستان
+
+    pixel(-13, -8, 26, 13, '#d95d91');
+
+    pixel(-10, -12, 20, 7, '#f58eb5');
+
+    pixel(-8, -6, 16, 5, '#ffbfd5');
+
+    pixel(-3, -5, 6, 4, '#fff0f6');
+
+    // الذراعان
+
+    pixel(-17, -8, 5, 12, '#f1b99f');
+
+    pixel(12, -8, 5, 12, '#f1b99f');
+
+    // الشعر
+
+    pixel(-14, -29, 28, 24, '#59382f');
+
+    pixel(-17, -23, 6, 18, '#59382f');
+
+    pixel(11, -23, 6, 18, '#59382f');
+
+    pixel(-12, -33, 24, 7, '#75473b');
+
+    // الوجه
+
+    pixel(-10, -25, 20, 19, '#f4c3a6');
+
+    // العينان
+
+    pixel(-7, -19, 3, 4, '#49313a');
+
+    pixel(4, -19, 3, 4, '#49313a');
+
+    pixel(-6, -19, 1, 1, '#fff4eb');
+
+    pixel(5, -19, 1, 1, '#fff4eb');
+
+    // الابتسامة
+
+    pixel(-2, -12, 5, 2, '#c96d80');
+
+    // الغرة
+
+    pixel(-11, -28, 22, 6, '#59382f');
+
+    pixel(-10, -24, 6, 5, '#59382f');
+
+    pixel(0, -25, 6, 5, '#59382f');
+
+    // مشبك شعر
+
+    pixel(8, -31, 6, 5, '#ff8db7');
+
+    pixel(13, -29, 5, 5, '#ff8db7');
+
+    pixel(10, -27, 5, 4, '#ffb8d1');
+
+    // حقيبة
+
+    pixel(12, -3, 7, 8, '#9d5d4b');
+
+    pixel(13, -2, 5, 2, '#f3c778');
+
+    ctx.restore();
+
+  }
+
+  function draw() {
+
+    drawWorld();
+
+    flowers.forEach(f => {
+
+      if (!f.got && Math.hypot(player.x - f.x, player.y - f.y) < 48) {
+
+        ctx.strokeStyle = '#fff1b7';
+
+        ctx.lineWidth = 3;
+
+        ctx.setLineDash([5, 5]);
+
+        ctx.beginPath();
+
+        ctx.arc(f.x, f.y, 26, 0, Math.PI * 2);
+
+        ctx.stroke();
+
+        ctx.setLineDash([]);
+
+      }
+
+    });
+
+    drawGirl();
+
+  }
+
+  function showLesson(index) {
+
+    const icon = document.getElementById('lessonIcon');
+
+    const title = document.getElementById('lessonTitle');
+
+    const text = document.getElementById('lessonText');
+
+    if (index < 0) {
+
+      icon.textContent = '🌷';
+
+      title.textContent = lang === 'ar'
+
+        ? 'أهلًا بكِ في الحديقة'
+
+        : 'Welcome to the garden';
+
+      text.textContent = lang === 'ar'
+
+        ? 'اجمعي الزهور لاكتشاف رسائل التوعية والأمل.'
+
+        : 'Collect flowers to discover awareness facts and messages of hope.';
+
+      return;
+
+    }
+
+    icon.textContent = facts[index].icon;
+
+    title.textContent = facts[index][lang][0];
+
+    text.textContent = facts[index][lang][1];
+
+  }
+
+  function collect(flower) {
+
+    if (gameComplete) return;
+
+    let target = flower || null;
+
+    if (!target) {
+
+      let nearest = null;
+
+      let distance = Infinity;
+
+      flowers.forEach(f => {
+
+        const d = Math.hypot(player.x - f.x, player.y - f.y);
+
+        if (!f.got && d < distance) {
+
+          nearest = f;
+
+          distance = d;
+
+        }
+
+      });
+
+      if (nearest && distance < 58) target = nearest;
+
+    }
+
+    if (!target || target.got) {
+
+      const title = document.getElementById('lessonTitle');
+
+      const text = document.getElementById('lessonText');
+
+      title.textContent = lang === 'ar'
+
+        ? 'اقتربي من الزهرة 🌸'
+
+        : 'Move closer to a flower 🌸';
+
+      text.textContent = lang === 'ar'
+
+        ? 'تحركي باتجاه زهرة ثم اضغطي زر الجمع.'
+
+        : 'Move toward a flower and press the collect button.';
+
+      return;
+
+    }
+
+    target.got = true;
+
+    const index = flowers.indexOf(target);
+
+    score++;
+
+    document.getElementById('score').textContent = String(score);
+
+    showLesson(index);
+
+    if (score === flowers.length) {
+
+      gameComplete = true;
+
+      document.getElementById('lessonTitle').textContent =
+
+        lang === 'ar' ? 'شكرًا لأنكِ زرعتِ الأمل! 🌸' : 'Thank you for growing hope! 🌸';
+
+      document.getElementById('lessonText').textContent =
+
+        lang === 'ar'
+
+          ? 'جمعتِ كل الزهور! شكرًا لمشاركتك في نشر الوعي والدعم.'
+
+          : 'You collected every flower! Thank you for spreading awareness and support.';
+
+      // تظهر رسالة الشكر تلقائيًا بعد جمع الزهرة الثامنة
+
+      document.getElementById('thanksOverlay').classList.add('show');
+
+    }
+
+    draw();
+
+  }
+
+  function move(direction) {
+
+    if (gameComplete) return;
+
+    player.direction = direction;
+
+    const step = player.speed;
+
+    if (direction === 'up') player.y -= step;
+
+    if (direction === 'down') player.y += step;
+
+    if (direction === 'left') player.x -= step;
+
+    if (direction === 'right') player.x += step;
+
+    player.x = Math.max(22, Math.min(W - 22, player.x));
+
+    player.y = Math.max(45, Math.min(H - 20, player.y));
+
+    const nearby = flowers.find(f =>
+
+      !f.got && Math.hypot(player.x - f.x, player.y - f.y) < 22
+
+    );
+
+    if (nearby) {
+
+      collect(nearby);
+
+    } else {
+
+      draw();
+
+    }
+
+  }
+
+  function stopMove() {
+
+    activeDirection = null;
+
+    if (holdTimer !== null) {
+
+      clearInterval(holdTimer);
+
+      holdTimer = null;
+
+    }
+
+  }
+
+  // لوحة المفاتيح
+
+  window.addEventListener('keydown', event => {
+
+    const key = event.key.toLowerCase();
+
+    const directions = {
+
+      arrowup: 'up',
+
+      w: 'up',
+
+      arrowdown: 'down',
+
+      s: 'down',
+
+      arrowleft: 'left',
+
+      a: 'left',
+
+      arrowright: 'right',
+
+      d: 'right'
+
+    };
+
+    if (directions[key]) {
+
+      event.preventDefault();
+
+      move(directions[key]);
+
+    }
+
+    if (key === ' ' || key === 'enter') {
+
+      event.preventDefault();
+
+      collect();
+
+    }
 
   });
 
-  document.querySelectorAll("[data-placeholder-en]").forEach(element => {
+  // أزرار الحركة للآيباد
 
-    element.placeholder = isEnglish
+  document.querySelectorAll('[data-move]').forEach(button => {
 
-      ? element.getAttribute("data-placeholder-en")
+    const direction = button.dataset.move;
 
-      : "اسمك (اختياري)";
+    button.addEventListener('click', () => move(direction));
+
+    button.addEventListener('pointerdown', event => {
+
+      event.preventDefault();
+
+      stopMove();
+
+      activeDirection = direction;
+
+      move(direction);
+
+      holdTimer = setInterval(() => {
+
+        if (activeDirection) move(activeDirection);
+
+      }, 120);
+
+    });
+
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(name => {
+
+      button.addEventListener(name, stopMove);
+
+    });
 
   });
 
-  document.getElementById("visitorMessage").placeholder = isEnglish
+  // لمس الزهرة مباشرة أو لمس مكان لتحريك الشخصية
 
-    ? "Write a message full of hope..."
+  canvas.addEventListener('pointerdown', event => {
 
-    : "اكتبي رسالة مليئة بالأمل...";
+    const rect = canvas.getBoundingClientRect();
 
-  document.querySelectorAll("#messageWall .wall-message").forEach(el => {
+    const x = (event.clientX - rect.left) * W / rect.width;
 
-    const title = el.querySelector("strong");
+    const y = (event.clientY - rect.top) * H / rect.height;
 
-    const p = el.querySelector("p");
+    const tappedFlower = flowers.find(f =>
 
-    if (title.dataset.ar) title.textContent = isEnglish ? title.dataset.en : title.dataset.ar;
+      !f.got && Math.hypot(x - f.x, y - f.y) < 35
 
-    if (p.dataset.ar) p.textContent = isEnglish ? p.dataset.en : p.dataset.ar;
+    );
+
+    if (tappedFlower) {
+
+      collect(tappedFlower);
+
+      return;
+
+    }
+
+    player.x = Math.max(22, Math.min(W - 22, x));
+
+    player.y = Math.max(45, Math.min(H - 20, y));
+
+    const nearby = flowers.find(f =>
+
+      !f.got && Math.hypot(player.x - f.x, player.y - f.y) < 30
+
+    );
+
+    if (nearby) {
+
+      collect(nearby);
+
+    } else {
+
+      draw();
+
+    }
 
   });
 
-  if (lastMessage >= 0) showMessage(lastMessage);
+  document.getElementById('collect').addEventListener('click', () => {
 
-}
+    collect();
 
-function grabDoll() {
+  });
 
-  const claw = document.getElementById("claw");
+  document.getElementById('restart').addEventListener('click', () => {
 
-  const dolls = [...document.querySelectorAll(".doll")];
+    stopMove();
 
-  const card = document.getElementById("messageCard");
+    reset();
 
-  let index;
+  });
 
-  do {
+  document.getElementById('closeThanks').addEventListener('click', () => {
 
-    index = Math.floor(Math.random() * messages.length);
+    document.getElementById('thanksOverlay').classList.remove('show');
 
-  } while (messages.length > 1 && index === lastMessage);
+  });
 
-  lastMessage = index;
+  // تبديل اللغة
 
-  const dollIndex = Math.floor(Math.random() * dolls.length);
+  function setLanguage(nextLanguage) {
 
-  dolls.forEach(d => d.classList.remove("selected"));
+    lang = nextLanguage;
 
-  claw.style.transform = "translateY(90px)";
+    document.documentElement.lang = lang;
 
-  setTimeout(() => {
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-    dolls[dollIndex].classList.add("selected");
+    document.querySelectorAll('[data-ar][data-en]').forEach(element => {
 
-    claw.style.transform = "translateY(0)";
+      element.innerHTML = element.dataset[lang];
 
-    showMessage(index);
+    });
 
-    card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    document.querySelectorAll('[data-placeholder-ar]').forEach(element => {
 
-  }, 550);
+      element.placeholder = lang === 'ar'
 
-}
+        ? element.dataset.placeholderAr
 
-function showMessage(index) {
+        : element.dataset.placeholderEn;
 
-  const message = messages[index];
+    });
 
-  document.getElementById("messageEmoji").textContent = message.emoji;
+    document.getElementById('langToggle').textContent =
 
-  document.getElementById("messageTitle").textContent =
+      lang === 'ar' ? 'English' : 'العربية';
 
-    isEnglish ? message.enTitle : message.arTitle;
+    showLesson(-1);
 
-  document.getElementById("messageText").textContent =
+  }
 
-    isEnglish ? message.en : message.ar;
+  document.getElementById('langToggle').addEventListener('click', () => {
 
-  document.getElementById("messageCard").classList.add("show");
+    setLanguage(lang === 'ar' ? 'en' : 'ar');
 
-}
+  });
 
-function resetGame() {
+  // جدار رسائل الدعم
 
-  lastMessage = -1;
+  document.getElementById('messageForm').addEventListener('submit', event => {
 
-  document.getElementById("messageCard").classList.remove("show");
+    event.preventDefault();
 
-  document.querySelectorAll(".doll").forEach(d => d.classList.remove("selected"));
+    const nameInput = document.getElementById('name');
 
-  document.getElementById("claw").style.transform = "translateY(0)";
+    const messageInput = document.getElementById('message');
 
-}
+    const name = nameInput.value.trim();
 
-document.getElementById("supportForm").addEventListener("submit", function(event) {
+    const message = messageInput.value.trim();
 
-  event.preventDefault();
+    if (!message) return;
 
-  const nameInput = document.getElementById("visitorName");
+    const note = document.createElement('div');
 
-  const messageInput = document.getElementById("visitorMessage");
+    note.className = 'note';
 
-  const name = nameInput.value.trim() ||
+    // textContent يمنع تفسير الرسالة على أنها HTML
 
-    (isEnglish ? "A Friend of Hope" : "صديقة الأمل");
+    note.textContent = name ? name + ' — ' + message : message;
 
-  const message = messageInput.value.trim();
+    document.getElementById('wall').prepend(note);
 
-  if (!message) return;
+    messageInput.value = '';
 
-  const card = document.createElement("div");
+    nameInput.value = '';
 
-  card.className = "wall-message";
+  });
 
-  const title = document.createElement("strong");
+  // رسم الحديقة باستمرار لتحريك الزهور
 
-  title.textContent = name;
+  function animate() {
 
-  title.dataset.ar = name;
+    draw();
 
-  title.dataset.en = name;
+    requestAnimationFrame(animate);
 
-  const paragraph = document.createElement("p");
+  }
 
-  paragraph.textContent = message;
+  reset();
 
-  paragraph.dataset.ar = message;
+  animate();
 
-  paragraph.dataset.en = message;
-
-  card.appendChild(title);
-
-  card.appendChild(paragraph);
-
-  document.getElementById("messageWall").prepend(card);
-
-  this.reset();
-
-});
+})();
 
 </script>
 
 </body>
 
 </html>
-<footer class="site-footer">
-
-
-
-  <p>Designed & Developed with Love by Tala Ayman Rawas ♡</p>
-
-  <p>© 2026 Tala Ayman Rawas. All Rights Reserved.</p>
-
-</footer>
