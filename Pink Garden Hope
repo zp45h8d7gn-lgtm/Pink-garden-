@@ -1,0 +1,3613 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="theme-color" content="#291b39">
+
+<meta name="description" content="Pink Hope — رحلة تفاعلية للتوعية بسرطان الثدي ونشر الأمل والدعم.">
+
+<title>Pink Hope | حديقة الأمل</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Press+Start+2P&display=swap');
+
+:root{
+
+  --night:#211a35;
+
+  --night2:#392544;
+
+  --pink:#f6a9ca;
+
+  --pink2:#ffd5e5;
+
+  --rose:#d975a8;
+
+  --cream:#fff5f6;
+
+  --lavender:#c7b4e9;
+
+  --text:#53344f;
+
+}
+
+*{
+
+  box-sizing:border-box;
+
+}
+
+html{
+
+  scroll-behavior:smooth;
+
+}
+
+body{
+
+  margin:0;
+
+  font-family:Arial,Tahoma,sans-serif;
+
+  background:var(--night);
+
+  color:var(--cream);
+
+  overflow-x:hidden;
+
+}
+
+button,input,textarea{
+
+  font:inherit;
+
+}
+
+button{
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+
+}
+
+button:focus-visible,
+
+textarea:focus-visible,
+
+input:focus-visible{
+
+  outline:3px solid #c7b4e9;
+
+  outline-offset:3px;
+
+}
+
+/* HEADER */
+
+header{
+
+  position:relative;
+
+  z-index:10;
+
+  padding:16px 5%;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:12px;
+
+  background:rgba(30,21,45,.92);
+
+  border-bottom:1px solid rgba(255,211,232,.18);
+
+}
+
+.logo{
+
+  font-family:Georgia,serif;
+
+  font-size:23px;
+
+  color:#ffc8df;
+
+  letter-spacing:1px;
+
+}
+
+.logo small{
+
+  display:block;
+
+  margin-top:5px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  color:#cdb9de;
+
+}
+
+.header-actions{
+
+  display:flex;
+
+  gap:8px;
+
+  flex-wrap:wrap;
+
+}
+
+.small-btn{
+
+  padding:10px 13px;
+
+  color:#fff2f7;
+
+  background:#493451;
+
+  border:1px solid #87638c;
+
+  border-radius:8px;
+
+}
+
+.small-btn:active{
+
+  transform:scale(.97);
+
+}
+
+/* HERO */
+
+.hero{
+
+  min-height:620px;
+
+  position:relative;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  overflow:hidden;
+
+  isolation:isolate;
+
+  background:
+
+    radial-gradient(ellipse at 50% 75%,rgba(246,169,202,.23),transparent 43%),
+
+    linear-gradient(180deg,#241b3a 0%,#49304e 48%,#9a587d 76%,#49304b 100%);
+
+}
+
+#sky{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+
+  height:100%;
+
+  z-index:-1;
+
+  pointer-events:none;
+
+}
+
+.hero-content{
+
+  width:min(650px,92%);
+
+  position:relative;
+
+  z-index:3;
+
+  padding:50px 12px 160px;
+
+}
+
+.ribbon{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  padding:9px 15px;
+
+  margin-bottom:23px;
+
+  border:1px solid rgba(255,215,231,.45);
+
+  border-radius:40px;
+
+  background:rgba(38,24,47,.35);
+
+  color:#ffe3ed;
+
+  font-size:12px;
+
+  letter-spacing:1px;
+
+}
+
+.ribbon-symbol{
+
+  color:#ffafd0;
+
+  font-size:22px;
+
+}
+
+.hero h1{
+
+  margin:0;
+
+  font-family:Georgia,serif;
+
+  font-weight:normal;
+
+  font-size:clamp(48px,9vw,85px);
+
+  line-height:1.15;
+
+  color:#ffe3ef;
+
+  text-shadow:0 5px 30px rgba(247,160,202,.35);
+
+}
+
+.hero h2{
+
+  font-weight:normal;
+
+  font-size:clamp(20px,4vw,28px);
+
+  color:#f8c6dd;
+
+  margin:15px 0;
+
+}
+
+.hero p{
+
+  max-width:450px;
+
+  margin:20px auto;
+
+  line-height:2;
+
+  font-size:15px;
+
+  color:#f3ddeb;
+
+}
+
+.primary-btn{
+
+  border:1px solid #ffe2ef;
+
+  border-radius:7px;
+
+  padding:15px 25px;
+
+  color:#4b2946;
+
+  font-weight:bold;
+
+  background:linear-gradient(135deg,#ffe4ef,#efaccd);
+
+  box-shadow:0 7px 25px #24182d65;
+
+  transition:transform .2s;
+
+}
+
+.primary-btn:active{
+
+  transform:scale(.96);
+
+}
+
+/* PIXEL GARDEN */
+
+.garden-scene{
+
+  position:absolute;
+
+  left:0;
+
+  right:0;
+
+  bottom:0;
+
+  height:200px;
+
+  overflow:hidden;
+
+  z-index:1;
+
+  pointer-events:none;
+
+}
+
+.hill{
+
+  position:absolute;
+
+  bottom:-85px;
+
+  width:120%;
+
+  height:180px;
+
+  left:-10%;
+
+  border-radius:50% 50% 0 0;
+
+  background:#352744;
+
+}
+
+.hill.second{
+
+  bottom:-110px;
+
+  left:15%;
+
+  width:100%;
+
+  background:#4b3450;
+
+}
+
+.pixel-tree{
+
+  position:absolute;
+
+  bottom:60px;
+
+  width:145px;
+
+  height:170px;
+
+  image-rendering:pixelated;
+
+}
+
+.tree-left{
+
+  left:-8px;
+
+}
+
+.tree-right{
+
+  right:-10px;
+
+  transform:scaleX(-1);
+
+}
+
+.tree-trunk{
+
+  position:absolute;
+
+  bottom:0;
+
+  left:63px;
+
+  width:20px;
+
+  height:108px;
+
+  background:#523448;
+
+  box-shadow:
+
+    20px 23px 0 -4px #523448,
+
+    -17px 40px 0 -5px #523448;
+
+}
+
+.tree-branch{
+
+  position:absolute;
+
+  bottom:70px;
+
+  left:38px;
+
+  width:14px;
+
+  height:76px;
+
+  background:#523448;
+
+  transform:rotate(-35deg);
+
+}
+
+.tree-crown{
+
+  position:absolute;
+
+  width:80px;
+
+  height:40px;
+
+  background:#d888b2;
+
+  top:5px;
+
+  left:22px;
+
+  box-shadow:
+
+    -18px 22px 0 #c876a5,
+
+    16px 30px 0 #efb2d0,
+
+    36px 15px 0 #d888b2,
+
+    5px -10px 0 #f2bfd9,
+
+    -22px 2px 0 #e9a3c6;
+
+}
+
+.tree-crown:before{
+
+  content:"";
+
+  position:absolute;
+
+  width:20px;
+
+  height:20px;
+
+  top:-15px;
+
+  left:28px;
+
+  background:#f5c6df;
+
+  box-shadow:
+
+    -35px 20px 0 #e8a5c9,
+
+    34px 38px 0 #e8a5c9,
+
+    51px 12px 0 #c97ba8;
+
+}
+
+.tree-crown:after{
+
+  content:"";
+
+  position:absolute;
+
+  width:9px;
+
+  height:9px;
+
+  left:13px;
+
+  top:26px;
+
+  background:#fff0f8;
+
+  box-shadow:
+
+    25px -22px 0 #fff0f8,
+
+    47px 11px 0 #ffe6f2,
+
+    64px -9px 0 #fff0f8;
+
+}
+
+.pixel-flower{
+
+  position:absolute;
+
+  bottom:12px;
+
+  font-size:23px;
+
+  image-rendering:pixelated;
+
+}
+
+.flower-a{left:15%}
+
+.flower-b{left:28%;bottom:27px}
+
+.flower-c{right:17%;bottom:21px}
+
+.flower-d{right:30%}
+
+/* GAME */
+
+.section{
+
+  padding:75px 5%;
+
+}
+
+.section-heading{
+
+  text-align:center;
+
+  margin-bottom:35px;
+
+}
+
+.eyebrow{
+
+  color:#e6a9ce;
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+}
+
+.section-heading h2{
+
+  font-family:Georgia,serif;
+
+  font-weight:normal;
+
+  font-size:clamp(30px,5vw,45px);
+
+  color:#ffe1ee;
+
+  margin:12px 0;
+
+}
+
+.section-heading p{
+
+  color:#d8c6de;
+
+  line-height:1.9;
+
+  font-size:14px;
+
+}
+
+.game-shell{
+
+  width:min(900px,100%);
+
+  margin:auto;
+
+  border:1px solid #785478;
+
+  border-radius:15px;
+
+  background:#291e37;
+
+  padding:12px;
+
+  box-shadow:0 20px 60px #120d1d55;
+
+}
+
+.game-topbar{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  padding:10px 8px 16px;
+
+  color:#f6cfe1;
+
+  font-size:12px;
+
+}
+
+.progress-track{
+
+  height:6px;
+
+  width:120px;
+
+  background:#4e3958;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  margin-top:7px;
+
+}
+
+#progressFill{
+
+  height:100%;
+
+  width:0%;
+
+  background:#f3b2d1;
+
+  transition:width .3s;
+
+}
+
+#gameWorld{
+
+  position:relative;
+
+  height:360px;
+
+  overflow:hidden;
+
+  border-radius:8px;
+
+  background:
+
+    radial-gradient(ellipse at 50% 55%,#a96b91 0%,transparent 65%),
+
+    linear-gradient(180deg,#382d55 0%,#66405e 68%,#66465c 100%);
+
+  border:1px solid #b17ba3;
+
+  touch-action:pan-y;
+
+}
+
+#gameStars{
+
+  position:absolute;
+
+  inset:0;
+
+  pointer-events:none;
+
+}
+
+.game-star{
+
+  position:absolute;
+
+  color:#ffe7f3;
+
+  animation:twinkle 2.5s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+  from{opacity:.35}
+
+  to{opacity:1}
+
+}
+
+.game-moon{
+
+  position:absolute;
+
+  top:25px;
+
+  right:10%;
+
+  font-size:37px;
+
+  filter:drop-shadow(0 0 12px #fbd3e8);
+
+  opacity:.9;
+
+}
+
+.game-hill{
+
+  position:absolute;
+
+  bottom:-90px;
+
+  left:-10%;
+
+  width:120%;
+
+  height:170px;
+
+  background:#483451;
+
+  border-radius:50% 50% 0 0;
+
+}
+
+.game-hill.back{
+
+  bottom:-110px;
+
+  left:30%;
+
+  background:#5c3b55;
+
+}
+
+.game-tree{
+
+  position:absolute;
+
+  bottom:55px;
+
+  width:90px;
+
+  height:155px;
+
+}
+
+.game-tree .trunk{
+
+  position:absolute;
+
+  bottom:0;
+
+  left:40px;
+
+  width:12px;
+
+  height:95px;
+
+  background:#513446;
+
+}
+
+.game-tree .crown{
+
+  position:absolute;
+
+  left:4px;
+
+  top:0;
+
+  width:70px;
+
+  height:30px;
+
+  background:#d78ab5;
+
+  box-shadow:
+
+    -12px 20px #bf719e,
+
+    10px 35px #e5a4c7,
+
+    24px 17px #d78ab5,
+
+    3px -8px #f1bad7;
+
+}
+
+.game-tree.left{left:0}
+
+.game-tree.right{right:0;transform:scaleX(-1)}
+
+.ground{
+
+  position:absolute;
+
+  bottom:0;
+
+  height:57px;
+
+  left:0;
+
+  right:0;
+
+  background:#49304b;
+
+  border-top:5px solid #97658b;
+
+}
+
+.ground:after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:12px 0 0;
+
+  background:repeating-linear-gradient(
+
+    90deg,
+
+    transparent 0 27px,
+
+    #65435f 27px 30px
+
+  );
+
+  opacity:.6;
+
+}
+
+/* GIRL CHARACTER */
+
+#girl{
+
+  position:absolute;
+
+  z-index:5;
+
+  left:calc(50% - 18px);
+
+  bottom:49px;
+
+  width:36px;
+
+  height:61px;
+
+  image-rendering:pixelated;
+
+  transition:left .12s linear;
+
+  filter:drop-shadow(0 5px 2px #21152555);
+
+  pointer-events:none;
+
+}
+
+.girl-hair{
+
+  position:absolute;
+
+  top:0;
+
+  left:7px;
+
+  width:22px;
+
+  height:18px;
+
+  background:#533044;
+
+  box-shadow:
+
+    -4px 7px #533044,
+
+    20px 8px #533044,
+
+    0 -4px #533044,
+
+    4px -4px #533044;
+
+}
+
+.girl-face{
+
+  position:absolute;
+
+  top:8px;
+
+  left:10px;
+
+  width:16px;
+
+  height:15px;
+
+  background:#ffd2b7;
+
+}
+
+.girl-face:before{
+
+  content:"";
+
+  position:absolute;
+
+  top:5px;
+
+  left:3px;
+
+  width:3px;
+
+  height:3px;
+
+  background:#493042;
+
+  box-shadow:7px 0 #493042;
+
+}
+
+.girl-face:after{
+
+  content:"";
+
+  position:absolute;
+
+  top:11px;
+
+  left:6px;
+
+  width:5px;
+
+  height:2px;
+
+  background:#c76c8b;
+
+}
+
+.girl-body{
+
+  position:absolute;
+
+  top:24px;
+
+  left:5px;
+
+  width:26px;
+
+  height:22px;
+
+  background:#f1a7c7;
+
+  clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);
+
+}
+
+.girl-body:after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:10px;
+
+  width:6px;
+
+  height:22px;
+
+  background:#ffe2ed;
+
+}
+
+.girl-legs{
+
+  position:absolute;
+
+  bottom:0;
+
+  left:10px;
+
+  width:6px;
+
+  height:14px;
+
+  background:#f7c5dc;
+
+  box-shadow:10px 0 #f7c5dc;
+
+}
+
+.girl-legs:after{
+
+  content:"";
+
+  position:absolute;
+
+  left:-2px;
+
+  bottom:0;
+
+  width:9px;
+
+  height:4px;
+
+  background:#6c4c70;
+
+  box-shadow:10px 0 #6c4c70;
+
+}
+
+#girl.facing-left{
+
+  transform:scaleX(-1);
+
+}
+
+#girl.walking .girl-legs{
+
+  animation:walk .2s infinite alternate;
+
+}
+
+@keyframes walk{
+
+  from{transform:translateX(-2px)}
+
+  to{transform:translateX(3px)}
+
+}
+
+/* INTERACTIVE FLOWERS */
+
+.collectible{
+
+  position:absolute;
+
+  z-index:6;
+
+  bottom:52px;
+
+  width:45px;
+
+  height:58px;
+
+  border:0;
+
+  background:transparent;
+
+  padding:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:flex-start;
+
+  filter:drop-shadow(0 0 9px #ffc3e588);
+
+  animation:flowerFloat 2s ease-in-out infinite alternate;
+
+}
+
+.collectible:nth-of-type(even){
+
+  animation-delay:.8s;
+
+}
+
+.collectible .bloom{
+
+  font-size:27px;
+
+  line-height:32px;
+
+  filter:drop-shadow(0 0 6px #ffd9ea);
+
+}
+
+.collectible .stem{
+
+  width:4px;
+
+  height:20px;
+
+  background:#91ad87;
+
+  position:relative;
+
+}
+
+.collectible .stem:after{
+
+  content:"";
+
+  position:absolute;
+
+  width:9px;
+
+  height:4px;
+
+  background:#9fc398;
+
+  top:8px;
+
+  left:2px;
+
+  transform:rotate(-25deg);
+
+}
+
+.collectible.collected{
+
+  opacity:.15;
+
+  filter:grayscale(1);
+
+  pointer-events:none;
+
+  animation:none;
+
+}
+
+@keyframes flowerFloat{
+
+  from{transform:translateY(0)}
+
+  to{transform:translateY(-7px)}
+
+}
+
+#petalLayer{
+
+  position:absolute;
+
+  inset:0;
+
+  overflow:hidden;
+
+  pointer-events:none;
+
+  z-index:4;
+
+}
+
+.petal{
+
+  position:absolute;
+
+  top:-20px;
+
+  width:9px;
+
+  height:7px;
+
+  background:#f7c1dc;
+
+  border-radius:70% 20% 70% 20%;
+
+  opacity:.85;
+
+  animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+  0%{transform:translate3d(0,-20px,0) rotate(0)}
+
+  100%{transform:translate3d(45px,410px,0) rotate(540deg)}
+
+}
+
+.game-caption{
+
+  text-align:center;
+
+  padding:15px 8px 5px;
+
+  font-size:12px;
+
+  color:#d8c1dc;
+
+  line-height:1.9;
+
+}
+
+.controls{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+  padding:18px 0 8px;
+
+  direction:ltr;
+
+}
+
+.control-btn{
+
+  width:63px;
+
+  height:55px;
+
+  color:#fff1f8;
+
+  background:#654461;
+
+  border:1px solid #ad7fa9;
+
+  border-radius:12px;
+
+  font-size:25px;
+
+  touch-action:manipulation;
+
+  user-select:none;
+
+  -webkit-user-select:none;
+
+}
+
+.control-btn:active{
+
+  background:#a76896;
+
+  transform:scale(.95);
+
+}
+
+.control-note{
+
+  text-align:center;
+
+  font-size:11px;
+
+  color:#d2bad8;
+
+  line-height:1.8;
+
+}
+
+/* MESSAGE POPUP */
+
+.modal{
+
+  position:fixed;
+
+  z-index:1000;
+
+  inset:0;
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:20px;
+
+  background:rgba(18,12,27,.78);
+
+  backdrop-filter:blur(6px);
+
+}
+
+.modal.open{
+
+  display:flex;
+
+}
+
+.modal-card{
+
+  width:min(450px,100%);
+
+  background:#fff5f8;
+
+  color:#54334f;
+
+  border:1px solid #e6b6d1;
+
+  border-radius:15px;
+
+  padding:30px 24px;
+
+  text-align:center;
+
+  box-shadow:0 20px 70px #120b1d88;
+
+  animation:modalIn .25s ease;
+
+}
+
+@keyframes modalIn{
+
+  from{transform:translateY(12px);opacity:0}
+
+  to{transform:translateY(0);opacity:1}
+
+}
+
+.modal-icon{
+
+  font-size:38px;
+
+  margin-bottom:10px;
+
+}
+
+.modal-card h3{
+
+  font-family:Georgia,serif;
+
+  font-size:28px;
+
+  font-weight:normal;
+
+  margin:8px 0 14px;
+
+}
+
+.modal-card p{
+
+  line-height:2;
+
+  font-size:15px;
+
+  white-space:pre-line;
+
+}
+
+.modal-close{
+
+  margin-top:15px;
+
+  padding:12px 24px;
+
+  border:0;
+
+  border-radius:7px;
+
+  background:#87577e;
+
+  color:white;
+
+}
+
+/* SUPPORT BOARD */
+
+.support-section{
+
+  background:linear-gradient(180deg,#32233e,#251c34);
+
+}
+
+.support-layout{
+
+  width:min(960px,100%);
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:20px;
+
+  align-items:start;
+
+}
+
+.panel{
+
+  background:#fff5f7;
+
+  color:#563850;
+
+  border:1px solid #e3b3cd;
+
+  border-radius:13px;
+
+  padding:24px;
+
+  min-width:0;
+
+}
+
+.panel h3{
+
+  margin-top:0;
+
+  font-family:Georgia,serif;
+
+  font-size:27px;
+
+  font-weight:normal;
+
+}
+
+.panel p{
+
+  line-height:1.9;
+
+  color:#84677f;
+
+  font-size:13px;
+
+}
+
+#messageForm{
+
+  display:block;
+
+  width:100%;
+
+  position:relative;
+
+}
+
+#message{
+
+  display:block;
+
+  width:100%;
+
+  min-height:155px;
+
+  resize:vertical;
+
+  padding:15px;
+
+  color:#50334b;
+
+  background:#fff;
+
+  border:1px solid #dcb4cd;
+
+  border-radius:8px;
+
+  font-size:16px;
+
+  line-height:1.8;
+
+  direction:auto;
+
+  text-align:start;
+
+  opacity:1;
+
+  visibility:visible;
+
+  pointer-events:auto;
+
+  -webkit-user-select:text;
+
+  user-select:text;
+
+  -webkit-appearance:none;
+
+  appearance:none;
+
+  touch-action:manipulation;
+
+}
+
+#message::placeholder{
+
+  color:#b096ae;
+
+}
+
+#message:focus{
+
+  border-color:#bd77a7;
+
+  outline:3px solid #f3d0e2;
+
+}
+
+.form-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:8px;
+
+  margin-top:12px;
+
+  flex-wrap:wrap;
+
+}
+
+#charCount{
+
+  font-size:11px;
+
+  color:#997b94;
+
+}
+
+.submit-btn{
+
+  border:0;
+
+  border-radius:7px;
+
+  padding:13px 17px;
+
+  color:white;
+
+  background:#87577e;
+
+}
+
+.submit-btn:active{
+
+  transform:scale(.97);
+
+}
+
+#formStatus{
+
+  font-size:12px;
+
+  line-height:1.8;
+
+  min-height:22px;
+
+  margin-top:10px;
+
+  color:#795072;
+
+}
+
+.message-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  max-height:440px;
+
+  overflow-y:auto;
+
+  padding-right:2px;
+
+}
+
+.message-card{
+
+  padding:14px;
+
+  border-radius:8px;
+
+  border:1px solid #ecd1e0;
+
+  background:#fffafd;
+
+  overflow-wrap:anywhere;
+
+}
+
+.message-card .message-label{
+
+  font-size:11px;
+
+  color:#b0789e;
+
+  margin-bottom:7px;
+
+}
+
+.message-card .message-text{
+
+  white-space:pre-wrap;
+
+  line-height:1.8;
+
+  font-size:14px;
+
+}
+
+.empty-messages{
+
+  text-align:center;
+
+  padding:28px 8px;
+
+  color:#a78ba2;
+
+  font-size:13px;
+
+  line-height:2;
+
+}
+
+/* AWARENESS */
+
+.awareness-section{
+
+  background:#f9edf4;
+
+  color:#563950;
+
+}
+
+.awareness-section .section-heading h2{
+
+  color:#65405e;
+
+}
+
+.awareness-section .section-heading p{
+
+  color:#8b6b85;
+
+}
+
+.fact-grid{
+
+  width:min(960px,100%);
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:16px;
+
+}
+
+.fact-card{
+
+  padding:24px 19px;
+
+  border:1px solid #e8c4d9;
+
+  border-radius:12px;
+
+  background:#fff9fc;
+
+  box-shadow:0 8px 20px #8d50720c;
+
+}
+
+.fact-number{
+
+  font-family:Georgia,serif;
+
+  font-size:31px;
+
+  color:#bd78a2;
+
+}
+
+.fact-card h3{
+
+  font-size:16px;
+
+  color:#684260;
+
+}
+
+.fact-card p{
+
+  font-size:13px;
+
+  color:#886f83;
+
+  line-height:1.9;
+
+}
+
+/* DONATION */
+
+.donation{
+
+  text-align:center;
+
+  padding:65px 20px;
+
+  background:linear-gradient(140deg,#6a456b,#38273f);
+
+}
+
+.donation h2{
+
+  font-family:Georgia,serif;
+
+  font-size:36px;
+
+  font-weight:normal;
+
+  color:#ffe3ef;
+
+}
+
+.donation p{
+
+  max-width:540px;
+
+  margin:15px auto 25px;
+
+  line-height:2;
+
+  color:#e5d0e2;
+
+  font-size:14px;
+
+}
+
+.donation a{
+
+  display:inline-block;
+
+  text-decoration:none;
+
+  color:#56344e;
+
+  background:#f7c5dc;
+
+  padding:15px 25px;
+
+  border-radius:7px;
+
+  font-weight:bold;
+
+}
+
+/* CERTIFICATE */
+
+.certificate{
+
+  display:none;
+
+  background:#fff7fa;
+
+  color:#603b59;
+
+  border:4px double #d49cbe;
+
+  padding:35px 20px;
+
+  text-align:center;
+
+  margin:25px auto 10px;
+
+  max-width:600px;
+
+  border-radius:5px;
+
+}
+
+.certificate.visible{
+
+  display:block;
+
+}
+
+.certificate h2{
+
+  font-family:Georgia,serif;
+
+  font-size:35px;
+
+  font-weight:normal;
+
+}
+
+.certificate p{
+
+  line-height:2;
+
+}
+
+.certificate .cert-mark{
+
+  font-size:42px;
+
+}
+
+.print-btn{
+
+  background:#85577e;
+
+  color:white;
+
+  border:0;
+
+  border-radius:7px;
+
+  padding:12px 18px;
+
+  margin-top:12px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+  text-align:center;
+
+  padding:28px 15px;
+
+  background:#1c1529;
+
+  color:#c6b2cc;
+
+  font-size:11px;
+
+  line-height:2.2;
+
+}
+
+footer strong{
+
+  color:#f0b6d3;
+
+  font-weight:normal;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+  header{
+
+    padding:13px 4%;
+
+  }
+
+  .logo{
+
+    font-size:19px;
+
+  }
+
+  .hero{
+
+    min-height:580px;
+
+  }
+
+  .hero-content{
+
+    padding-bottom:155px;
+
+  }
+
+  .pixel-tree{
+
+    transform:scale(.78);
+
+    transform-origin:bottom left;
+
+  }
+
+  .tree-right{
+
+    transform:scaleX(-1) scale(.78);
+
+    transform-origin:bottom right;
+
+  }
+
+  .section{
+
+    padding:55px 4%;
+
+  }
+
+  .support-layout{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .fact-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .game-shell{
+
+    padding:8px;
+
+  }
+
+  #gameWorld{
+
+    height:320px;
+
+  }
+
+  .game-topbar{
+
+    font-size:11px;
+
+  }
+
+  .control-btn{
+
+    width:65px;
+
+    height:56px;
+
+  }
+
+  .panel{
+
+    padding:20px;
+
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,*::before,*::after{
+
+    animation-duration:.01ms!important;
+
+    animation-iteration-count:1!important;
+
+    scroll-behavior:auto!important;
+
+  }
+
+}
+
+/* PRINT CERTIFICATE */
+
+@media print{
+
+  body *{
+
+    visibility:hidden!important;
+
+  }
+
+  #certificate,
+
+  #certificate *{
+
+    visibility:visible!important;
+
+  }
+
+  #certificate{
+
+    display:block!important;
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    max-width:none;
+
+    margin:0;
+
+    border:4px double #b77fa1;
+
+  }
+
+  #certificate .print-btn{
+
+    display:none!important;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+
+    Pink Hope
+
+    <small id="logoSubtitle">A GARDEN OF HOPE</small>
+
+  </div>
+
+  <div class="header-actions">
+
+    <button class="small-btn" id="languageButton" type="button">English</button>
+
+    <button class="small-btn" id="homeButton" type="button">⌂</button>
+
+  </div>
+
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+  <canvas id="sky" aria-hidden="true"></canvas>
+
+  <div class="hero-content">
+
+    <div class="ribbon">
+
+      <span class="ribbon-symbol">🎀</span>
+
+      <span data-i18n="ribbon">شهر التوعية بسرطان الثدي</span>
+
+    </div>
+
+    <h1>Pink Hope</h1>
+
+    <h2 data-i18n="heroTitle">كل زهرة تحمل أملاً</h2>
+
+    <p data-i18n="heroDescription">
+
+      في هذه الحديقة الصغيرة، لكل زهرة رسالة ولكل خطوة معنى.
+
+      استكشفي الحديقة واجمعي رسائل الأمل والتوعية والدعم.
+
+    </p>
+
+    <button class="primary-btn" id="startButton" type="button" data-i18n="start">
+
+      ابدئي رحلتك ✿
+
+    </button>
+
+  </div>
+
+  <div class="garden-scene" aria-hidden="true">
+
+    <div class="hill"></div>
+
+    <div class="hill second"></div>
+
+    <div class="pixel-tree tree-left">
+
+      <div class="tree-branch"></div>
+
+      <div class="tree-trunk"></div>
+
+      <div class="tree-crown"></div>
+
+    </div>
+
+    <div class="pixel-tree tree-right">
+
+      <div class="tree-branch"></div>
+
+      <div class="tree-trunk"></div>
+
+      <div class="tree-crown"></div>
+
+    </div>
+
+    <span class="pixel-flower flower-a">✿</span>
+
+    <span class="pixel-flower flower-b">🌷</span>
+
+    <span class="pixel-flower flower-c">✿</span>
+
+    <span class="pixel-flower flower-d">🌸</span>
+
+  </div>
+
+</section>
+
+<section class="section" id="garden">
+
+  <div class="section-heading">
+
+    <div class="eyebrow" data-i18n="gameEyebrow">YOUR LITTLE WORLD</div>
+
+    <h2 data-i18n="gameTitle">حديقة الأمل</h2>
+
+    <p data-i18n="gameDescription">
+
+      حرّكي شخصيتك بين الزهور واضغطي على كل زهرة لاكتشاف رسالتها.
+
+    </p>
+
+  </div>
+
+  <div class="game-shell">
+
+    <div class="game-topbar">
+
+      <div>
+
+        <span data-i18n="collection">الزهور التي جمعتِها</span>
+
+        <strong id="collectionCount">0 / 10</strong>
+
+        <div class="progress-track">
+
+          <div id="progressFill"></div>
+
+        </div>
+
+      </div>
+
+      <div id="gameStatus" data-i18n="gameStatus">
+
+        رحلتك تبدأ هنا ✿
+
+      </div>
+
+    </div>
+
+    <div id="gameWorld" aria-label="Interactive pixel art garden">
+
+      <div id="gameStars"></div>
+
+      <div class="game-moon" aria-hidden="true">☾</div>
+
+      <div class="game-hill back"></div>
+
+      <div class="game-hill"></div>
+
+      <div class="game-tree left" aria-hidden="true">
+
+        <div class="trunk"></div>
+
+        <div class="crown"></div>
+
+      </div>
+
+      <div class="game-tree right" aria-hidden="true">
+
+        <div class="trunk"></div>
+
+        <div class="crown"></div>
+
+      </div>
+
+      <div id="petalLayer"></div>
+
+      <button class="collectible" data-flower="0" style="left:12%" type="button" aria-label="Flower 1">
+
+        <span class="bloom">🌸</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="1" style="left:29%;bottom:100px" type="button" aria-label="Flower 2">
+
+        <span class="bloom">🌷</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="2" style="left:46%;bottom:64px" type="button" aria-label="Flower 3">
+
+        <span class="bloom">✿</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="3" style="left:65%;bottom:110px" type="button" aria-label="Flower 4">
+
+        <span class="bloom">🌸</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="4" style="left:82%" type="button" aria-label="Flower 5">
+
+        <span class="bloom">🌷</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="5" style="left:20%;bottom:130px" type="button" aria-label="Flower 6">
+
+        <span class="bloom">🌺</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="6" style="left:38%;bottom:80px" type="button" aria-label="Flower 7">
+
+        <span class="bloom">🌸</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="7" style="left:56%;bottom:135px" type="button" aria-label="Flower 8">
+
+        <span class="bloom">✿</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="8" style="left:73%;bottom:75px" type="button" aria-label="Flower 9">
+
+        <span class="bloom">🌷</span><span class="stem"></span>
+
+      </button>
+
+      <button class="collectible" data-flower="9" style="left:90%;bottom:120px" type="button" aria-label="Flower 10">
+
+        <span class="bloom">🌸</span><span class="stem"></span>
+
+      </button>
+
+      <div id="girl" role="img" aria-label="Pixel art girl character">
+
+        <div class="girl-hair"></div>
+
+        <div class="girl-face"></div>
+
+        <div class="girl-body"></div>
+
+        <div class="girl-legs"></div>
+
+      </div>
+
+      <div class="ground"></div>
+
+    </div>
+
+    <div class="game-caption" data-i18n="gameHint">
+
+      استخدمي الأسهم لتحريك الفتاة، أو اضغطي على الزهرة مباشرة لقراءة رسالتها.
+
+    </div>
+
+    <div class="controls" aria-label="Movement controls">
+
+      <button class="control-btn" id="leftButton" type="button" aria-label="Move left">◀</button>
+
+      <button class="control-btn" id="upButton" type="button" aria-label="Jump">↑</button>
+
+      <button class="control-btn" id="rightButton" type="button" aria-label="Move right">▶</button>
+
+    </div>
+
+    <div class="control-note" data-i18n="controlNote">
+
+      يمكنك اللعب باللمس على الآيباد أو باستخدام الأسهم على لوحة المفاتيح.
+
+    </div>
+
+    <div class="certificate" id="certificate">
+
+      <div class="cert-mark">✿ 🎀 ✿</div>
+
+      <h2 data-i18n="certTitle">شهادة الأمل</h2>
+
+      <p data-i18n="certText">
+
+        لقد أكملتِ رحلتك في حديقة الأمل واكتشفتِ جميع الرسائل العشر.
+
+        شكرًا لك على نشر الوعي والدعم والأمل.
+
+      </p>
+
+      <p>Pink Hope · Breast Cancer Awareness</p>
+
+      <button class="print-btn" id="printButton" type="button" data-i18n="print">
+
+        طباعة الشهادة
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section support-section" id="support">
+
+  <div class="section-heading">
+
+    <div class="eyebrow" data-i18n="supportEyebrow">WORDS THAT MATTER</div>
+
+    <h2 data-i18n="supportTitle">مساحة دعم ومحبة</h2>
+
+    <p data-i18n="supportDescription">
+
+      اتركي رسالة لطيفة أو كلمة تشجيع قد تصنع فرقًا في يوم شخص آخر.
+
+    </p>
+
+  </div>
+
+  <div class="support-layout">
+
+    <div class="panel">
+
+      <h3 data-i18n="writeTitle">اكتبي رسالة دعم</h3>
+
+      <p data-i18n="writeDescription">
+
+        كل كلمة طيبة يمكن أن تمنح شخصًا شعورًا بأنه ليس وحده.
+
+      </p>
+
+      <form id="messageForm">
+
+        <label for="message" id="messageLabel" data-i18n="messageLabel">
+
+          رسالتك
+
+        </label>
+
+        <textarea
+
+          id="message"
+
+          name="message"
+
+          rows="6"
+
+          maxlength="500"
+
+          required
+
+          autocomplete="off"
+
+          autocapitalize="sentences"
+
+          spellcheck="true"
+
+          placeholder="اكتبي رسالتك هنا..."
+
+        ></textarea>
+
+        <div class="form-bottom">
+
+          <span id="charCount">0 / 500</span>
+
+          <button class="submit-btn" id="submitMessage" type="submit" data-i18n="send">
+
+            نشر الرسالة ✿
+
+          </button>
+
+        </div>
+
+        <div id="formStatus" role="status" aria-live="polite"></div>
+
+      </form>
+
+    </div>
+
+    <div class="panel">
+
+      <h3 data-i18n="wallTitle">جدار الأمل</h3>
+
+      <p data-i18n="wallDescription">
+
+        رسائل صغيرة مليئة بالدعم واللطف.
+
+      </p>
+
+      <div class="message-list" id="messageList" aria-live="polite">
+
+        <div class="empty-messages" data-i18n="emptyMessages">
+
+          لا توجد رسائل بعد. كوني أول من يزرع كلمة أمل هنا.
+
+        </div>
+
+      </div>
+
+      <p data-i18n="storageNotice">
+
+        ملاحظة: الرسائل تحفظ في هذا المتصفح فقط ولا تظهر تلقائيًا للزوار الآخرين.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section awareness-section" id="awareness">
+
+  <div class="section-heading">
+
+    <div class="eyebrow" data-i18n="awarenessEyebrow">KNOWLEDGE IS POWER</div>
+
+    <h2 data-i18n="awarenessTitle">المعرفة بداية الوعي</h2>
+
+    <p data-i18n="awarenessDescription">
+
+      معلومات أساسية تساعد على فهم أهمية التوعية بسرطان الثدي.
+
+    </p>
+
+  </div>
+
+  <div class="fact-grid">
+
+    <article class="fact-card">
+
+      <div class="fact-number">01</div>
+
+      <h3 data-i18n="factTitle1">التعرّف على التغيّرات</h3>
+
+      <p data-i18n="factText1">
+
+        تعرّفي على الشكل المعتاد لثدييك، وراجعي مختصًا صحيًا عند ملاحظة تغيّر جديد أو غير معتاد.
+
+      </p>
+
+    </article>
+
+    <article class="fact-card">
+
+      <div class="fact-number">02</div>
+
+      <h3 data-i18n="factTitle2">الفحص المبكر</h3>
+
+      <p data-i18n="factText2">
+
+        الفحوصات المناسبة للعمر ومستوى الخطورة تساعد على اكتشاف بعض حالات سرطان الثدي مبكرًا.
+
+      </p>
+
+    </article>
+
+    <article class="fact-card">
+
+      <div class="fact-number">03</div>
+
+      <h3 data-i18n="factTitle3">الدعم النفسي</h3>
+
+      <p data-i18n="factText3">
+
+        الاستماع باحترام وتقديم الدعم العملي والنفسي قد يساعدان المريضة خلال رحلة العلاج.
+
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section class="donation" id="donation">
+
+  <div class="ribbon-symbol">🎀</div>
+
+  <h2 data-i18n="donationTitle">كل دعم يصنع فرقًا</h2>
+
+  <p data-i18n="donationDescription">
+
+    إذا رغبتِ في دعم جهود التوعية ومساندة مرضى سرطان الثدي،
+
+    يمكنك زيارة جمعية زهرة للتعرّف على طرق المساهمة المتاحة.
+
+  </p>
+
+  <a
+
+    href="https://donate.zahra.org.sa/"
+
+    target="_blank"
+
+    rel="noopener noreferrer"
+
+    data-i18n="donationButton"
+
+  >
+
+    زيارة جمعية زهرة ↗
+
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div>Pink Hope · A Garden of Hope</div>
+
+  <div>Made with care by <strong>Tala Ayman Rawas</strong></div>
+
+  <div>© 2026 Tala Ayman Rawas. All Rights Reserved.</div>
+
+  <div data-i18n="footerNote">
+
+    مشروع توعوي للتثقيف والدعم، وليس بديلًا عن الاستشارة الطبية.
+
+  </div>
+
+</footer>
+
+<!-- FLOWER MESSAGE POPUP -->
+
+<div class="modal" id="flowerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+  <div class="modal-card">
+
+    <div class="modal-icon" id="modalIcon">🌸</div>
+
+    <h3 id="modalTitle">رسالة أمل</h3>
+
+    <p id="modalText"></p>
+
+    <button class="modal-close" id="modalClose" type="button" data-i18n="close">
+
+      إغلاق
+
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+(function(){
+
+"use strict";
+
+/* =========================
+
+   TRANSLATIONS
+
+========================= */
+
+const translations = {
+
+  ar:{
+
+    ribbon:"شهر التوعية بسرطان الثدي",
+
+    heroTitle:"كل زهرة تحمل أملاً",
+
+    heroDescription:"في هذه الحديقة الصغيرة، لكل زهرة رسالة ولكل خطوة معنى. استكشفي الحديقة واجمعي رسائل الأمل والتوعية والدعم.",
+
+    start:"ابدئي رحلتك ✿",
+
+    gameEyebrow:"YOUR LITTLE WORLD",
+
+    gameTitle:"حديقة الأمل",
+
+    gameDescription:"حرّكي شخصيتك بين الزهور واضغطي على كل زهرة لاكتشاف رسالتها.",
+
+    collection:"الزهور التي جمعتِها",
+
+    gameStatus:"رحلتك تبدأ هنا ✿",
+
+    gameHint:"استخدمي الأسهم لتحريك الفتاة، أو اضغطي على الزهرة مباشرة لقراءة رسالتها.",
+
+    controlNote:"يمكنك اللعب باللمس على الآيباد أو باستخدام الأسهم على لوحة المفاتيح.",
+
+    certTitle:"شهادة الأمل",
+
+    certText:"لقد أكملتِ رحلتك في حديقة الأمل واكتشفتِ جميع الرسائل العشر. شكرًا لك على نشر الوعي والدعم والأمل.",
+
+    print:"طباعة الشهادة",
+
+    supportEyebrow:"WORDS THAT MATTER",
+
+    supportTitle:"مساحة دعم ومحبة",
+
+    supportDescription:"اتركي رسالة لطيفة أو كلمة تشجيع قد تصنع فرقًا في يوم شخص آخر.",
+
+    writeTitle:"اكتبي رسالة دعم",
+
+    writeDescription:"كل كلمة طيبة يمكن أن تمنح شخصًا شعورًا بأنه ليس وحده.",
+
+    messageLabel:"رسالتك",
+
+    send:"نشر الرسالة ✿",
+
+    wallTitle:"جدار الأمل",
+
+    wallDescription:"رسائل صغيرة مليئة بالدعم واللطف.",
+
+    emptyMessages:"لا توجد رسائل بعد. كوني أول من يزرع كلمة أمل هنا.",
+
+    storageNotice:"ملاحظة: الرسائل تحفظ في هذا المتصفح فقط ولا تظهر تلقائيًا للزوار الآخرين.",
+
+    awarenessEyebrow:"KNOWLEDGE IS POWER",
+
+    awarenessTitle:"المعرفة بداية الوعي",
+
+    awarenessDescription:"معلومات أساسية تساعد على فهم أهمية التوعية بسرطان الثدي.",
+
+    factTitle1:"التعرّف على التغيّرات",
+
+    factText1:"تعرّفي على الشكل المعتاد لثدييك، وراجعي مختصًا صحيًا عند ملاحظة تغيّر جديد أو غير معتاد.",
+
+    factTitle2:"الفحص المبكر",
+
+    factText2:"الفحوصات المناسبة للعمر ومستوى الخطورة تساعد على اكتشاف بعض حالات سرطان الثدي مبكرًا.",
+
+    factTitle3:"الدعم النفسي",
+
+    factText3:"الاستماع باحترام وتقديم الدعم العملي والنفسي قد يساعدان المريضة خلال رحلة العلاج.",
+
+    donationTitle:"كل دعم يصنع فرقًا",
+
+    donationDescription:"إذا رغبتِ في دعم جهود التوعية ومساندة مرضى سرطان الثدي، يمكنك زيارة جمعية زهرة للتعرّف على طرق المساهمة المتاحة.",
+
+    donationButton:"زيارة جمعية زهرة ↗",
+
+    footerNote:"مشروع توعوي للتثقيف والدعم، وليس بديلًا عن الاستشارة الطبية.",
+
+    close:"إغلاق",
+
+    placeholder:"اكتبي رسالتك هنا...",
+
+    emptyError:"اكتبي رسالة أولًا.",
+
+    longError:"الرسالة طويلة جدًا.",
+
+    sent:"تمت إضافة رسالتك إلى هذا المتصفح.",
+
+    gameDone:"رائعة! جمعتِ جميع الزهور العشر ✿",
+
+    flowerStatus:"اكتشفتِ رسالة جديدة ✿",
+
+    logoSubtitle:"A GARDEN OF HOPE"
+
+  },
+
+  en:{
+
+    ribbon:"BREAST CANCER AWARENESS",
+
+    heroTitle:"Every Flower Holds Hope",
+
+    heroDescription:"In this little garden, every flower has a message and every step has meaning. Explore the garden and discover messages of hope, awareness, and support.",
+
+    start:"Begin Your Journey ✿",
+
+    gameEyebrow:"YOUR LITTLE WORLD",
+
+    gameTitle:"The Garden of Hope",
+
+    gameDescription:"Move your character among the flowers and tap a flower to discover its message.",
+
+    collection:"Flowers collected",
+
+    gameStatus:"Your journey begins here ✿",
+
+    gameHint:"Use the arrows to move the girl, or tap a flower directly to read its message.",
+
+    controlNote:"Play using touch controls on your iPad or the arrow keys on your keyboard.",
+
+    certTitle:"Certificate of Hope",
+
+    certText:"You completed your journey through the Garden of Hope and discovered all ten messages. Thank you for sharing awareness, support, and hope.",
+
+    print:"Print Certificate",
+
+    supportEyebrow:"WORDS THAT MATTER",
+
+    supportTitle:"A Space for Support",
+
+    supportDescription:"Leave a kind message or an encouraging word that may brighten someone's day.",
+
+    writeTitle:"Write a Support Message",
+
+    writeDescription:"A kind word can remind someone that they are not alone.",
+
+    messageLabel:"Your message",
+
+    send:"Post Message ✿",
+
+    wallTitle:"The Hope Wall",
+
+    wallDescription:"Little messages filled with kindness and support.",
+
+    emptyMessages:"No messages yet. Be the first to plant a little hope here.",
+
+    storageNotice:"Note: messages are stored only in this browser and are not automatically visible to other visitors.",
+
+    awarenessEyebrow:"KNOWLEDGE IS POWER",
+
+    awarenessTitle:"Awareness Begins with Knowledge",
+
+    awarenessDescription:"Essential information about breast cancer awareness.",
+
+    factTitle1:"Know Your Body",
+
+    factText1:"Be familiar with what is usual for you and consult a healthcare professional about any new or unusual changes.",
+
+    factTitle2:"Early Detection",
+
+    factText2:"Screening appropriate for your age and level of risk can help detect some breast cancers early.",
+
+    factTitle3:"Emotional Support",
+
+    factText3:"Listening respectfully and offering practical and emotional support can help someone during treatment.",
+
+    donationTitle:"Every Act of Support Matters",
+
+    donationDescription:"To support breast cancer awareness and patients, visit Zahra Association to learn about available ways to contribute.",
+
+    donationButton:"Visit Zahra Association ↗",
+
+    footerNote:"An educational awareness project, not a substitute for medical advice.",
+
+    close:"Close",
+
+    placeholder:"Write your message here...",
+
+    emptyError:"Please write a message first.",
+
+    longError:"Your message is too long.",
+
+    sent:"Your message was added to this browser.",
+
+    gameDone:"Wonderful! You collected all ten flowers ✿",
+
+    flowerStatus:"You discovered a new message ✿",
+
+    logoSubtitle:"A GARDEN OF HOPE"
+
+  }
+
+};
+
+let language = "ar";
+
+function t(key){
+
+  return translations[language][key] || translations.ar[key] || key;
+
+}
+
+function applyLanguage(){
+
+  document.documentElement.lang = language;
+
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+
+    const key = el.getAttribute("data-i18n");
+
+    if(translations[language][key]){
+
+      el.textContent = translations[language][key];
+
+    }
+
+  });
+
+  document.getElementById("languageButton").textContent =
+
+    language === "ar" ? "English" : "العربية";
+
+  document.getElementById("message").placeholder = t("placeholder");
+
+  renderMessages();
+
+  updateProgress();
+
+}
+
+document.getElementById("languageButton").addEventListener("click",()=>{
+
+  language = language === "ar" ? "en" : "ar";
+
+  applyLanguage();
+
+});
+
+document.getElementById("homeButton").addEventListener("click",()=>{
+
+  document.getElementById("home").scrollIntoView({behavior:"smooth"});
+
+});
+
+document.getElementById("startButton").addEventListener("click",()=>{
+
+  document.getElementById("garden").scrollIntoView({behavior:"smooth"});
+
+});
+
+/* =========================
+
+   SKY STARS
+
+========================= */
+
+const sky = document.getElementById("sky");
+
+const ctx = sky.getContext("2d");
+
+let stars = [];
+
+let skyWidth = 0;
+
+let skyHeight = 0;
+
+function resizeSky(){
+
+  const rect = sky.getBoundingClientRect();
+
+  const dpr = Math.min(window.devicePixelRatio || 1,2);
+
+  skyWidth = rect.width;
+
+  skyHeight = rect.height;
+
+  sky.width = Math.floor(skyWidth*dpr);
+
+  sky.height = Math.floor(skyHeight*dpr);
+
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  stars = [];
+
+  const count = Math.max(35,Math.floor(skyWidth/9));
+
+  for(let i=0;i<count;i++){
+
+    stars.push({
+
+      x:Math.random()*skyWidth,
+
+      y:Math.random()*skyHeight*.72,
+
+      size:Math.random()*1.8+.4,
+
+      phase:Math.random()*Math.PI*2,
+
+      speed:Math.random()*.018+.006
+
+    });
+
+  }
+
+}
+
+function drawSky(time){
+
+  ctx.clearRect(0,0,skyWidth,skyHeight);
+
+  stars.forEach(star=>{
+
+    const alpha=.35+.65*(.5+.5*Math.sin(time*star.speed+star.phase));
+
+    ctx.fillStyle="rgba(255,233,246,"+alpha+")";
+
+    ctx.fillRect(star.x,star.y,star.size,star.size);
+
+  });
+
+  requestAnimationFrame(drawSky);
+
+}
+
+resizeSky();
+
+requestAnimationFrame(drawSky);
+
+window.addEventListener("resize",resizeSky);
+
+/* =========================
+
+   FALLING SAKURA PETALS
+
+========================= */
+
+const petalLayer = document.getElementById("petalLayer");
+
+for(let i=0;i<24;i++){
+
+  const petal=document.createElement("span");
+
+  petal.className="petal";
+
+  petal.style.left=Math.random()*100+"%";
+
+  petal.style.animationDuration=(5+Math.random()*8)+"s";
+
+  petal.style.animationDelay=(-Math.random()*12)+"s";
+
+  petal.style.opacity=(.3+Math.random()*.6).toFixed(2);
+
+  petal.style.transform="scale("+(0.5+Math.random()*.9)+")";
+
+  if(i%3===0){
+
+    petal.style.background="#ffe5f1";
+
+  }
+
+  petalLayer.appendChild(petal);
+
+}
+
+/* =========================
+
+   GAME STARS
+
+========================= */
+
+const gameStars=document.getElementById("gameStars");
+
+for(let i=0;i<28;i++){
+
+  const star=document.createElement("span");
+
+  star.className="game-star";
+
+  star.textContent=i%4===0?"✧":"·";
+
+  star.style.left=Math.random()*98+"%";
+
+  star.style.top=Math.random()*68+"%";
+
+  star.style.fontSize=(9+Math.random()*12)+"px";
+
+  star.style.animationDelay=Math.random()*3+"s";
+
+  gameStars.appendChild(star);
+
+}
+
+/* =========================
+
+   FLOWER MESSAGES
+
+========================= */
+
+const flowerMessages = [
+
+  {
+
+    icon:"🌸",
+
+    ar:{
+
+      title:"أنتِ لستِ وحدك",
+
+      text:"لكل امرأة تمر برحلة صعبة، هناك قلوب تتمنى لها العافية وأيدٍ مستعدة لمساندتها. طلب الدعم ليس ضعفًا."
+
+    },
+
+    en:{
+
+      title:"You Are Not Alone",
+
+      text:"For every woman going through a difficult journey, there are hearts wishing her well and people ready to support her. Asking for support is not weakness."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌷",
+
+    ar:{
+
+      title:"المعرفة قوة",
+
+      text:"التوعية تساعدنا على فهم سرطان الثدي والتعرّف على أهمية الفحوصات المناسبة والاستشارة الطبية."
+
+    },
+
+    en:{
+
+      title:"Knowledge Is Power",
+
+      text:"Awareness helps us understand breast cancer and recognize the importance of appropriate screening and medical advice."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌺",
+
+    ar:{
+
+      title:"كل تجربة تستحق الاحترام",
+
+      text:"تجربة كل مريضة مختلفة. استمعي دون أحكام، واسأليها عن نوع الدعم الذي تحتاجه."
+
+    },
+
+    en:{
+
+      title:"Every Journey Deserves Respect",
+
+      text:"Every patient's experience is different. Listen without judgment and ask what kind of support she needs."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌸",
+
+    ar:{
+
+      title:"الفحص مهم",
+
+      text:"اسألي مختصًا صحيًا عن الفحوصات المناسبة لعمرك وتاريخك الصحي. وراجعي المختص عند ملاحظة أي تغير جديد."
+
+    },
+
+    en:{
+
+      title:"Screening Matters",
+
+      text:"Ask a healthcare professional about screening appropriate for your age and medical history. Seek advice about any new changes."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌷",
+
+    ar:{
+
+      title:"اللطف يترك أثرًا",
+
+      text:"رسالة قصيرة أو زيارة أو مساعدة عملية قد تعني الكثير لشخص يمر بوقت صعب."
+
+    },
+
+    en:{
+
+      title:"Kindness Leaves a Mark",
+
+      text:"A short message, a visit, or practical help can mean a great deal to someone going through a difficult time."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌺",
+
+    ar:{
+
+      title:"امنحي نفسك وقتًا",
+
+      text:"لا توجد طريقة واحدة صحيحة للتعامل مع المشاعر الصعبة. امنحي نفسك مساحة للراحة واطلبي المساندة عند الحاجة."
+
+    },
+
+    en:{
+
+      title:"Give Yourself Time",
+
+      text:"There is no single right way to handle difficult emotions. Give yourself room to rest and seek support when needed."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌸",
+
+    ar:{
+
+      title:"كوني سندًا",
+
+      text:"بدلًا من افتراض ما تحتاجه المريضة، اسأليها كيف يمكنك مساعدتها واحترمي رغباتها."
+
+    },
+
+    en:{
+
+      title:"Be There",
+
+      text:"Rather than assuming what a patient needs, ask how you can help and respect her wishes."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌷",
+
+    ar:{
+
+      title:"كل سؤال مهم",
+
+      text:"لا تترددي في سؤال الفريق الصحي عن التشخيص وخيارات العلاج والآثار الجانبية. المعلومات الموثوقة تساعد على اتخاذ قرارات واعية."
+
+    },
+
+    en:{
+
+      title:"Every Question Matters",
+
+      text:"Ask the healthcare team about diagnosis, treatment options, and side effects. Reliable information supports informed decisions."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌺",
+
+    ar:{
+
+      title:"الأمل له أشكال كثيرة",
+
+      text:"قد يكون الأمل في يوم هادئ أو حديث مطمئن أو شخص يستمع إليك. لا يلزم أن تكوني قوية طوال الوقت."
+
+    },
+
+    en:{
+
+      title:"Hope Comes in Many Forms",
+
+      text:"Hope may be a peaceful day, a reassuring conversation, or someone who listens. You do not have to be strong all the time."
+
+    }
+
+  },
+
+  {
+
+    icon:"🌸",
+
+    ar:{
+
+      title:"انشري الوعي بمحبة",
+
+      text:"شاركي المعلومات من مصادر صحية موثوقة، وساعدي في نشر التوعية دون تخويف أو لوم."
+
+    },
+
+    en:{
+
+      title:"Spread Awareness with Care",
+
+      text:"Share information from trusted health sources and help raise awareness without fear or blame."
+
+    }
+
+  }
+
+];
+
+const collected=new Set();
+
+const flowerButtons=[...document.querySelectorAll(".collectible")];
+
+const flowerModal=document.getElementById("flowerModal");
+
+const modalTitle=document.getElementById("modalTitle");
+
+const modalText=document.getElementById("modalText");
+
+const modalIcon=document.getElementById("modalIcon");
+
+function openFlower(index){
+
+  const message=flowerMessages[index];
+
+  if(!message)return;
+
+  collected.add(index);
+
+  const button=flowerButtons[index];
+
+  button.classList.add("collected");
+
+  modalIcon.textContent=message.icon;
+
+  modalTitle.textContent=message[language].title;
+
+  modalText.textContent=message[language].text;
+
+  flowerModal.classList.add("open");
+
+  updateProgress();
+
+  if(collected.size===10){
+
+    document.getElementById("gameStatus").textContent=t("gameDone");
+
+    document.getElementById("certificate").classList.add("visible");
+
+    setTimeout(()=>{
+
+      document.getElementById("certificate").scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"center"
+
+      });
+
+    },350);
+
+  }else{
+
+    document.getElementById("gameStatus").textContent=t("flowerStatus");
+
+  }
+
+}
+
+flowerButtons.forEach(button=>{
+
+  button.addEventListener("click",()=>{
+
+    openFlower(Number(button.dataset.flower));
+
+  });
+
+});
+
+function closeFlower(){
+
+  flowerModal.classList.remove("open");
+
+}
+
+document.getElementById("modalClose").addEventListener("click",closeFlower);
+
+flowerModal.addEventListener("click",event=>{
+
+  if(event.target===flowerModal){
+
+    closeFlower();
+
+  }
+
+});
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key==="Escape"){
+
+    closeFlower();
+
+  }
+
+});
+
+function updateProgress(){
+
+  document.getElementById("collectionCount").textContent=
+
+    collected.size+" / 10";
+
+  document.getElementById("progressFill").style.width=
+
+    (collected.size/10*100)+"%";
+
+  if(collected.size<10){
+
+    document.getElementById("gameStatus").textContent=
+
+      language==="ar"
+
+      ?"باقي لك "+(10-collected.size)+" زهور ✿"
+
+      :(10-collected.size)+" flowers left ✿";
+
+  }
+
+}
+
+/* =========================
+
+   CHARACTER MOVEMENT
+
+========================= */
+
+const girl=document.getElementById("girl");
+
+const world=document.getElementById("gameWorld");
+
+let girlX=50;
+
+let jumpTimer=null;
+
+function moveGirl(direction){
+
+  girlX+=direction*5;
+
+  girlX=Math.max(3,Math.min(94,girlX));
+
+  girl.style.left=girlX+"%";
+
+  girl.classList.toggle("facing-left",direction<0);
+
+  girl.classList.add("walking");
+
+  clearTimeout(girl._walkTimer);
+
+  girl._walkTimer=setTimeout(()=>{
+
+    girl.classList.remove("walking");
+
+  },180);
+
+}
+
+function jumpGirl(){
+
+  if(jumpTimer)return;
+
+  girl.style.transition="bottom .18s ease";
+
+  girl.style.bottom="105px";
+
+  jumpTimer=setTimeout(()=>{
+
+    girl.style.bottom="49px";
+
+    jumpTimer=null;
+
+    setTimeout(()=>{
+
+      girl.style.transition="left .12s linear";
+
+    },200);
+
+  },220);
+
+}
+
+function bindPress(button,action){
+
+  button.addEventListener("click",action);
+
+  button.addEventListener("contextmenu",event=>{
+
+    event.preventDefault();
+
+  });
+
+}
+
+bindPress(document.getElementById("leftButton"),()=>moveGirl(-1));
+
+bindPress(document.getElementById("rightButton"),()=>moveGirl(1));
+
+bindPress(document.getElementById("upButton"),jumpGirl);
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key==="ArrowLeft"){
+
+    moveGirl(-1);
+
+  }else if(event.key==="ArrowRight"){
+
+    moveGirl(1);
+
+  }else if(event.key==="ArrowUp" || event.key===" "){
+
+    if(!["TEXTAREA","INPUT"].includes(document.activeElement.tagName)){
+
+      event.preventDefault();
+
+      jumpGirl();
+
+    }
+
+  }
+
+});
+
+/* =========================
+
+   SUPPORT MESSAGE BOARD
+
+========================= */
+
+const messageForm=document.getElementById("messageForm");
+
+const messageInput=document.getElementById("message");
+
+const charCount=document.getElementById("charCount");
+
+const formStatus=document.getElementById("formStatus");
+
+const messageList=document.getElementById("messageList");
+
+let messages=[];
+
+try{
+
+  const stored=localStorage.getItem("pinkHopeMessagesV3");
+
+  const parsed=stored?JSON.parse(stored):[];
+
+  if(Array.isArray(parsed)){
+
+    messages=parsed.filter(item=>
+
+      item &&
+
+      typeof item.text==="string" &&
+
+      typeof item.date==="string"
+
+    ).slice(0,100);
+
+  }
+
+}catch(error){
+
+  messages=[];
+
+}
+
+messageInput.addEventListener("input",()=>{
+
+  charCount.textContent=messageInput.value.length+" / 500";
+
+  formStatus.textContent="";
+
+});
+
+function renderMessages(){
+
+  messageList.replaceChildren();
+
+  if(messages.length===0){
+
+    const empty=document.createElement("div");
+
+    empty.className="empty-messages";
+
+    empty.textContent=t("emptyMessages");
+
+    messageList.appendChild(empty);
+
+    return;
+
+  }
+
+  messages.forEach(item=>{
+
+    const card=document.createElement("article");
+
+    card.className="message-card";
+
+    const label=document.createElement("div");
+
+    label.className="message-label";
+
+    label.textContent="✿  Pink Hope";
+
+    const text=document.createElement("div");
+
+    text.className="message-text";
+
+    /* textContent prevents messages from being treated as HTML */
+
+    text.textContent=item.text;
+
+    card.appendChild(label);
+
+    card.appendChild(text);
+
+    messageList.appendChild(card);
+
+  });
+
+}
+
+messageForm.addEventListener("submit",event=>{
+
+  event.preventDefault();
+
+  const text=messageInput.value.trim();
+
+  if(!text){
+
+    formStatus.textContent=t("emptyError");
+
+    messageInput.focus();
+
+    return;
+
+  }
+
+  if(text.length>500){
+
+    formStatus.textContent=t("longError");
+
+    return;
+
+  }
+
+  messages.unshift({
+
+    text:text,
+
+    date:new Date().toISOString()
+
+  });
+
+  messages=messages.slice(0,100);
+
+  try{
+
+    localStorage.setItem(
+
+      "pinkHopeMessagesV3",
+
+      JSON.stringify(messages)
+
+    );
+
+    formStatus.textContent=t("sent");
+
+  }catch(error){
+
+    formStatus.textContent=
+
+      language==="ar"
+
+      ?"تعذّر حفظ الرسالة في المتصفح، لكن يمكنك المحاولة مرة أخرى."
+
+      :"Could not save the message in this browser. Please try again.";
+
+  }
+
+  messageInput.value="";
+
+  charCount.textContent="0 / 500";
+
+  renderMessages();
+
+});
+
+document.getElementById("printButton").addEventListener("click",()=>{
+
+  window.print();
+
+});
+
+/* INITIALIZE */
+
+applyLanguage();
+
+updateProgress();
+
+})();
+
+</script>
+
+</body>
+
+</html>
