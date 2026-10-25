@@ -486,17 +486,181 @@ bindPress(document.getElementById("leftButton"),()=>moveGirl(-1));bindPress(docu
 
 document.addEventListener("keydown",event=>{if(event.key==="ArrowLeft")moveGirl(-1);else if(event.key==="ArrowRight")moveGirl(1);else if(event.key==="ArrowUp"||event.key===" "){if(!["TEXTAREA","INPUT"].includes(document.activeElement.tagName)){event.preventDefault();jumpGirl()}}});
 
-const messageForm=document.getElementById("messageForm"),messageInput=document.getElementById("message"),charCount=document.getElementById("charCount"),formStatus=document.getElementById("formStatus"),messageList=document.getElementById("messageList");
+const SUPABASE_URL = "https://iaykgpzhkkkilhwjczmw.supabase.co";
 
-let messages=[];
+const SUPABASE_KEY = "sb_publishable_vqAK4ZZaKk4HbGwuSUHT2w_hc5aynXq";
 
-try{const stored=localStorage.getItem("pinkHopeMessagesV3"),parsed=stored?JSON.parse(stored):[];if(Array.isArray(parsed))messages=parsed.filter(item=>item&&typeof item.text==="string"&&typeof item.date==="string").slice(0,100)}catch(error){messages=[]}
+const messageForm = document.getElementById("messageForm");
 
-messageInput.addEventListener("input",()=>{charCount.textContent=messageInput.value.length+" / 500";formStatus.textContent=""});
+const messageInput = document.getElementById("message");
 
-function renderMessages(){messageList.replaceChildren();if(messages.length===0){const empty=document.createElement("div");empty.className="empty-messages";empty.textContent=t("emptyMessages");messageList.appendChild(empty);return}messages.forEach(item=>{const card=document.createElement("article");card.className="message-card";const label=document.createElement("div");label.className="message-label";label.textContent="✿  Pink Hope";const text=document.createElement("div");text.className="message-text";text.textContent=item.text;card.appendChild(label);card.appendChild(text);messageList.appendChild(card)})}
+const charCount = document.getElementById("charCount");
 
-messageForm.addEventListener("submit",event=>{event.preventDefault();const text=messageInput.value.trim();if(!text){formStatus.textContent=t("emptyError");messageInput.focus();return}if(text.length>500){formStatus.textContent=t("longError");return}messages.unshift({text:text,date:new Date().toISOString()});messages=messages.slice(0,100);try{localStorage.setItem("pinkHopeMessagesV3",JSON.stringify(messages));formStatus.textContent=t("sent")}catch(error){formStatus.textContent=language==="ar"?"تعذّر حفظ الرسالة في المتصفح، لكن يمكنك المحاولة مرة أخرى.":"Could not save the message in this browser. Please try again."}messageInput.value="";charCount.textContent="0 / 500";renderMessages()});
+const formStatus = document.getElementById("formStatus");
+
+const messageList = document.getElementById("messageList");
+
+let messages = [];
+
+async function loadMessages() {
+
+  try {
+
+    const response = await fetch(
+
+      `${SUPABASE_URL}/rest/v1/messages?select=id,message,created_at&order=created_at.desc&limit=100`,
+
+      {
+
+        headers: {
+
+          apikey: SUPABASE_KEY,
+
+          Authorization: `Bearer ${SUPABASE_KEY}`
+
+        }
+
+      }
+
+    );
+
+    if (!response.ok) throw new Error("Load failed");
+
+    const data = await response.json();
+
+    messages = data.map(item => ({
+
+      text: item.message,
+
+      date: item.created_at
+
+    }));
+
+    renderMessages();
+
+  } catch (error) {
+
+    formStatus.textContent = "تعذّر تحميل الرسائل. حاولي تحديث الصفحة.";
+
+  }
+
+}
+
+messageInput.addEventListener("input", () => {
+
+  charCount.textContent = messageInput.value.length + " / 500";
+
+  formStatus.textContent = "";
+
+});
+
+function renderMessages() {
+
+  messageList.replaceChildren();
+
+  if (messages.length === 0) {
+
+    const empty = document.createElement("div");
+
+    empty.className = "empty-messages";
+
+    empty.textContent = t("emptyMessages");
+
+    messageList.appendChild(empty);
+
+    return;
+
+  }
+
+  messages.forEach(item => {
+
+    const card = document.createElement("article");
+
+    card.className = "message-card";
+
+    const label = document.createElement("div");
+
+    label.className = "message-label";
+
+    label.textContent = "✿ Pink Hope";
+
+    const text = document.createElement("div");
+
+    text.className = "message-text";
+
+    text.textContent = item.text;
+
+    card.append(label, text);
+
+    messageList.appendChild(card);
+
+  });
+
+}
+
+messageForm.addEventListener("submit", async event => {
+
+  event.preventDefault();
+
+  const text = messageInput.value.trim();
+
+  if (!text || text.length > 500) {
+
+    formStatus.textContent = "اكتبي رسالة من 1 إلى 500 حرف.";
+
+    return;
+
+  }
+
+  formStatus.textContent = "جاري نشر رسالتك...";
+
+  try {
+
+    const response = await fetch(
+
+      `${SUPABASE_URL}/rest/v1/messages`,
+
+      {
+
+        method: "POST",
+
+        headers: {
+
+          apikey: SUPABASE_KEY,
+
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+
+          "Content-Type": "application/json",
+
+          Prefer: "return=representation"
+
+        },
+
+        body: JSON.stringify({ message: text })
+
+      }
+
+    );
+
+    if (!response.ok) throw new Error("Save failed");
+
+    messageInput.value = "";
+
+    charCount.textContent = "0 / 500";
+
+    formStatus.textContent = "تم نشر رسالتك للجميع 💗";
+
+    await loadMessages();
+
+  } catch (error) {
+
+    formStatus.textContent = "تعذّر نشر الرسالة. حاولي مرة ثانية.";
+
+  }
+
+});
+
+loadMessages();
 
 document.getElementById("printButton").addEventListener("click",()=>window.print());
 
