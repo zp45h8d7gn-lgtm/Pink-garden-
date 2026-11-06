@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apple's Little Birthday House ♡</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#211a2b;color:#ffe6d7;
+ font-family:monospace;text-align:center;
+ overflow-x:hidden;
+}
+h1{font-size:17px;color:#f6c8bc;margin:18px 5px 5px}
+.sub{font-size:10px;color:#c9a9b2;margin-bottom:15px}
+.frame{
+ width:min(96vw,850px);margin:auto;
+ border:6px solid #91665b;
+ background:#352638;
+ box-shadow:0 0 35px #d58b9b40;
+ position:relative;
+}
+canvas{
+ width:100%;display:block;
+ image-rendering:pixelated;
+ touch-action:manipulation;
+}
+.message{
+ display:none;position:absolute;inset:0;
+ background:#211a2be8;
+ align-items:center;justify-content:center;
+ padding:15px;
+}
+.box{
+ background:#72505a;border:5px solid #f4c9b8;
+ padding:20px;width:min(95%,430px);
+ box-shadow:6px 6px #211a2b;
+}
+.box h2{color:#ffe1b9;font-size:22px}
+.box p{font-size:13px;line-height:2;color:#fff0e5}
+button{
+ background:#d99ba5;border:3px solid #ffe6d7;
+ color:#432c3d;padding:10px 15px;
+ font-family:monospace;font-weight:bold;
+ cursor:pointer;
+}
+.controls{
+ display:grid;grid-template-columns:55px 55px 55px;
+ justify-content:center;gap:7px;margin:15px auto;
+}
+.controls button{height:45px;font-size:18px;touch-action:none}
+.controls .empty{visibility:hidden}
+.hint{font-size:10px;color:#d8b9b5;line-height:2;margin:12px}
+#musicBtn{
+ position:fixed;bottom:15px;right:15px;
+ z-index:10;background:#72505a;
+ color:#ffe6d7;border:2px solid #f4c9b8;
+ padding:12px;border-radius:10px;font-size:13px;
+}
+</style>
+</head>
+<body>
+<h1>♡ APPLE'S LITTLE BIRTHDAY HOUSE ♡</h1>
+<div class="sub">A warm little home, made with love for you.</div>
+<div class="frame">
+<canvas id="game" width="480" height="300"></canvas>
+<div class="message" id="message">
+ <div class="box">
+  <h2>Happy Birthday, Apple! ♡</h2>
+  <p>
+   Dear apple_wannabe3,<br><br>
+   May your days be as warm as this little home,
+   your dreams shine brighter than the stars,
+   and your heart always find a reason to smile.<br><br>
+   You deserve a lifetime of beautiful little moments.<br><br>
+   With lots of love ♡
+  </p>
+  <button onclick="closeGift()">BACK TO OUR LITTLE HOME</button>
+ </div>
+</div>
+</div>
+<div class="controls">
+ <button class="empty">.</button>
+ <button id="up">▲</button>
+ <button class="empty">.</button>
+ <button id="left">◀</button>
+ <button id="down">▼</button>
+ <button id="right">▶</button>
+</div>
+<div class="hint">
+Explore the little house using the arrows.<br>
+Walk to the birthday cake and press SPACE to open your surprise ♡
+</div>
+<button id="musicBtn">♫ MUSIC BOX: OFF</button>
+<script>
+const c=document.getElementById("game");
+const g=c.getContext("2d");
+const W=480,H=300;
+let t=0,keys={};
+const p={x:205,y:193,speed:2,dir:1,step:0};
+const stars=Array.from({length:35},()=>({
+ x:220+Math.random()*190,
+ y:12+Math.random()*83,
+ phase:Math.random()*6
+}));
+function R(x,y,w,h,color){
+ g.fillStyle=color;
+ g.fillRect(Math.round(x),Math.round(y),w,h);
+}
+function text(a,x,y,size,color){
+ g.font=size+"px monospace";
+ g.fillStyle=color;
+ g.textAlign="center";
+ g.fillText(a,x,y);
+}
+function wall(){
+ R(0,0,480,210,"#75585a");
+ for(let x=10;x<480;x+=24)
+ for(let y=10;y<205;y+=25){
+  R(x,y,2,2,"#967174");
+  R(x+7,y+8,2,2,"#967174");
+ }
+ R(0,205,480,95,"#9a7056");
+ for(let y=207;y<300;y+=22)R(0,y,480,2,"#76523f");
+ for(let x=0;x<480;x+=60)R(x,207,2,93,"#805a45");
+ R(0,203,480,6,"#c19575");
+}
+function windowDraw(){
+ R(260,15,160,112,"#68464b");
+ R(266,21,148,100,"#242e49");
+ R(373,39,20,20,"#ffe3b0");
+ R(382,34,17,20,"#242e49");
+ stars.forEach(s=>{
+  let glow=Math.sin(t*.07+s.phase);
+  R(s.x,s.y,glow>0?3:2,glow>0?3:2,
+    glow>0?"#fff0bf":"#aaa6ca");
+ });
+ R(280,92,25,29,"#38405a");
+ R(310,82,35,39,"#343a55");
+ R(357,97,22,24,"#38405a");
+ R(285,104,5,8,"#e6b98b");
+ R(324,96,6,8,"#e6b98b");
+ R(366,108,5,6,"#e6b98b");
+ R(337,21,5,100,"#b17c66");
+ R(266,70,148,5,"#b17c66");
+ R(250,10,13,120,"#a86677");
+ R(254,10,7,120,"#d39192");
+ R(417,10,13,120,"#a86677");
+ R(420,10,7,120,"#d39192");
+ R(247,10,185,5,"#d6a17f");
+}
+function shelf(){
+ R(16,53,105,105,"#654332");
+ R(12,49,113,7,"#ba8b65");
+ R(18,103,103,6,"#ba8b65");
+ const colors=["#c47d80","#d8b58c","#84967d","#a97588","#d2a47c","#8b9a91"];
+ for(let i=0;i<6;i++){
+  R(23+i*15,63+(i%2)*3,10,34-(i%2)*3,colors[i]);
+  R(24+i*15,69,8,2,"#f0c9a8");
+ }
+ R(26,113,16,29,"#d2b28e");
+ R(47,116,13,26,"#a17b70");
+ R(66,110,17,32,"#84967d");
+ R(89,114,17,28,"#bd8990");
+ R(32,35,16,15,"#8d594e");
+ R(38,23,4,15,"#66815c");
+ R(27,29,12,6,"#7b9870");
+ R(42,25,12,7,"#78986c");
+}
+function fireplace(){
+ R(22,170,108,37,"#67463f");
+ R(17,164,118,8,"#b88668");
+ R(30,175,92,32,"#3c2830");
+ R(64,190,22,12,"#c96f48");
+ R(69,181,10,18,"#f1b56d");
+ R(73,178,5,13,"#ffe3a0");
+ R(50,194,11,6,"#e49a57");
+ R(92,193,12,6,"#e49a57");
+ R(23,208,106,5,"#ba8b6c");
+}
+function picture(){
+ R(157,17,65,60,"#b78b6d");
+ R(162,22,55,50,"#f1d8b5");
+ R(166,26,47,42,"#8e9b82");
+ R(170,53,40,11,"#718269");
+ R(183,37,15,17,"#e9c7a5");
+ R(188,32,5,9,"#a66d59");
+ R(177,43,5,7,"#a66d59");
+ R(198,43,5,7,"#a66d59");
+}
+function lamp(){
+ R(166,106,4,45,"#6b493e");
+ R(151,147,34,5,"#c19570");
+ R(155,89,27,18,"#e9c995");
+ R(161,82,15,8,"#ffe2b0");
+ R(149,110,40,30,"#ffe4a0");
+ R(154,115,30,20,"#ffd89b");
+}
+function rug(){
+ R(138,218,224,62,"#8d5968");
+ R(145,224,210,49,"#d09a98");
+ R(155,232,190,33,"#a97580");
+ R(165,239,170,18,"#b98589");
+ for(let x=166;x<337;x+=20){
+  R(x,245,3,3,"#f0c7ad");
+ }
+}
+function table(){
+ R(309,177,110,8,"#a47756");
+ R(318,185,7,42,"#76503e");
+ R(405,185,7,42,"#76503e");
+ R(305,172,118,7,"#d1a17b");
+}
+function cake(){
+ let f=Math.sin(t*.2)>0;
+ R(326,169,76,5,"#fff0d9");
+ R(334,146,60,22,"#d9899a");
+ R(330,151,4,13,"#ffe9d3");
+ R(394,151,4,13,"#ffe9d3");
+ R(334,143,60,5,"#fff0dc");
+ R(338,138,8,6,"#fff0dc");
+ R(350,135,10,8,"#fff0dc");
+ R(366,136,9,7,"#fff0dc");
+ R(382,138,8,6,"#fff0dc");
+ R(344,133,6,6,"#d65c69");
+ R(370,130,7,7,"#d65c69");
+ R(384,134,6,6,"#d65c69");
+ R(362,120,5,14,"#f4d19e");
+ R(363,116,3,4,f?"#ffeaa6":"#ffad70");
+ R(359,119,3,3,"#ffb76c");
+ R(369,119,3,3,"#ffb76c");
+ if(f){
+  R(352,109,3,3,"#fff0b5");
+  R(379,115,3,3,"#fff0b5");
+ }
+}
+function cat(x,y,type){
+ let fur=type===0?"#e5c6a6":"#99939d";
+ let dark=type===0?"#997a6b":"#625b6b";
+ let b=Math.sin(t*.08+type)*2;
+ R(x+22,y+12+b,6,4,fur);
+ R(x+27,y+8+b,4,5,fur);
+ R(x+5,y+10,20,14,fur);
+ R(x+8,y+22,6,4,dark);
+ R(x+20,y+22,6,4,dark);
+ R(x+5,y,19,16,fur);
+ R(x+4,y-5,7,9,fur);
+ R(x+19,y-5,7,9,fur);
+ R(x+6,y-2,4,5,"#d58d91");
+ R(x+20,y-2,4,5,"#d58d91");
+ R(x+10,y+6,3,3,"#493640");
+ R(x+19,y+6,3,3,"#493640");
+ R(x+15,y+11,3,2,"#d58c92");
+ R(x+7,y+11,3,2,"#d58d91");
+ R(x+22,y+11,3,2,"#d58d91");
+}
+function yarn(){
+ let b=Math.sin(t*.1)*2;
+ R(222,221+b,17,16,"#c77991");
+ R(225,218+b,10,3,"#e5afba");
+ R(226,226+b,10,3,"#f0c4cb");
+ R(230,221+b,3,13,"#f0c4cb");
+ R(239,229+b,12,2,"#f0c4cb");
+ R(248,228+b,2,7,"#f0c4cb");
+}
+function playerDraw(){
+ let moving=keys.ArrowLeft||keys.ArrowRight||
+ keys.ArrowUp||keys.ArrowDown;
+ let bob=moving?Math.sin(t*.35)*2:0;
+ let x=p.x,y=p.y+bob;
+ R(x+1,y+29,20,4,"#49353d");
+ R(x+5,y,13,13,"#604036");
+ R(x+3,y+5,4,14,"#604036");
+ R(x+15,y+7,5,13,"#604036");
+ R(x+6,y+7,12,11,"#f1c5a4");
+ R(x+5,y+6,14,4,"#604036");
+ R(x+8,y+12,2,2,"#44313a");
+ R(x+15,y+12,2,2,"#44313a");
+ R(x+4,y+19,17,10,"#d58c9b");
+ R(x+1,y+21,23,7,"#d58c9b");
+ R(x+9,y+19,5,3,"#ffe1cf");
+ R(x+5,y+28,5,4,"#e8bd9f");
+ R(x+16,y+28,5,4,"#e8bd9f");
+ R(x+4,y+31,7,3,"#60404a");
+ R(x+15,y+31,7,3,"#60404a");
+ R(x+2,y+3,5,4,"#e9a0ad");
+ R(x+17,y+3,5,4,"#e9a0ad");
+}
+function draw(){
+ g.clearRect(0,0,W,H);
+ wall();
+ windowDraw();
+ picture();
+ shelf();
+ fireplace();
+ lamp();
+ rug();
+ table();
+ cat(175,228,0);
+ cat(265,228,1);
+ yarn();
+ cake();
+ playerDraw();
+ if(Math.abs(p.x-355)<55 && Math.abs(p.y-145)<50){
+  text("PRESS SPACE ♡",355,108,10,"#fff0c5");
+ }
+}
+function update(){
+ let moving=false;
+ if(keys.ArrowLeft){p.x-=p.speed;p.dir=-1;moving=true}
+ if(keys.ArrowRight){p.x+=p.speed;p.dir=1;moving=true}
+ if(keys.ArrowUp){p.y-=p.speed;moving=true}
+ if(keys.ArrowDown){p.y+=p.speed;moving=true}
+ if(moving)p.step++;
+ p.x=Math.max(5,Math.min(448,p.x));
+ p.y=Math.max(135,Math.min(255,p.y));
+}
+function nearCake(){
+ return Math.abs((p.x+10)-364)<48 &&
+ Math.abs((p.y+15)-153)<55;
+}
+function check(){
+ if(nearCake()){
+  document.getElementById("message").style.display="flex";
+ }
+}
+function loop(){
+ t++;
+ update();
+ draw();
+ requestAnimationFrame(loop);
+}
+loop();
+window.addEventListener("keydown",e=>{
+ if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"," "].includes(e.key))
+ e.preventDefault();
+ keys[e.key]=true;
+ if(e.key===" ")check();
+});
+window.addEventListener("keyup",e=>keys[e.key]=false);
+function bind(id,key){
+ let b=document.getElementById(id);
+ b.addEventListener("pointerdown",e=>{
+  e.preventDefault();
+  keys[key]=true;
+ });
+ ["pointerup","pointercancel","pointerleave"].forEach(ev=>{
+  b.addEventListener(ev,()=>keys[key]=false);
+ });
+}
+bind("up","ArrowUp");
+bind("down","ArrowDown");
+bind("left","ArrowLeft");
+bind("right","ArrowRight");
+function closeGift(){
+ document.getElementById("message").style.display="none";
+}
+c.addEventListener("click",()=>{
+ if(nearCake())check();
+});
+// MUSIC BOX
+const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+const audioCtx=new AudioContextClass();
+let musicOn=false;
+let musicTimer=null;
+let noteIndex=0;
+const melody=[
+ 523,659,784,659,
+ 587,698,880,698,
+ 523,659,784,1046,
+ 880,784,659,523,
+ 587,698,784,698,
+ 659,587,523,392
+];
+function playNote(freq,start){
+ const osc=audioCtx.createOscillator();
+ const gain=audioCtx.createGain();
+ osc.type="sine";
+ osc.frequency.value=freq;
+ gain.gain.setValueAtTime(0,start);
+ gain.gain.linearRampToValueAtTime(0.12,start+0.03);
+ gain.gain.exponentialRampToValueAtTime(0.001,start+1.5);
+ osc.connect(gain);
+ gain.connect(audioCtx.destination);
+ osc.start(start);
+ osc.stop(start+1.6);
+}
+function playMusic(){
+ if(!musicOn)return;
+ const now=audioCtx.currentTime;
+ playNote(melody[noteIndex],now);
+ if(noteIndex%4===0){
+  playNote(melody[noteIndex]*2,now+0.12);
+ }
+ noteIndex=(noteIndex+1)%melody.length;
+}
+async function toggleMusic(){
+ const btn=document.getElementById("musicBtn");
+ if(!musicOn){
+  await audioCtx.resume();
+  musicOn=true;
+  btn.textContent="♫ MUSIC BOX: ON";
+  playMusic();
+  musicTimer=setInterval(playMusic,450);
+ }else{
+  musicOn=false;
+  clearInterval(musicTimer);
+  btn.textContent="♫ MUSIC BOX: OFF";
+ }
+}
+document.getElementById("musicBtn")
+.addEventListener("click",toggleMusic);
+</script>
+</body>
+</html>
